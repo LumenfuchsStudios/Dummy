@@ -1,0 +1,18 @@
+{
+	"criteria": {
+		"build_totem": {
+			"trigger": "placed_block",
+			"conditions": {
+				"location": [
+					{
+						"condition": "reference",
+						"name": "lumenfuchs:dummy_totem"
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"function": "lumenfuchs:dummy/events/totem_built"
+	}
+}

@@ -1,0 +1,1 @@
+function lumenfuchs:help

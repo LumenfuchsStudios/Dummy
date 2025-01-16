@@ -1,0 +1,73 @@
+{
+	"condition": "all_of",
+	"terms": [
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": "#lumenfuchs:dummy_material"
+				}
+			},
+			"offsetY": -2
+		},
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": "#lumenfuchs:dummy_material"
+				}
+			},
+			"offsetY": -1
+		},
+		{
+			"condition": "any_of",
+			"terms": [
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#lumenfuchs:dummy_material"
+						}
+					},
+					"offsetX": 1,
+					"offsetY": -1
+				},
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#lumenfuchs:dummy_material"
+						}
+					},
+					"offsetZ": 1,
+					"offsetY": -1
+				}
+			]
+		},
+		{
+			"condition": "any_of",
+			"terms": [
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#lumenfuchs:dummy_material"
+						}
+					},
+					"offsetX": -1,
+					"offsetY": -1
+				},
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#lumenfuchs:dummy_material"
+						}
+					},
+					"offsetZ": -1,
+					"offsetY": -1
+				}
+			]
+		}
+	]
+}

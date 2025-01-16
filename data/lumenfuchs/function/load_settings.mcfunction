@@ -78,10 +78,10 @@ execute unless data storage lumenfuchs:flags dummy.attack_player_distance run da
 
 #? Ambience
 
-## (dummy.ambience_presence) | Default: "ambient.soul_sand_valley.additions"
+## (dummy.ambience_presence) | Default: "block.stone.break"
 # The ambient sound played occasionally by the Dummy to players within staring distance.
 execute unless data storage lumenfuchs:flags dummy.ambience_presence run data modify storage lumenfuchs:flags dummy.ambience_presence set value "block.stone.break"
 
-## (dummy.ambience_target) | Default: "ambient.basalt_deltas.mood"
+## (dummy.ambience_target) | Default: "ambient.soul_sand_valley.additions"
 # The ambient sound played by the Dummy to the player it is currently following.
 execute unless data storage lumenfuchs:flags dummy.ambience_target run data modify storage lumenfuchs:flags dummy.ambience_target set value "ambient.soul_sand_valley.additions"

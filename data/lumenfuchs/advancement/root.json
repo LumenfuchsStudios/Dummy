@@ -10,6 +10,7 @@
 		},
 		"description": "Lesser projects of the Golden Light.",
 		"frame": "task",
+		"background": "minecraft:textures/block/black_concrete.png",
 		"announce_to_chat": false,
 		"show_toast": false
 	},

@@ -1,0 +1,21 @@
+{
+	"display": {
+		"icon": {
+			"id": "glowstone_dust"
+		},
+		"title": {
+			"text": "Lumenfuchs Studios",
+			"bold": true,
+			"color": "dark_aqua"
+		},
+		"description": "Lesser projects of the Golden Light.",
+		"frame": "task",
+		"announce_to_chat": false,
+		"show_toast": false
+	},
+	"criteria": {
+		"world_loaded": {
+			"trigger": "impossible"
+		}
+	}
+}

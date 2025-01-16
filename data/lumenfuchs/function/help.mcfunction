@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Displays a helpful message for first-time users.
+
+
 tellraw @s [ "", \
 	{ "text": "\" ~~~~~~~~~~~~~~~~~~~~~~~~ \"", "color": "dark_purple" }, "\n\n", \
 	{ "text": "Hello! Welcome to " }, \

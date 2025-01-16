@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Manages ambient sounds of the dummy.
+
+
 $tellraw @s [ "", \
 	{ "text": "--------------------------", "color": "dark_gray" }, "\n\n", \
 	{ "text": "[<] " , "color": "red", "hoverEvent": { "action": "show_text", "contents": "Reset to default?" }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 203" } }, \

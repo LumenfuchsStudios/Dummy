@@ -1,3 +1,9 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Turns the dummy towards its target player.
+## * Also plays stepping noises while it is walking towards the player.
+
+
 # Look at player
 execute if entity @p[distance=1..] as @n[type=item_display, tag=lumenfuchs.dummy_limb.head, distance=..3] at @s \
 		run tp @s ~ ~ ~ facing entity @p[distance=1..] eyes

@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Lowers the dummy's arm after its attack.
+
+
 # Remove attacking flag
 tag @n[type=interaction, tag=lumenfuchs.entity.dummy, tag=lumenfuchs.dummy.is_attacking, distance=..2] remove lumenfuchs.dummy.is_attacking
 

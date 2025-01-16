@@ -1,4 +1,4 @@
-## * AYDEN T. FOXX | 2025-01-11 - 2025-01-13
+## * AydenTFoxx @ 2025-01-11 .. 2025-01-13
 ## * 
 ## * Initializes features required for the proper functioning of the datapack.
 
@@ -46,6 +46,11 @@ scoreboard objectives add lumenfuchs.settings trigger { "text": "Settings", "col
 # Initialize GUID for identifier generation
 execute unless score #lumenfuchs_guid lumenfuchs.guid matches 1.. \
         run scoreboard players set #lumenfuchs_guid lumenfuchs.guid 1
+
+# Initialize custom tick rate
+execute unless score #lumenfuchs_tick_rate lumenfuchs.dummy matches 1.. \
+        run scoreboard players set #lumenfuchs_tick_rate lumenfuchs.dummy 1
+
 
 # Enable Settings trigger for all players
 scoreboard players enable @a lumenfuchs.settings

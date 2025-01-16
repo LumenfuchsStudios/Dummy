@@ -1,0 +1,21 @@
+{
+	"parent": "lumenfuchs:root",
+	"display": {
+		"icon": {
+			"id": "tinted_glass"
+		},
+		"title": {
+			"text": "The Dummy",
+			"color": "black",
+			"obfuscated": true,
+			"bold": true
+		},
+		"description": "Safety was never an option.",
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"met_dummy": {
+			"trigger": "impossible"
+		}
+	}
+}

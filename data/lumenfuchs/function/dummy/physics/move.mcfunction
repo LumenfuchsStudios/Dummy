@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-14 .. 2025-01-15
+## * 
+## * Moves the dummy and its limbs to the desired direction.
+
+
 # Teleport limbs
 $execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, distance=..3] \
 		if function lumenfuchs:dummy/utils/is_matching_guid run tp @s $(direction)

@@ -1,5 +1,10 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Attempts to summon a Dummy when its totem is built.
+
+
 # Revoke trigger
-advancement revoke @s only lumenfuchs:summon_dummy
+advancement revoke @s only lumenfuchs:internal/summon_dummy
 
 
 # Attempt summoning

@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2024-12-20 - 2025-01-15
+## * AydenTFoxx @ 2024-12-20 .. 2025-01-15
 ## * 
 ## * Performs a raycast to detect a player's visibility through blocks.
 

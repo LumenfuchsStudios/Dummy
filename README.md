@@ -1,6 +1,6 @@
 # Dummy
 
-**Lumenfuchs: Dummy** (or simply *The Dummy*) is a simple proof-of-concept datapack which adds a singular entity: the Dummy.
+**Lumenfuchs' Dummy** (or simply *The Dummy*) is a simple proof-of-concept datapack which adds a singular entity: the Dummy.
 
 Whether summoned by a player or naturally spawned, it has a sole purpose: find the player, no matter where, no matter how. It will always move towards its target, ignoring all obstacles and even defying physics itself to achieve its ultimate goal... whichever it might be.
 
@@ -34,4 +34,4 @@ The Dummy also has its own health, and will always die with exactly 8 hits. If t
 
 ## License
 
-**Lumenfuchs: Dummy** is licensed under the [GNU GPL-v3.0 License](https://choosealicense.com/licenses/gpl-3.0/).
+**Lumenfuchs' Dummy** is licensed under the [GNU GPL-v3.0 License](https://choosealicense.com/licenses/gpl-3.0/).

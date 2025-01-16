@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Display the main settings panel.
+
+
 # Intro
 execute unless data storage lumenfuchs:flags first_load_settings run tellraw @s [ { "text": "--> ", "color": "aqua" }, { "text": "Lumenfuchs Studios", "color": "yellow", "bold": true, "clickEvent": { "action": "open_url", "value": "https://github.com/LumenfuchsStudios" } }, { "text": " presents...\n", "color": "aqua" }, { "text": "\n    [ ", "color": "black" }, { "text": "The Dummy", "color": "black", "obfuscated": true }, { "text": " ]\n", "color": "black" } ]
 execute unless data storage lumenfuchs:flags first_load_settings run data modify storage lumenfuchs:flags first_load_settings set value true

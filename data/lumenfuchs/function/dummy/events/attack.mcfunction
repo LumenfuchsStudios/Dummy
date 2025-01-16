@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Performs the dummy's signature ability.
+
+
 # Trigger aggro from nearby mobs towards player
 execute as @e[type=!#lumenfuchs:technical, distance=..16] \
 		run data modify entity @s AngerTime set value 40

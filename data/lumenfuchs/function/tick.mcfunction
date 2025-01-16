@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Ticks all code from this datapack at a custom rate.
+
+
 ## FUNCTION MANAGEMENT
 
 # Tick clock
@@ -5,10 +10,10 @@ scoreboard players add #lumenfuchs_tick lumenfuchs.dummy 1
 
 
 # Update functions
-execute if score #lumenfuchs_tick lumenfuchs.dummy matches 2 as @e[type=interaction, tag=lumenfuchs.entity.dummy] at @s run function lumenfuchs:dummy/update with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick lumenfuchs.dummy >= #lumenfuchs_tick_rate lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy] at @s run function lumenfuchs:dummy/update with storage lumenfuchs:flags dummy
 
 # Reset clock
-execute if score #lumenfuchs_tick lumenfuchs.dummy matches 2.. run scoreboard players set #lumenfuchs_tick lumenfuchs.dummy 0
+execute if score #lumenfuchs_tick lumenfuchs.dummy >= #lumenfuchs_tick_rate lumenfuchs.dummy run scoreboard players set #lumenfuchs_tick lumenfuchs.dummy 0
 
 
 ## SETTINGS TRIGGER
@@ -19,6 +24,9 @@ execute as @a[scores={ lumenfuchs.settings=2 }] run function lumenfuchs:settings
 execute as @a[scores={ lumenfuchs.settings=3 }] run function lumenfuchs:settings/_menu/ambience with storage lumenfuchs:flags dummy
 execute as @a[scores={ lumenfuchs.settings=4 }] run function lumenfuchs:settings/_menu/behavior with storage lumenfuchs:flags dummy
 execute as @a[scores={ lumenfuchs.settings=5 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
+
+# Display help message
+execute as @a[scores={ lumenfuchs.settings=200 }] run function lumenfuchs:help
 
 
 # Display "read-only settings" message

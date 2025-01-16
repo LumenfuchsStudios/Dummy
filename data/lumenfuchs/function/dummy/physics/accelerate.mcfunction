@@ -1,4 +1,9 @@
-# Add momentum
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Applies upwards and downwards motion to the dummy.
+
+
+## Add momentum
 execute unless score @s lumenfuchs.momentum matches 20.. run scoreboard players add @s lumenfuchs.momentum 1
 
 

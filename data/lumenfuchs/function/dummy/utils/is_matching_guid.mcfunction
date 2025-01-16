@@ -1,3 +1,7 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Evaluates if a limb's GUID is the same as the dummy's.
+
 ##? IF @s lumenfuchs.guid EQUALS @n[type=dummy, r=2] lumenfuchs.guid
 ##? THEN RETURN True
 ##? OTHERWISE RETURN False

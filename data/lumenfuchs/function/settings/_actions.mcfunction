@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Executes all actions from the settings panel.
+
+
 # Ignore if allow_edit_settings is disabled
 execute if data storage lumenfuchs:flags { allow_edit_settings: false } run return fail
 

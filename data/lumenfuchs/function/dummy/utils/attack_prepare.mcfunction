@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Raises the dummy's arm to its signature attack.
+
+
 # Remove walking tag
 tag @s[tag=lumenfuchs.dummy.is_walking] remove lumenfuchs.dummy.is_walking
 

@@ -24,13 +24,8 @@ To update an existing world's datapack, delete the `Lumenfuchs-Dummy` folder at 
 * To open the settings panel, run `/function lumenfuchs:settings/_menu` or `/function lumenfuchs:_settings`.
 * To open a helpful message containing both links above, run `/function lumenfuchs:help` or `/function lumenfuchs:_help`
 
-With the default settings, the Dummy will follow the nearest player within range, remaining stationary when being looked at. Upon reaching a player, it will perform an "attack" ability, causing the skies to darken and entities to aggro on that player.
-
-The Dummy also has its own health, and will always die with exactly 8 hits. If the [Golden Arcane](https://github.com/LumenfuchsStudios/GoldenArcane) datapack is present, its *Remover Stick* item can also instantly kill the Dummy.
-
 > [!NOTE]
-> All settings for the Dummy can be accessed at storage `lumenfuchs:flags`.  
-> For a raw list of all settings in a world, run `/data get storage lumenfuchs:flags`
+> For a complete list of the datapack's capabilities, see [here](./USAGE.md).
 
 ## License
 

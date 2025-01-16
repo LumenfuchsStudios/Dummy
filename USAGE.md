@@ -130,7 +130,7 @@ For a helpful panel containing all available settings, run `/function lumenfuchs
 #### dummy.forceload_chunks
 
 > - Determines if the Dummy will force-load chunks around itself when unloaded.
->   - NOTE: May cause performance issues. Disabled by default over concerns with potentially faster SSD degradation.
+>   - NOTE: May cause performance issues. Disabled by default over concerns with potentially faster SSD wear out.
 > - Default: `false`
 
 #### dummy.natural_spawning

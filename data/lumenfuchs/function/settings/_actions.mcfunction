@@ -25,6 +25,8 @@ execute if entity @a[scores={ lumenfuchs.settings=210 }] run data modify storage
 execute if entity @a[scores={ lumenfuchs.settings=211 }] run data modify storage lumenfuchs:flags dummy.attack_player set value true
 execute if entity @a[scores={ lumenfuchs.settings=212 }] run data modify storage lumenfuchs:flags dummy.attack_player_distance set value 4
 
+execute if entity @a[scores={ lumenfuchs.settings=213 }] run data modify storage lumenfuchs:flags dummy.freeze_when_stared set value true
+
 # Misc
 execute if entity @a[scores={ lumenfuchs.settings=400 }] run data remove storage lumenfuchs:flags first_load
 
@@ -43,6 +45,7 @@ execute as @a[scores={ lumenfuchs.settings=301 }] run function lumenfuchs:settin
 execute as @a[scores={ lumenfuchs.settings=302 }] run function lumenfuchs:settings/stalk_player
 execute as @a[scores={ lumenfuchs.settings=303 }] run function lumenfuchs:settings/harm_on_touch
 execute as @a[scores={ lumenfuchs.settings=304 }] run function lumenfuchs:settings/attack_player
+execute as @a[scores={ lumenfuchs.settings=307 }] run function lumenfuchs:settings/freeze_when_stared
 
 # Misc
 execute as @a[scores={ lumenfuchs.settings=305 }] run function lumenfuchs:settings/forceload

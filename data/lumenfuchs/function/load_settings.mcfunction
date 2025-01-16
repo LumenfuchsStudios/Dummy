@@ -55,6 +55,11 @@ execute unless data storage lumenfuchs:flags dummy.stalk_player_distance run dat
 execute unless data storage lumenfuchs:flags dummy.stalk_player_threshold run data modify storage lumenfuchs:flags dummy.stalk_player_threshold set value 8
 
 
+## (dummy.freeze_when_stared) | Default: ON
+# The Dummy will not walk towards the player while being looked at.
+execute unless data storage lumenfuchs:flags dummy.freeze_when_stared run data modify storage lumenfuchs:flags dummy.freeze_when_stared set value true
+
+
 #? Hostility
 
 ## (dummy.harm_on_touch) | Default: ON

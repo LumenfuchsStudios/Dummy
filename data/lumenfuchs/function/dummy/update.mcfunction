@@ -83,7 +83,7 @@ scoreboard players reset @s[scores={ lumenfuchs.dummy=..0 }] lumenfuchs.dummy
 ## Move
 
 # Detect player looking at dummy
-$execute at @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 if entity @p[distance=..0.8] run tag @s add lumenfuchs.dummy.looked_at
+$execute if data storage lumenfuchs:flags { dummy: { freeze_when_stared: true } } at @p[distance=$(stalk_player_threshold)..$(stare_player_distance)] positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 if entity @p[distance=..0.8] run tag @s add lumenfuchs.dummy.looked_at
 
 # Remove looking tag
 execute if entity @s[tag=lumenfuchs.dummy.looked_at] at @p positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 unless entity @p[distance=..0.8] run tag @s remove lumenfuchs.dummy.looked_at

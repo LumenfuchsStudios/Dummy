@@ -28,6 +28,10 @@ With the default settings, the Dummy will follow the nearest player within range
 
 The Dummy does have health, and will always die at exactly 8 hits. If the [Golden Arcane](https://github.com/LumenfuchsStudios/GoldenArcane) datapack is present, its *Remover Stick* item can also instantly kill the Dummy.
 
+> [!NOTE]
+> All settings for the Dummy can be accessed at storage `lumenfuchs:flags`.  
+> For a raw list of all flags in your world, run `/data get storage lumenfuchs:flags`
+
 ## License
 
 **Lumenfuchs: Dummy** is licensed under the [GNU GPL-v3.0 License](https://choosealicense.com/licenses/gpl-3.0/).

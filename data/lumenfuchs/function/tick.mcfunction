@@ -66,4 +66,4 @@ execute if data storage lumenfuchs:flags { dummy: { natural_spawning: true } } r
 ## DUMMY SUMMONING (EGG)
 
 # Replace vessel with Dummy
-execute as @e[type=wither_skeleton, tag=lumenfuchs.dummy.vessel] at @s positioned ~-0.5 ~ ~-0.5 run function lumenfuchs:dummy/events/summon_egg
+execute as @e[type=marker, tag=lumenfuchs.dummy.vessel] at @s positioned ~-0.5 ~ ~-0.5 run function lumenfuchs:dummy/events/summon_egg

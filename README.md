@@ -25,12 +25,12 @@ To update an existing world's datapack, delete the `Lumenfuchs-Dummy` folder at 
 ## Usage
 
 * To summon a Dummy entity, run `/function lumenfuchs:dummy/summon`
-* To open the settings panel, run `/function lumenfuchs:settings/_menu` or `/function lumenfuchs:_settings`.
-* To open a helpful message containing both links above, run `/function lumenfuchs:help` or `/function lumenfuchs:_help`
+* To open the settings panel, run `/function lumenfuchs:_settings`
+* To open a helpful message containing both links above, run `/function lumenfuchs:_help`,
 
 > [!NOTE]
 > For a complete list of the datapack's capabilities, see [here](./USAGE.md).
 
 ## License
 
-**Lumenfuchs' Dummy** is licensed under the [GNU GPL-v3.0 License](https://choosealicense.com/licenses/gpl-3.0/).
+**Lumenfuchs' Dummy** is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).

@@ -12,9 +12,7 @@ execute if entity @s[tag=lumenfuchs.dummy.is_hurt] run return fail
 
 # If harming item was Golden Arcane's Remover Stick, instantly perish.
 execute if items entity @p weapon.mainhand debug_stick[custom_data={ goldark.items.remover_stick: true }] run summon lightning_bolt
-
-execute if items entity @p weapon.mainhand debug_stick[custom_data={ goldark.items.remover_stick: true }] run scoreboard players set @s lumenfuchs.clock 40
-execute if items entity @p weapon.mainhand debug_stick[custom_data={ goldark.items.remover_stick: true }] run return run tag @s add lumenfuchs.dummy.is_dead
+execute if items entity @p weapon.mainhand debug_stick[custom_data={ goldark.items.remover_stick: true }] run return run function lumenfuchs:dummy/utils/force_remove
 
 
 # Display audiovisual feedback

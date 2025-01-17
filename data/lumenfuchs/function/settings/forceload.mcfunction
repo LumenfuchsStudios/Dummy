@@ -8,16 +8,16 @@
 
 # Display notice
 execute if data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } \
-		run tellraw @s { "text": "# Forceload has been disabled.", "color": "red", "hoverEvent": { "action": "show_text", "contents": "Revert?" }, "clickEvent": { "action": "run_command", "value": "/function lumenfuchs:settings/forceload" } }
+		run tellraw @s { "text": "# Force-loading has been disabled.", "color": "red", "hoverEvent": { "action": "show_text", "contents": "Revert?" }, "clickEvent": { "action": "run_command", "value": "/function lumenfuchs:settings/forceload" } }
 
 # Disable forceloading
-execute unless data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } run return run data modify storage lumenfuchs:flags dummy.forceload_chunks set value false
+execute if data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } run return run data modify storage lumenfuchs:flags dummy.forceload_chunks set value false
 
 
 ## Reset
 
 # Display notice
-tellraw @s { "text": "# Forceload has been enabled.", "color": "green", "hoverEvent": { "action": "show_text", "contents": "Revert?" }, "clickEvent": { "action": "run_command", "value": "/function lumenfuchs:settings/forceload" } }
+tellraw @s { "text": "# Force-loading has been enabled.", "color": "green", "hoverEvent": { "action": "show_text", "contents": "Revert?" }, "clickEvent": { "action": "run_command", "value": "/function lumenfuchs:settings/forceload" } }
 
 # Enable forceloading
 data modify storage lumenfuchs:flags dummy.forceload_chunks set value true

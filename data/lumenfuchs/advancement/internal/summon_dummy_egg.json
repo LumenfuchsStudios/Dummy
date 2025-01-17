@@ -1,0 +1,16 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "summoned_entity",
+			"conditions": {
+				"entity": {
+					"type": "wither_skeleton",
+					"nbt": "{ Tags: [ lumenfuchs.dummy.vessel ] }"
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "lumenfuchs:dummy/events/summon_egg"
+	}
+}

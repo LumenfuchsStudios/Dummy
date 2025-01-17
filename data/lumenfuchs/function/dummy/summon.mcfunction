@@ -93,9 +93,7 @@ scoreboard players set @n[type=interaction, tag=lumenfuchs.entity.dummy, distanc
 execute positioned ~0.5 ~1 ~0.5 as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, distance=..2] run data modify entity @s item.id set string storage lumenfuchs:flags dummy.material
 
 ## Grant Advancement
-# Grant advancement to players looking at the Dummy
-execute as @a[distance=..32] at @s positioned ^ ^ ^1 facing entity @n[type=interaction, tag=lumenfuchs.entity.dummy, distance=..32] feet positioned ^ ^ ^-1 if entity @s[distance=..0.5] \
-		if function lumenfuchs:dummy/utils/raycast run advancement grant @s only lumenfuchs:the_dummy
+advancement grant @a[advancements={ lumenfuchs:the_dummy=false }, distance=..16] only lumenfuchs:the_dummy
 
 
 ## Set GUID

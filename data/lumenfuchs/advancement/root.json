@@ -6,11 +6,11 @@
 		"title": {
 			"text": "Lumenfuchs Studios",
 			"bold": true,
-			"color": "dark_aqua"
+			"color": "aqua"
 		},
 		"description": "Lesser projects of the Golden Light.",
 		"frame": "task",
-		"background": "minecraft:textures/block/black_concrete.png",
+		"background": "minecraft:textures/block/tinted_glass.png",
 		"announce_to_chat": false,
 		"show_toast": false
 	},

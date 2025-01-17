@@ -24,9 +24,13 @@ execute unless score @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, dist
 execute if entity @s[tag=lumenfuchs.dummy.is_walking] run function lumenfuchs:dummy/utils/play_step_noise
 
 
-# Copy player's rotation
+# Copy player's rotation (limbs)
 execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.head, distance=..3] \
 		run rotate @s facing entity @p eyes
+
+# Copy player's rotation (dummy)
+rotate @s facing entity @p feet
+
 
 # Remove Y-axis rotation
 execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.head, distance=..3] \
@@ -35,6 +39,7 @@ execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuc
 # Add interpolation
 execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.head, distance=..3] \
 		run data modify entity @s interpolation_duration set value 20
+
 
 # Reset score
 scoreboard players reset @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..2] lumenfuchs.dummy

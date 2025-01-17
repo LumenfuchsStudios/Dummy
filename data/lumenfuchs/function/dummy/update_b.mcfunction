@@ -3,36 +3,6 @@
 ## * Updates the dummy with entity-like and custom behavior.
 
 
-## # PHYSICS
-
-# Apply gravity
-execute if loaded ~ ~ ~ if block ~ ~-0.1 ~ #lumenfuchs:transparent run function lumenfuchs:dummy/physics/accelerate
-
-# Apply upwards momentum (Slime Block)
-execute if loaded ~ ~ ~ if block ~ ~ ~ slime_block run scoreboard players set @s lumenfuchs.momentum -10
-
-
-# Raise from ground
-execute if loaded ~ ~ ~ unless block ~ ~ ~ #lumenfuchs:transparent unless block ~ ~ ~ slime_block run function lumenfuchs:dummy/physics/move { direction: "~ ~0.1 ~" }
-
-# Reset gravity
-execute if loaded ~ ~ ~ unless block ~ ~-0.1 ~ #lumenfuchs:transparent run scoreboard players reset @s lumenfuchs.momentum
-
-
-# Remove forceload
-execute if data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } unless loaded ~ ~ ~ run forceload remove ~-1 ~-1 ~1 ~1
-
-## Ignore if dead
-execute if loaded ~ ~ ~ if entity @s[tag=lumenfuchs.dummy.is_dead] run return run function lumenfuchs:dummy/events/death
-
-# Add forceload
-execute if data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } unless loaded ~ ~ ~ run forceload add ~ ~ ~ ~
-
-
-## Ignore if unloaded
-execute unless loaded ~ ~ ~ run return fail
-
-
 ## # AUDIO-VISUAL
 
 # Turn to player
@@ -90,15 +60,21 @@ execute if entity @s[tag=lumenfuchs.dummy.looked_at] at @p positioned ^ ^ ^1 fac
 
 
 # Start walking
-$execute unless entity @s[tag=lumenfuchs.dummy.is_walking] if entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] if predicate lumenfuchs:random/5 run tag @s add lumenfuchs.dummy.is_walking
+$execute unless entity @s[tag=lumenfuchs.dummy.is_walking] if entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] positioned ^ ^ ^0.2 unless predicate lumenfuchs:block/stop_dummy_move if predicate lumenfuchs:random/5 run tag @s add lumenfuchs.dummy.is_walking
 
 # Stop walking
+$execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] run function lumenfuchs:dummy/physics/restore_arms
 $execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] run tag @s remove lumenfuchs.dummy.is_walking
+
+execute if entity @s[tag=lumenfuchs.dummy.is_walking] positioned ^ ^ ^0.2 if predicate lumenfuchs:block/stop_dummy_move run tag @s remove lumenfuchs.dummy.is_walking
 tag @s[tag=lumenfuchs.dummy.is_walking, tag=lumenfuchs.dummy.looked_at] remove lumenfuchs.dummy.is_walking
 
 
+# Jump
+execute if entity @s[tag=lumenfuchs.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at] unless block ^ ^1 ^2 #lumenfuchs:transparent if block ^ ^2 ^2 #lumenfuchs:transparent run scoreboard players set @s lumenfuchs.momentum -12
+
 # Move towards nearest player
-$execute if entity @s[tag=lumenfuchs.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at] facing entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] feet run function lumenfuchs:dummy/physics/move { direction: "^ ^ ^0.1" }
+execute if entity @s[tag=lumenfuchs.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at] positioned ^ ^ ^0.2 unless predicate lumenfuchs:block/stop_dummy_move positioned ^ ^ ^-0.2 run function lumenfuchs:dummy/physics/move { direction: "^ ^ ^0.1" }
 
 
 ## Attack
@@ -122,4 +98,4 @@ $execute if data storage lumenfuchs:flags { dummy: { attack_player: true } } unl
 execute if entity @s[tag=lumenfuchs.dummy.is_attacking] run function lumenfuchs:dummy/events/attack
 
 # Revert attack pose
-execute unless entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @p[distance=..4] as @n[type=item_display, tag=lumenfuchs.dummy_limb.l_arm, distance=..3] if score @s lumenfuchs.clock matches 1.. run function lumenfuchs:dummy/utils/attack_revert
+$execute unless entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @p[distance=..$(attack_player_distance)] as @n[type=item_display, tag=lumenfuchs.dummy_limb.l_arm, distance=..3] if score @s lumenfuchs.clock matches 1.. run function lumenfuchs:dummy/utils/attack_revert

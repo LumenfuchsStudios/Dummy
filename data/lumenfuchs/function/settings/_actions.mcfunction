@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15
+## * AydenTFoxx @ 2025-01-15 .. 2025-01.18
 ## * 
 ## * Executes all actions from the settings panel.
 
@@ -50,8 +50,28 @@ execute as @a[scores={ lumenfuchs.settings=301 }] run function lumenfuchs:settin
 execute as @a[scores={ lumenfuchs.settings=302 }] run function lumenfuchs:settings/stalk_player
 execute as @a[scores={ lumenfuchs.settings=303 }] run function lumenfuchs:settings/harm_on_touch
 execute as @a[scores={ lumenfuchs.settings=304 }] run function lumenfuchs:settings/attack_player
+
 execute as @a[scores={ lumenfuchs.settings=307 }] run function lumenfuchs:settings/freeze_when_stared
 
 # Misc
 execute as @a[scores={ lumenfuchs.settings=305 }] run function lumenfuchs:settings/forceload
 execute as @a[scores={ lumenfuchs.settings=306 }] run function lumenfuchs:settings/natural_spawning
+
+
+## EDIT
+
+# Appearance
+execute as @a[scores={ lumenfuchs.settings=308 }] run function lumenfuchs:settings/_utils/give_edit_book { setting: "material" }
+execute as @a[scores={ lumenfuchs.settings=309 }] run function lumenfuchs:settings/_utils/give_edit_book { setting: "material_hurt" }
+
+# Ambience
+execute as @a[scores={ lumenfuchs.settings=310 }] run function lumenfuchs:settings/_utils/give_edit_book { setting: "ambience_presence" }
+execute as @a[scores={ lumenfuchs.settings=311 }] run function lumenfuchs:settings/_utils/give_edit_book { setting: "ambience_target" }
+
+# Behavior
+execute as @a[scores={ lumenfuchs.settings=312 }] run function lumenfuchs:settings/_utils/give_edit_book { setting: "stare_player_distance" }
+
+execute as @a[scores={ lumenfuchs.settings=313 }] run function lumenfuchs:settings/_utils/give_edit_book { setting: "stalk_player_distance" }
+execute as @a[scores={ lumenfuchs.settings=314 }] run function lumenfuchs:settings/_utils/give_edit_book { setting: "stalk_player_threshold" }
+
+execute as @a[scores={ lumenfuchs.settings=315 }] run function lumenfuchs:settings/_utils/give_edit_book { setting: "attack_player_distance" }

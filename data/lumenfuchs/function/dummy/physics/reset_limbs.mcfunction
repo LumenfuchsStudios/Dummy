@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-18
 ## * 
 ## * Resets the swinging rotation from the limb.
 
@@ -11,5 +11,5 @@ execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuc
 scoreboard players reset @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.torso, tag=!lumenfuchs.dummy_limb.head, distance=..3] lumenfuchs.clock
 
 
-# Reset arms
-function lumenfuchs:dummy/physics/restore_arms
+# Reset arms and legs' mirroring
+function lumenfuchs:dummy/physics/restore_limbs

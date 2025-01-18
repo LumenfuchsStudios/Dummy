@@ -1,0 +1,97 @@
+{
+	"condition": "any_of",
+	"terms": [
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": [
+						"redstone_wire",
+						"redstone_torch",
+						"redstone_wall_torch"
+					],
+					"state": {
+						"power": "15"
+					}
+				}
+			}
+		},
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": "redstone_wire",
+					"state": {
+						"power": "14"
+					}
+				}
+			}
+		},
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": "redstone_wire",
+					"state": {
+						"power": "13"
+					}
+				}
+			}
+		},
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": "redstone_wire",
+					"state": {
+						"power": "12"
+					}
+				}
+			}
+		},
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": [
+						"redstone_block"
+					]
+				}
+			}
+		},
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": [
+						"redstone_block"
+					]
+				}
+			},
+			"offsetY": -1
+		},
+		{
+			"condition": "all_of",
+			"terms": [
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#lumenfuchs:transparent"
+						}
+					},
+					"offsetY": -1
+				},
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#lumenfuchs:transparent"
+						}
+					},
+					"offsetY": -2
+				}
+			]
+		}
+	]
+}

@@ -1,14 +1,19 @@
-## * AydenTFoxx @ 2025-01-15
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-16
 ## * 
 ## * Performs the dummy's signature ability.
 
 
 # Trigger aggro from nearby mobs towards player
-execute as @e[type=!#lumenfuchs:technical, distance=..16] \
+execute as @e[type=!#lumenfuchs:technical, distance=..32] \
 		run data modify entity @s AngerTime set value 40
 
-execute as @e[type=!#lumenfuchs:technical, distance=..16] \
+execute as @e[type=!#lumenfuchs:technical, distance=..32] \
 		run data modify entity @s AngryAt set from entity @p[distance=..16] UUID
+
+
+# Regain lost health, if any
+execute unless score @s lumenfuchs.health matches 8 if predicate lumenfuchs:random/1 \
+		run scoreboard players add @s lumenfuchs.health 1
 
 
 # Apply Darkness

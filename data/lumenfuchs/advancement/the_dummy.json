@@ -2,7 +2,7 @@
 	"parent": "lumenfuchs:root",
 	"display": {
 		"icon": {
-			"id": "tinted_glass"
+			"id": "black_concrete"
 		},
 		"title": {
 			"text": "The Dummy",

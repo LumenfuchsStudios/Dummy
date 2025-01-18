@@ -9,9 +9,12 @@
 execute unless entity @e[type=player] run return run schedule function lumenfuchs:load 20t
 
 # Display join message
-execute unless data storage lumenfuchs:flags { first_load_true: true } run tellraw @a { "translate": "%s has joined the world.", "color": "yellow", "with": [ { "selector": "@p" } ], "hoverEvent": { "action": "show_text", "contents": [ "First time here? Try running ", { "text": "/function lumenfuchs:help", "color": "yellow" }, " for a start!" ] }, "clickEvent": { "action": "suggest_command", "value": "/function lumenfuchs:help" } }
+execute unless data storage lumenfuchs:flags { first_load_true: true } run tellraw @a { "translate": "%s has joined the world.", "color": "yellow", "with": [ { "selector": "@p" } ], "hoverEvent": { "action": "show_text", "contents": [ "First time here? Try running ", { "text": "/function lumenfuchs:help", "color": "yellow" }, " for a start!" ] }, "clickEvent": { "action": "suggest_command", "value": "/trigger lumenfuchs.settings set 200" } }
 
 execute if data storage lumenfuchs:flags { first_load_true: true } unless data storage lumenfuchs:flags { first_load: true } run tellraw @a { "text": "Hello again.", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": [ "Settings and Dummy summoning at ", { "text": "/function lumenfuchs:help", "color": "yellow" } ] }, "clickEvent": { "action": "suggest_command", "value": "/function lumenfuchs:help" }  }
+
+# Grant advancement
+advancement grant @a[advancements={ lumenfuchs:root=false }] only lumenfuchs:root
 
 
 ## # SCOREBOARDS
@@ -48,8 +51,11 @@ execute unless score #lumenfuchs_guid lumenfuchs.guid matches 1.. \
         run scoreboard players set #lumenfuchs_guid lumenfuchs.guid 1
 
 # Initialize custom tick rate
-execute unless score #lumenfuchs_tick_rate lumenfuchs.dummy matches 1.. \
-        run scoreboard players set #lumenfuchs_tick_rate lumenfuchs.dummy 1
+execute unless score #lumenfuchs_tick_rate_a lumenfuchs.dummy matches 1.. \
+        run scoreboard players set #lumenfuchs_tick_rate_a lumenfuchs.dummy 1
+
+execute unless score #lumenfuchs_tick_rate_b lumenfuchs.dummy matches 1.. \
+        run scoreboard players set #lumenfuchs_tick_rate_b lumenfuchs.dummy 2
 
 
 # Enable Settings trigger for all players

@@ -1,140 +1,165 @@
-# Usage
+# Lumenfuchs' Dummypedia: How to Dummy
 
-The datapack adds a single new "entity" to the game: the Dummy.
+![The Dummy standing by an Oak tree](./.github/assets/dummy_tree.png)
 
-## Summoning
+The datapack adds a singular entity: the Dummy. Relentless and nigh-unstoppable, knowing how it behaves is crucial for one's survival.
 
-To obtain a Dummy, there are three methods:
+## The Dummy
 
-1. Build a T-shaped, 4-block structure with a black-dyed material (concrete, terracotta, wool, etc.), then put a Glowstone Block at its top middle block (forming a plus sign -- akin to summoning an Iron Golem)
-2. Run the function `/function lumenfuchs:dummy/summon`.
-3. ~~If the Dummy's "Natural Spawning" setting is enabled, there is a chance for it to spawn in any area with light below 3.~~ \[TBA\]
+The Dummy is a condensed mass of darkness, said to be from the depths of the Void. Some even go as far as to say it is an omen which seeks those who are abandoned by their gods.
 
-## Stats
+By default, the Dummy does not spawn on its own (see [here](#dummynatural_spawning-default-false)). In order to be present in a world, the player must summon it by either of two methods:
 
-The Dummy has the following stats by default:
+* Running the command: `/function lumenfuchs:dummy/summon`
+* Building a Dummy Totem, made with (almost) any black-dyed material placed in a T shape, with a Glowstone block at its top.
 
-- 8 (![heart](https://minecraft.wiki/images/Heart_(icon).png)![heart](https://minecraft.wiki/images/Heart_(icon).png)![heart](https://minecraft.wiki/images/Heart_(icon).png)![heart](https://minecraft.wiki/images/Heart_(icon).png)) health
-- 2 (![heart](https://minecraft.wiki/images/Heart_(icon).png)) attack damage (contact)
-- Moves 0.1 blocks / tick.
+![The Dummy Totem, an omen of darkness and destruction.](./.github/assets/dummy_totem.png)
 
-- Follow range of 512 blocks (configurable)
-- Staring distance of 128 blocks (configurable)
-- "Attacking" distance of 4 blocks (configurable)
-  - This is separate from the range of contact damage, which is always 0.5 blocks.
+### Stats
 
-## Interaction
+The Dummy has 8 (4 hearts) health, and moves at a rate of roughly half a block per second. Despite looking solid, its highly volatile material damages anything it touches, dealing 2 (1 heart) thorns damage.
 
-The Dummy has the following actions when near a player:
+If present, players may hear knocking or something breaking in the distance.  
+When targeted, a player may also hear the faint sound of wind unusually agitated. When those sounds become louder, the Dummy is near.
 
-- When within *staring distance*, it will stare that player, turning its head and body towards its target.
-- When within *stalking distance*, it'll walk towards the nearest player, ignoring blocks and entities in the way.
-  - The Dummy will stop at a *stalking threshold (default 8 blocks), and will not move until being farther than this distance to the player.
-  - If within *staring distance* and being looked at, the Dummy will cease to move, but will still turn towards the player.
-- If a player is within *attacking distance* to the Dummy, it will raise its arm, then cause the following effects:
-  - 4 seconds of Darkness II;
-  - 1.5 seconds of thunderous weather;
-  - Hostile and neutral mobs will target the nearest player;
-  - Lightning Bolts within a 128-block radius will be teleported to the nearest player.
-- If any entity is within 0.5 blocks to the Dummy, it receives 2 (![heart](https://minecraft.wiki/images/Heart_(icon).png)) thorns damage and is knocked back.
+### Behaviors
 
-The Dummy has the following reactions to external stimuli:
+The Dummy has a set of default behaviors whenever there are players within its detection range:
 
-- If hit by a player, the Dummy receives 1 damage and is knocked back.
-- If its health reaches 0, the Dummy stops in place, applies Darkness to all nearby players, and disappears after a couple seconds.
-- If there is no block under its feet, it falls at an increasing pace, up to a terminal velocity of 1 block / tick.
-- If its standing block is not within the "transparent" block tag, the Dummy will move upwards at a pace of 0.1 blocks / tick.
-  - If said block is a Slime Block, the Dummy is launched upwards a few blocks, then falls back to the ground.
+| Range (inclusive) | Behavior   |
+| :---------------: | -------- |
+| 512 blocks (32 chunks) | The Dummy *stalks* the nearest player, walking towards its position. It phases through blocks and climbs any wall, but will avoid holes and strongly powered redstone. |
+| 128 blocks (8 chunks) | The Dummy *stares* the nearest player, facing its body towards its target. If stared back, it freezes. |
+| 4 blocks | The Dummy raises its arm to perform its signature "attack", conjuring chaos unto the land. |
+
+When no players are nearby, it simply stands in place, still as a statue.
+
+## The Datapack
+
+The datapack is a proof-of-concept at creating entities without basing it on an existing mob, or retexturing a mob with custom behavior.
+
+The Dummy is composed of six `minecraft:item_display` entities (the "limbs" -- arms, legs, torso and head) and one `minecraft:interaction` (the hitbox).
+
+All composing entities are assigned a Globally Unique Identifier (with the `lumenfuchs.guid` objective) at spawn, which the `interaction` entity uses for moving the correct limbs around. A custom *move* function is implemented (as `lumenfuchs:dummy/physics/move`), which teleports all limbs by their GUID to the target position, then realigns each one with the correct Y position. All other functions which target the limbs also use this GUID for ensuring the targeted limb belongs to that Dummy.
+
+Some observations on working with a non-mob custom entity:
+
+* The entity is inherently immune to status effects and enemy aggro. This can be both useful, as there is no weird/unwanted aggro (e.g. Zombies attacking Villagers, or mobs retaliating when attacked), but also imposes its own limitations; The Dummy cannot be made invisible, float or receive damage reduction with potion effects, for instance.
+* The entity has no physics by default; The developer must create their own simulation. This has obvious pros and cons, as well as less-known side effects. The more accurate to vanilla you want to make your creation, the more complex it will be and the more resources will be used.
+* The entity has no default behavior; If none is created by the developer, it is simply a lifeless shell. As with physics, complex behaviors take significantly more effort than with regular mobs, and often consume more resources. However, there are no unwanted behaviors to circumvent.
+* Creating the desirable appearance is significantly harder, as the model must be created from scratch. If a custom texture is desired, it can also be significantly harder to add to the entity. On the other hand, this allows custom models and textures to be created without requiring a resource pack.
+
+The task is complex, and takes a significantly higher amount of time in comparison to using an existing entity for a base. However, unmatched levels of customizability are achievable by this approach, with entities being as simple or as complex as the developer desires.
+
+The Dummy is but a mere example. Many of its quirks are fitting to the character, but a decently-coded datapack could do much more with remarkable results. That is the goal of creating this datapack.
 
 ## Settings
 
-All settings from the datapack are stored within the data storage `lumenfuchs:flags`.
+The datapack provides settings for tweaking nearly all of the Dummy's behavior, divided in four categories. All settings are set at the first world load (i.e. when first opening/reloading the world with the datapack enabled), and are not restored if removed unless the `first_load` *flag* is removed.
 
-For a helpful panel containing all available settings, run `/function lumenfuchs:_settings`
+> Flags are bits of data saved at storage `lumenfuchs:flags`, which tell the datapack how to operate. All settings are saved as flags in the same location.
+
+All settings can be seen and edited on the datapack's **settings panel**, accessible by running the command `/trigger lumenfuchs:settings`
 
 ### Appearance
 
-#### dummy.material
+#### dummy.material (Default: `minecraft:black_concrete`)
 
-> - Determines the texture of the Dummy.
-> - Default: `black_concrete`
+This defines the `id` of the item used by the Dummy's `item_display` entities. Works best when set to a block, as it fully shows the Dummy's model. If set to `minecraft:air`, the Dummy is invisible.
 
-#### dummy.material_hurt
+Some textures can look off here, as all limbs except the head will display a stretched texture instead of its original resolution.
 
-> - Determines the texture of the Dummy when hurt.
-> - Default: `red_concrete`
+#### dummy.material_hurt (Default: `minecraft:red_concrete`)
+
+This defines the `id` of the item used by the Dummy's `item_display` entities when it is hit by a player. Works best as a red-tinted block, which simulates entities' red overlay when hurt. If set to the same as `dummy.material`, this effect is disabled.
+
+As with the above setting, materials may vary in how well they fit the Dummy's model.
 
 ### Ambience
 
-#### dummy.ambience_presence
+#### dummy.ambience_presence (Default: `block.stone.break`)
 
-> - Determines the sound played by the Dummy to all players within staring distance.
-> - Default: `block.stone.break`
+Defines the resource location of the sound played by the Dummy to all players within `dummy.stare_player_distance`.
 
-#### dummy.ambience_target
+This sound is always played at volume `2` and pitch `0.5`.
 
-> - Determines the sound played by the Dummy to the player it is currently targeting.
-> - Default: `ambient.soul_sand_valley.additions`
+#### dummy.ambience_target (Default: `ambient.soul_sand_valley.additions`)
+
+Defines the resource location of the sound played by the Dummy to the nearest player within `dummy.stare_player_distance`.
+
+This sound is always played at volume `1` and pitch `1.5`.
 
 ### Behavior
 
-#### dummy.stare_player
+#### dummy.stare_player (Default: `true`)
 
-> - Determines if the Dummy should stare nearby players.
-> - Default: `true`
+If the Dummy should always turn towards the nearest player in range. When set to `false`, the Dummy maintains its rotation unless when walking towards its target.
 
-#### dummy.stare_player_distance
+If disabled while `dummy.stalk_player` is enabled, the Dummy will still turn towards the player when walking to their position.
 
-> - Determines the distance at which the Dummy can stare players, measured in blocks.
-> - Default: `128`
+#### dummy.stare_player_distance (Default: `128` blocks)
 
-#### dummy.stalk_player
+Defines the max distance the Dummy can stare players, measured in blocks. When `dummy.stare_player` is enabled, the Dummy will always look in the direction of the nearest player within this range.
 
-> - Determines if the Dummy should walk towards the nearest player.
-> - Default: `true`
+This also defines the max distance at which the Dummy will freeze if looked at, even if `dummy.stare_player` is set to false.
 
-#### dummy.stalk_player_distance
+#### dummy.stalk_player (Default: `true`)
 
-> - Determines the distance at which the Dummy can stalk players, measured in blocks.
->   - NOTE: In Singleplayer, this also heavily depends on the client's simulation distance, unless "Forceload Chunks" is enabled.
-> - Default: `512`
+If the Dummy should walk towards the nearest player in range. When set to `false`, the Dummy remains stationary unless punched around.
 
-#### dummy.stalk_player_threshold
+The Dummy will not walk in the following conditions, regardless of this setting:
 
-> - Determines the distance at which the Dummy will stop walking when approaching a player.
-> - Default: `8`
+* The Dummy is being stared at while `dummy.freeze_when_stared` is enabled;
+* The block the Dummy would walk to is a Redstone Wire (with power 12 or above) or Redstone Block;
+* There is a hole deeper than two blocks where the Dummy would walk to.
+  * A hole is determined if the two blocks below the target position are of type `#lumenfuchs:transparent`.
 
-#### dummy.freeze_when_stared
+#### dummy.stalk_player_distance (Default: `512` blocks)
 
-> - Determines if the Dummy should stop walking when looked at within staring distance.
-> - Default: `true`
+Defines the max distance the Dummy can walk towards players, measured in blocks. When `dummy.stalk_player` is enabled, the Dummy will move towards its target player as long as conditions allow.
 
-#### dummy.harm_on_touch
+If no players are within this range, the Dummy is completely static; Acceleration and contact damage are still applied, however, and if `dummy.forceload_chunks` is enabled, the Dummy still force-loads its current chunk.
 
-> - Determines if the Dummy should apply damage to entities within the same block as itself.
-> - Default: `true`
+#### dummy.stalk_player_threshold (Default: `8` blocks)
 
-#### dummy.attack_player
+Defines the max distance the Dummy will approach its target player. When `dummy.stalk_player` is enabled, the Dummy will stop moving while within this distance.
 
-> - Determines if the Dummy should perform its "attack" behavior.
-> - Default: `true`
+This range is also used to measure the minimal distance the Dummy will check for if it is being stared at.
 
-#### dummy.attack_player_distance
+#### dummy.freeze_when_stared (Default: `true`)
 
-> - Determines how close to a player the Dummy must be in order to perform its ability.
->   - NOTE: For the best experience, `attack_player_distance` should be *lower* than `stalk_player_threshold`.
-> - Default: `4`
+If the Dummy should stop moving while being looked at. When set to `false`, the Dummy will move towards the player as long as conditions allow. Has no effect if `dummy.stalk_player` is disabled.
 
-### Extras
+The actual range of "staring" is wide enough that "looking in the general direction" will still trigger this feature. At default FOV, the Dummy can still be seen walking if viewed from the corners of the player's vision.
 
-#### dummy.forceload_chunks
+#### dummy.hurt_on_touch (Default: `true`)
 
-> - Determines if the Dummy will force-load chunks around itself when unloaded.
->   - NOTE: May cause performance issues. Disabled by default over concerns with potentially faster SSD wear out.
-> - Default: `false`
+If the Dummy should harm mobs on physical contact. When set to `true`, the Dummy deals 2 (1 heart) thorns damage and a small knockback to the nearest block within a `0.5` blocks range. Otherwise, has no effects.
 
-#### dummy.natural_spawning
+Mobs damaged by this feature do not aggro on the Dummy, and can actually get killed on their own by this.
 
-> - Determines if the Dummy can spawn naturally in particularly dark places.
->   - NOTE: Has no effect (yet); Nonetheless, balance and tolerance may be considered before enabling this.
-> - Default: `false`
+### Miscellaneous
+
+#### dummy.forceload_chunks (Default: `false`)
+
+If enabled, the Dummy will force-load its current position whenever unloaded. When set to `false`, the Dummy will not move or perform any of its behaviors (including physics) until within loaded chunks again.
+
+When triggered, the Dummy removes force-loading within a 17-block radius, then adds a force-load to its own position. Due to this and possible concerns with high SSD usage, this setting is disabled by default.
+
+#### dummy.natural_spawning (Default: `false`)
+
+If enabled, the Dummy has a chance to naturally spawn in dark areas when the player is in a poorly lit environment.
+
+When enabled, standing in a location of light below 6 has a chance to spawn a Dummy every 8-10 minutes. While within this range, the game has a 5% chance to choose a random block in a 32-block radius around the player. Then, the following is checked:
+
+* If a Dummy entity is already present, it immediately fails.
+* If the target block or the block above it are not of type `#lumenfuchs:transparent`, it fails.
+* Otherwise, has a 10% chance to succeed.
+
+If all conditions are passed, a Dummy is summoned at that position; All players within a 32-block radius receive 8 seconds of Darkness II and have their timers set back to 0.
+
+This feature is still in early stages, and may not satisfy all users. Therefore, it is disabled by default.
+
+---
+
+[Return to top](#lumenfuchs-dummypedia-how-to-dummy)

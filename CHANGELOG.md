@@ -8,6 +8,15 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
+## v1.1.1 - Unreleased
+
+### Codename: `Hotfix: Dummy Book`
+
+> 🐛 Fixed Dummy freezing its rotation after walking when "stare player" is disabled.
+> 🐛 Fixed Dummy's delayed rotation when walking while "stare player" is disabled.
+> 🐛 Fixed Dummy's legs out of sync with arms every now and then.
+> ⭐ Added new "Settings Book" (in-game: "Write me!") for editing non-boolean (enabled/disabled) settings.
+
 ## v1.1.0 - 2025-01-18
 
 ### Codename: `Additions`

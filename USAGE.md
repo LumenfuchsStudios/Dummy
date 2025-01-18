@@ -162,6 +162,4 @@ This feature is still in early stages, and may not satisfy all users. Therefore,
 
 ---
 
-<!-- markdownlint-disable MD042 -->
-
-[Return to top](#)
+[Return to top](#lumenfuchs-dummypedia-how-to-dummy)

@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-16 .. 2025-01-17
+## * 
+## * Updates the dummy with entity-like and custom behavior.
+
+
 ## # PHYSICS
 
 # Apply gravity
@@ -16,7 +21,7 @@ execute if loaded ~ ~ ~ unless block ~ ~-0.1 ~ #lumenfuchs:transparent run score
 
 
 # Remove forceload
-execute if data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } unless loaded ~ ~ ~ run forceload remove ~-1 ~-1 ~1 ~1
+execute if data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } unless loaded ~ ~ ~ run forceload remove ~-17 ~-17 ~17 ~17
 
 ## Ignore if dead
 execute if loaded ~ ~ ~ if entity @s[tag=lumenfuchs.dummy.is_dead] run return run function lumenfuchs:dummy/events/death

@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-13 - 2025-01-15
+## * AydenTFoxx @ 2025-01-13 .. 2025-01-17
 ## * 
 ## * Updates the dummy with entity-like and custom behavior.
 
@@ -9,7 +9,8 @@
 $execute if data storage lumenfuchs:flags { dummy: { stare_player: true } } if entity @p[distance=0.5..$(stare_player_distance)] run function lumenfuchs:dummy/utils/turn_towards_player
 
 # Turn forwards
-$execute if data storage lumenfuchs:flags { dummy: { stare_player: true } } unless entity @p[distance=..$(stare_player_distance)] anchored eyes run rotate @s facing ^ ^ ^1
+execute if data storage lumenfuchs:flags { dummy: { stalk_player: true, stare_player: false } } if entity @s[tag=lumenfuchs.dummy.is_walking] anchored eyes run function lumenfuchs:dummy/utils/turn_towards_player
+$execute if data storage lumenfuchs:flags { dummy: { stalk_player: true } } unless entity @p[distance=..$(stare_player_distance)] anchored eyes run rotate @s facing ^ ^ ^1
 
 
 # Wave limbs
@@ -18,12 +19,12 @@ execute if entity @s[tag=lumenfuchs.dummy.is_hurt] as @e[type=item_display, tag=
 
 
 # Play ambience (presence)
-$execute if predicate lumenfuchs:random/1 as @a[distance=..$(stare_player_distance)] at @s anchored eyes \
-		run playsound $(ambience_presence) hostile @s ^ ^ ^-2 1 0.5 0.2
+$execute if predicate lumenfuchs:random/1 as @a[distance=..$(stare_player_distance)] \
+		run playsound $(ambience_presence) hostile @s ^ ^ ^ 2 0.5 0.1
 
 # Play ambience (target)
-$execute if predicate lumenfuchs:random/5 as @p[distance=..$(stalk_player_distance)] at @s anchored eyes \
-		run playsound $(ambience_target) hostile @s ^ ^ ^2 1 0.8 0.2
+$execute if predicate lumenfuchs:random/5 as @p[distance=..$(stalk_player_distance)] \
+		run playsound $(ambience_target) hostile @s ^ ^ ^4 1 1.5 0.2
 
 
 ## # BEHAVIOR

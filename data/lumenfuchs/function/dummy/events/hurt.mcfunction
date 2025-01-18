@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-14
+## * AydenTFoxx @ 2025-01-14 .. 2025-01-17
 ## * 
 ## * Simulates the dummy taking damage.
 
@@ -11,7 +11,7 @@ execute if entity @s[tag=lumenfuchs.dummy.is_hurt] run return fail
 
 
 # If harming item was Golden Arcane's Remover Stick, instantly perish.
-execute if items entity @p weapon.mainhand debug_stick[custom_data={ goldark.items.remover_stick: true }] run summon lightning_bolt
+execute if items entity @p weapon.mainhand stick[custom_data={ goldark.items.remover_stick: true }] run return run function lumenfuchs:dummy/utils/force_remove
 execute if items entity @p weapon.mainhand debug_stick[custom_data={ goldark.items.remover_stick: true }] run return run function lumenfuchs:dummy/utils/force_remove
 
 

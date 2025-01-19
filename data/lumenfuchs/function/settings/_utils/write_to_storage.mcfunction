@@ -1,6 +1,6 @@
 # Fail if player is not holding the correct Settings Book
 $execute unless data entity @s SelectedItem.components.minecraft:custom_data."lumenfuchs.settings_dummy"{ setting: $(setting) } \
-		run return run tellraw @s { "text": "Please hold the book for saving this setting!", "color": "red" }
+		run return run tellraw @s ["", { "text": "Please hold the ", "color": "red" }, { "text": "dummy.$(setting)", "color": "gray" }, { "text": " book for saving this setting!", "color": "red" } ]
 
 
 # Write to storage

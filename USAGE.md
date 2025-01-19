@@ -162,7 +162,7 @@ This feature is still in early stages, and may not satisfy all users. Therefore,
 
 ## Performance
 
-This datapack is written and tested on a relatively weak machine (Intel CORE i3 (6th gen), 8 GB RAM), and thus all observations on performance are taken from a perspective of a user who can barely run any shader above 40-ish FPS on a regular world.
+This datapack is written and tested on a relatively weak machine (Intel Core i3 (6th gen), 8 GB RAM), and thus all observations on performance are taken from a perspective of a user who can barely run any shader above 40-ish FPS on a regular world.
 
 That being said, there *is* a performance cost with the Dummy. Perhaps not as much in stronger (and newer) devices, but quite noticeable when running multiple entities at once in the aforementioned device (even though multiple Dummies are somewhat unintended for this datapack's purpose).
 

@@ -8,7 +8,7 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
-## v1.1.1 - Unreleased
+## v1.1.1 - 2025-01-19
 
 ### Codename: `Hotfix: Dummy Book`
 
@@ -16,7 +16,14 @@ Legend:
 * 🐛 Fixed Dummy freezing its rotation after walking when "stare player" is disabled.
 * 🐛 Fixed Dummy's delayed rotation when walking while "stare player" is disabled.
 * 🐛 Fixed Dummy's legs out of sync with arms every now and then.
+* 🐛 Fixed optional settings' reset button being wrongly linked to the wrong setting.
+* ⭐ Added new optional setting for allowing the Dummy to spawn under skylight.
 * ⭐ Added new "Settings Book" (in-game: "Write me!") for editing non-boolean (enabled/disabled) settings.
+* 🔺 Increased chance to check for a valid spawn location when within range for spawning a Dummy, Dummy spawns should be less rare now.
+* 🔺 Reduced Y-axis range for Dummy's natural spawning to 32 blocks.
+* 🔺 Reduced duration of Darkness effect when a Dummy spawns to 8 seconds.
+* 🔺 Reduced light level requirement for triggering the Dummy's natural spawning mechanic to 5.
+* 🔺 Changed Dummy spawning audio cue to only play to the nearest player.
 
 ## v1.1.0 - 2025-01-18
 

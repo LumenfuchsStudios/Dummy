@@ -35,7 +35,7 @@ effect give @a[distance=..32] darkness 8 0 true
 
 # Display audiovisual feedback
 particle large_smoke ~ ~0.5 ~ 0.1 0.2 0.1 0.05 24
-playsound ambient.cave hostile @a[distance=..32] ~ ~ ~ 1.5 0.8 0.5
+playsound ambient.cave hostile @p[distance=..32] ~ ~ ~ 1.5 0.8 0.5
 
 
 # Summon Dummy

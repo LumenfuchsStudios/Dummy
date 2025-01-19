@@ -75,3 +75,6 @@ execute as @a[scores={ lumenfuchs.settings=313 }] run function lumenfuchs:settin
 execute as @a[scores={ lumenfuchs.settings=314 }] run function lumenfuchs:settings/_utils/give_edit_book { setting: "stalk_player_threshold" }
 
 execute as @a[scores={ lumenfuchs.settings=315 }] run function lumenfuchs:settings/_utils/give_edit_book { setting: "attack_player_distance" }
+
+# [Confirm Setting]
+execute as @a[scores={ lumenfuchs.settings=300 }] run function lumenfuchs:settings/_utils/write_to_storage with entity @s SelectedItem.components.minecraft:custom_data."lumenfuchs.settings_dummy"

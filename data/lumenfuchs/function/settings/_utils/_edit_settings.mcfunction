@@ -1,7 +1,10 @@
-## Revoke trigger
+# Revoke trigger
 advancement revoke @s only lumenfuchs:internal/edit_settings
 
+# Ignore if Player just triggered a "Change setting?" action
+execute if score @s lumenfuchs.settings matches 300.. run return fail
 
-## Edit settings
+
+# Edit settings
 execute if data entity @s SelectedItem.components.minecraft:custom_data."lumenfuchs.settings_dummy" \
 		run function lumenfuchs:settings/_utils/write_from_book with entity @s SelectedItem.components.minecraft:custom_data."lumenfuchs.settings_dummy"

@@ -12,6 +12,7 @@ Legend:
 
 ### Codename: `Hotfix: Dummy Book`
 
+* 🐛 Fixed datapack incompatibility with versions prior to 1.21.4.
 * 🐛 Fixed Dummy freezing its rotation after walking when "stare player" is disabled.
 * 🐛 Fixed Dummy's delayed rotation when walking while "stare player" is disabled.
 * 🐛 Fixed Dummy's legs out of sync with arms every now and then.

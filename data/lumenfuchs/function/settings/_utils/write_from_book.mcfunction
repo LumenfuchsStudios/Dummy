@@ -6,6 +6,6 @@ $tellraw @s [ \
 	{ "text": "* Change ", "color": "yellow" }, \
 	{ "text": "dummy.$(setting)", "color": "gray" }, \
 	{ "text": " to ", "color": "yellow" }, \
-	{ "entity": "@s", "nbt": "SelectedItem.components.minecraft:writable_book_content.pages[0].raw", "color": "aqua", "hoverEvent": { "action": "show_text", "contents": "Click to write to storage." }, "clickEvent": { "action": "run_command", "value": "/function lumenfuchs:settings/_utils/write_to_storage { setting: $(setting) }" } }, \
+	{ "entity": "@s", "nbt": "SelectedItem.components.minecraft:writable_book_content.pages[0].raw", "color": "aqua", "hoverEvent": { "action": "show_text", "contents": "Click to write to storage." }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 300" } }, \
 	{ "text": "?", "color": "yellow" } \
 ]

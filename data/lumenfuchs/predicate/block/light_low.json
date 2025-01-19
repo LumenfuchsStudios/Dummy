@@ -3,7 +3,7 @@
 	"predicate": {
 		"light": {
 			"light": {
-				"max": 6
+				"max": 5
 			}
 		},
 		"can_see_sky": false

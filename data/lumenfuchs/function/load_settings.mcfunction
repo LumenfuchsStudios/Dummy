@@ -30,6 +30,10 @@ execute unless data storage lumenfuchs:flags dummy.forceload_chunks run data mod
 # Allows the Dummy entity to spawn naturally in complete darkness; Highly experimental.
 execute unless data storage lumenfuchs:flags dummy.natural_spawning run data modify storage lumenfuchs:flags dummy.natural_spawning set value false
 
+## (dummy.spawn_under_skylight) | Default: OFF
+# Allows the Dummy entity to spawn in blocks with direct view to the sky.
+execute unless data storage lumenfuchs:flags dummy.spawn_under_skylight run data modify storage lumenfuchs:flags dummy.spawn_under_skylight set value false
+
 
 #? Weirdness
 

@@ -1,12 +1,19 @@
+## VERIFY
+
 # Debug: Display visual feedback
 execute if data storage lumenfuchs:flags { debug_mode: 1b } run particle end_rod ~ ~2 ~ 0.1 0.1 0.1 0.1 12 force
+
 
 # Ignore if Dummy already exists
 execute if entity @n[type=interaction, tag=lumenfuchs.entity.dummy, distance=..512] run return run kill @s[type=#lumenfuchs:technical]
 
+# Ignore if block is under skylight (and spawn_under_skylight is disabled)
+execute unless data storage lumenfuchs:flags { dummy: { spawn_under_skylight: true } } \
+		if predicate lumenfuchs:block/can_see_sky run return run kill @s[type=#lumenfuchs:technical]
+
 
 # Check if position is valid
-execute if predicate lumenfuchs:block/light_dangerous if predicate lumenfuchs:random/10 \
+execute if predicate lumenfuchs:block/light_dangerous if predicate lumenfuchs:random/50 \
 		unless block ~ ~-1 ~ #lumenfuchs:transparent if block ~ ~ ~ #lumenfuchs:transparent if block ~ ~1 ~ #lumenfuchs:transparent \
 		run tag @s add lumenfuchs.dummy_spawn.summon_dummy
 
@@ -14,15 +21,17 @@ execute if predicate lumenfuchs:block/light_dangerous if predicate lumenfuchs:ra
 execute unless entity @s[tag=lumenfuchs.dummy_spawn.summon_dummy] run return run kill @s[type=#lumenfuchs:technical]
 
 
+## SUMMON
+
 # Debug: Notify success
 execute if data storage lumenfuchs:flags { debug_mode: 1b } run say Summoned
 
-# Reset spawning timer
-scoreboard players reset @a[scores={ lumenfuchs.dummy=1.. }, distance=..32] lumenfuchs.dummy
+# Reset players' spawning timer
+scoreboard players reset @a[scores={ lumenfuchs.dummy=1.. }, distance=..128] lumenfuchs.dummy
 
 
 # Apply Darkness
-effect give @a[distance=..32] darkness 12 0 true
+effect give @a[distance=..32] darkness 8 0 true
 
 # Display audiovisual feedback
 particle large_smoke ~ ~0.5 ~ 0.1 0.2 0.1 0.05 24

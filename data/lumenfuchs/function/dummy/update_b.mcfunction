@@ -71,9 +71,6 @@ execute if entity @s[tag=lumenfuchs.dummy.is_walking] positioned ^ ^ ^0.2 if pre
 tag @s[tag=lumenfuchs.dummy.is_walking, tag=lumenfuchs.dummy.looked_at] remove lumenfuchs.dummy.is_walking
 
 
-# Jump
-execute if entity @s[tag=lumenfuchs.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at] unless block ^ ^1 ^2 #lumenfuchs:transparent if block ^ ^2 ^2 #lumenfuchs:transparent run scoreboard players set @s lumenfuchs.momentum -12
-
 # Move towards nearest player
 execute if entity @s[tag=lumenfuchs.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at] positioned ^ ^ ^0.2 unless predicate lumenfuchs:block/stop_dummy_move positioned ^ ^ ^-0.2 run function lumenfuchs:dummy/physics/move { direction: "^ ^ ^0.1" }
 

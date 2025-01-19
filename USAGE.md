@@ -160,6 +160,19 @@ If all conditions are passed, a Dummy is summoned at that position; All players 
 
 This feature is still in early stages, and may not satisfy all users. Therefore, it is disabled by default.
 
+## Performance
+
+This datapack is written and tested on a relatively weak machine (Intel CORE i3 (6th gen), 8 GB RAM), and thus all observations on performance are taken from a perspective of a user who can barely run any shader above 40-ish FPS on a regular world.
+
+That being said, there *is* a performance cost with the Dummy. Perhaps not as much in stronger (and newer) devices, but quite noticeable when running multiple entities at once in the aforementioned device (even though multiple Dummies are somewhat unintended for this datapack's purpose).
+
+The Dummy's most resource-intensive function is walking, which utilizes macros and multiple teleports to reshape the Dummy. Spawning has nearly no effect, as it relies on `minecraft:marker` entities for spawn attempts, and all other behaviors also have little effect in comparison. Forceloading is less impactful than expected -- it is primarily disabled by default to avoid breaking other mods/datapacks which depend on force-loading to work.
+
+If performance is a concern, the Dummy's update rate is editable by changing these fake players' `lumenfuchs.dummy` score:
+
+* `#lumenfuchs_tick_rate_a` (Default: `1`) defines the delay in ticks for updating the Dummy's physics, as well as for checking and adding/removing forceloaded chunks.
+* `#lumenfuchs_tick_rate_b` (Default: `2`) defines the delay in ticks for updating the Dummy's behaviors and animations.
+
 ---
 
 [Return to top](#lumenfuchs-dummypedia-how-to-dummy)

@@ -1,8 +1,8 @@
 {
-	"values": [
-		"#boat",
-		"#arrows",
-		"cherry_chest_boat",
+    "values": [
+        "#arrows",
+        "#boat",
+        "cherry_chest_boat",
         "oak_chest_boat",
         "birch_chest_boat",
         "acacia_chest_boat",
@@ -11,15 +11,15 @@
         "spruce_chest_boat",
         "dark_oak_chest_boat",
         "mangrove_chest_boat",
-        "pale_oak_chest_boat",
-		"minecart",
+        { "id": "pale_oak_chest_boat", "required": false },
+        "minecart",
         "chest_minecart",
         "tnt_minecart",
         "furnace_minecart",
         "command_block_minecart",
         "spawner_minecart",
         "hopper_minecart",
-		"area_effect_cloud",
+        "area_effect_cloud",
         "armor_stand",
         "block_display",
         "item_display",
@@ -54,5 +54,5 @@
         "firework_rocket",
         "fishing_bobber",
         "llama_spit"
-	]
+    ]
 }

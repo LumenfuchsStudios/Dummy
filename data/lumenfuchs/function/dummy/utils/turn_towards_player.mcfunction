@@ -1,7 +1,7 @@
 ## * AydenTFoxx @ 2025-01-15 .. 2025-01-17
 ## * 
 ## * Turns the dummy towards its target player.
-## * Also plays stepping noises while it is walking towards the player.
+## * Also plays stepping noises while walking towards that player.
 
 
 # Look at player
@@ -16,12 +16,14 @@ execute if entity @p[distance=1..] as @n[type=item_display, tag=lumenfuchs.dummy
 scoreboard players add @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..2] lumenfuchs.dummy 1
 
 # Ignore if not in attack mode until delay is ready
-execute unless score @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..2] lumenfuchs.dummy matches 10.. \
-		unless entity @s[tag=lumenfuchs.dummy.is_attacking] run return fail
+# If stare_player is disabled, this is ignored entirely.
+execute if data storage lumenfuchs:flags { dummy: { stare_player: true } } unless entity @s[tag=lumenfuchs.dummy.is_attacking] \
+		unless score @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..2] lumenfuchs.dummy matches 10.. run return fail
 
 
 # Play audio if walking
-execute if entity @s[tag=lumenfuchs.dummy.is_walking] run function lumenfuchs:dummy/utils/play_step_noise
+execute if entity @s[tag=lumenfuchs.dummy.is_walking] if score @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..2] lumenfuchs.dummy matches 10.. \
+		run function lumenfuchs:dummy/utils/play_step_noise
 
 
 # Copy player's rotation (limbs)
@@ -29,7 +31,7 @@ execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuc
 		run rotate @s facing entity @p eyes
 
 # Copy player's rotation (dummy)
-rotate @s facing entity @p feet
+rotate @s facing entity @p
 
 
 # Remove Y-axis rotation

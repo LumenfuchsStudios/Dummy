@@ -1,10 +1,6 @@
 {
 	"condition": "location_check",
 	"predicate": {
-		"light": {
-			"light": {
-				"max": 2
-			}
-		}
+		"can_see_sky": true
 	}
 }

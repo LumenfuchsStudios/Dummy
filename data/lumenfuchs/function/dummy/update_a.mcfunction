@@ -21,7 +21,8 @@ execute if loaded ~ ~ ~ unless block ~ ~-0.1 ~ #lumenfuchs:transparent run score
 
 
 # Remove forceload
-execute if data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } unless loaded ~ ~ ~ run forceload remove ~-17 ~-17 ~17 ~17
+execute if data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } unless loaded ~ ~ ~ run forceload remove ~-32 ~-32 ~32 ~32
+execute if data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } if loaded ~ ~ ~ unless loaded ^ ^ ^-8 run forceload remove ~-32 ~-32 ~32 ~32
 
 ## Ignore if dead
 execute if loaded ~ ~ ~ if entity @s[tag=lumenfuchs.dummy.is_dead] run return run function lumenfuchs:dummy/events/death

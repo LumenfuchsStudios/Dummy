@@ -150,15 +150,28 @@ When triggered, the Dummy removes force-loading within a 17-block radius, then a
 
 If enabled, the Dummy has a chance to naturally spawn in dark areas when the player is in a poorly lit environment.
 
-When enabled, standing in a location of light below 6 has a chance to spawn a Dummy every 8-10 minutes. While within this range, the game has a 5% chance to choose a random block in a 32-block radius around the player. Then, the following is checked:
+When enabled, standing in a location with light level of 5 or lower has a chance to spawn a Dummy every 8-10 minutes. While within this range, the game has a 10% chance to choose a random block in a 32x16x32 radius around the player. Then, the following is checked:
 
 * If a Dummy entity is already present, it immediately fails.
 * If the target block or the block above it are not of type `#lumenfuchs:transparent`, it fails.
-* Otherwise, has a 10% chance to succeed.
+* Otherwise, has a 50% chance to succeed.
 
-If all conditions are passed, a Dummy is summoned at that position; All players within a 32-block radius receive 8 seconds of Darkness II and have their timers set back to 0.
+If all conditions pass, a Dummy is summoned at that position; Players within a 32-block radius receive 8 seconds of Darkness II, and the closest player hears a cave sound ("Eerie noise" in subtitles), indicating they're most likely to be targeted by the newly spawned Dummy.
 
 This feature is still in early stages, and may not satisfy all users. Therefore, it is disabled by default.
+
+## Performance
+
+This datapack is written and tested on a relatively weak machine (Intel CORE i3 (6th gen), 8 GB RAM), and thus all observations on performance are taken from a perspective of a user who can barely run any shader above 40-ish FPS on a regular world.
+
+That being said, there *is* a performance cost with the Dummy. Perhaps not as much in stronger (and newer) devices, but quite noticeable when running multiple entities at once in the aforementioned device (even though multiple Dummies are somewhat unintended for this datapack's purpose).
+
+The Dummy's most resource-intensive function is walking, which utilizes macros and multiple teleports to reshape the Dummy. Spawning has nearly no effect, as it relies on `minecraft:marker` entities for spawn attempts, and all other behaviors also have little effect in comparison. Forceloading is less impactful than expected -- it is primarily disabled by default to avoid breaking other mods/datapacks which depend on force-loading to work.
+
+If performance is a concern, the Dummy's update rate is editable by changing these fake players' `lumenfuchs.dummy` score:
+
+* `#lumenfuchs_tick_rate_a` (Default: `1`) defines the delay in ticks for updating the Dummy's physics, as well as for checking and adding/removing forceloaded chunks.
+* `#lumenfuchs_tick_rate_b` (Default: `2`) defines the delay in ticks for updating the Dummy's behaviors and animations.
 
 ---
 

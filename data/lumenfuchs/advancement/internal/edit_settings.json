@@ -1,0 +1,22 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "writable_book",
+						"predicates": {
+							"custom_data": {
+								"lumenfuchs.items.settings_book": true
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"function": "lumenfuchs:settings/_utils/_edit_settings"
+	}
+}

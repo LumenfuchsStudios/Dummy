@@ -28,7 +28,7 @@ The Dummy has a set of default behaviors whenever there are players within its d
 
 | Range (inclusive) | Behavior   |
 | :---------------: | -------- |
-| 512 blocks (32 chunks) | The Dummy *stalks* the nearest player, walking towards its position. It phases through blocks and climbs any wall, but will avoid holes and strongly powered redstone. |
+| 512 blocks (32 chunks) | The Dummy *stalks* the nearest player, walking towards their position. It phases through blocks and climbs any wall, but will avoid holes and strongly powered redstone. |
 | 128 blocks (8 chunks) | The Dummy *stares* the nearest player, facing its body towards its target. If stared back, it freezes. |
 | 4 blocks | The Dummy raises its arm to perform its signature "attack", conjuring chaos unto the land. |
 
@@ -110,7 +110,7 @@ If the Dummy should walk towards the nearest player in range. When set to `false
 The Dummy will not walk in the following conditions, regardless of this setting:
 
 * The Dummy is being stared at while `dummy.freeze_when_stared` is enabled;
-* The block the Dummy would walk to is a Redstone Wire (with power 12 or above) or Redstone Block;
+* The block the Dummy would walk to is a Redstone Wire (with power 12 or above) or a Redstone Block;
 * There is a hole deeper than two blocks where the Dummy would walk to.
   * A hole is determined if the two blocks below the target position are of type `#lumenfuchs:transparent`.
 
@@ -130,7 +130,7 @@ This range is also used to measure the minimal distance the Dummy will check for
 
 If the Dummy should stop moving while being looked at. When set to `false`, the Dummy will move towards the player as long as conditions allow. Has no effect if `dummy.stalk_player` is disabled.
 
-The actual range of "staring" is wide enough that "looking in the general direction" will still trigger this feature. At default FOV, the Dummy can still be seen walking if viewed from the corners of the player's vision.
+The actual range of "staring" is wide enough that "looking in the general direction" will still trigger this feature. At default FOV, the Dummy can still be seen walking if viewed from the corner of the player's vision.
 
 #### dummy.hurt_on_touch (Default: `true`)
 
@@ -144,7 +144,7 @@ Mobs damaged by this feature do not aggro on the Dummy, and can actually get kil
 
 If enabled, the Dummy will force-load its current position whenever unloaded. When set to `false`, the Dummy will not move or perform any of its behaviors (including physics) until within loaded chunks again.
 
-When triggered, the Dummy removes force-loading within a 17-block radius, then adds a force-load to its own position. Due to this and possible concerns with high SSD usage, this setting is disabled by default.
+When triggered, the Dummy removes force-loading within a 32-block radius, then adds a force-load to its own position. Due to this and possible concerns with high SSD usage, this setting is disabled by default.
 
 #### dummy.natural_spawning (Default: `false`)
 
@@ -159,6 +159,12 @@ When enabled, standing in a location with light level of 5 or lower has a chance
 If all conditions pass, a Dummy is summoned at that position; Players within a 32-block radius receive 8 seconds of Darkness II, and the closest player hears a cave sound ("Eerie noise" in subtitles), indicating they're most likely to be targeted by the newly spawned Dummy.
 
 This feature is still in early stages, and may not satisfy all users. Therefore, it is disabled by default.
+
+#### dummy.spawn_under_skylight (Default: `false`)
+
+If enabled and `dummy.natural_spawning` is also set to `true`, the Dummy is able to spawn in blocks with no cover above it (i.e. directly exposed to the sky / under skylight). This mainly allows the Dummy to spawn on the world's surface as opposed to only within caves or under trees or similar.
+
+The player must still not be under skylight for the spawning timer to be actually triggered; It does, however, allow scenarios such as the Dummy spawning in the surface while the player is inside a poorly lit house, under a tree, or within a cave entrance.
 
 ## Performance
 

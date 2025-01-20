@@ -1,5 +1,4 @@
 # Lumenfuchs' Dummypedia: How to Dummy
-
 ![The Dummy standing by an Oak tree](./.github/assets/dummy_tree.png)
 
 The datapack adds a singular entity: the Dummy. Relentless and nigh-unstoppable, knowing how it behaves is crucial for one's survival.
@@ -162,9 +161,9 @@ This feature is still in early stages, and may not satisfy all users. Therefore,
 
 #### dummy.spawn_under_skylight (Default: `false`)
 
-If enabled and `dummy.natural_spawning` is also set to `true`, the Dummy is able to spawn in blocks with no cover above it (i.e. directly exposed to the sky / under skylight). This mainly allows the Dummy to spawn on the world's surface as opposed to only within caves or under trees or similar.
+If enabled and `dummy.natural_spawning` is also set to `true`, the Dummy is able to spawn in blocks with no cover above it (i.e. directly exposed to the sky). This mainly allows the Dummy to spawn on the world's surface as opposed to only within caves or under unlit structures.
 
-The player must still not be under skylight for the spawning timer to be actually triggered; It does, however, allow scenarios such as the Dummy spawning in the surface while the player is inside a poorly lit house, under a tree, or within a cave entrance.
+The player still must not be under skylight for the game to attempt a Dummy spawning; It does, however, allow for more spawn opportunities, and brings the Dummy a bit closer (but never truly) to how regular hostile mobs spawn in the regular game.
 
 ## Performance
 
@@ -172,7 +171,7 @@ This datapack is written and tested on a relatively weak machine (Intel Core i3 
 
 That being said, there *is* a performance cost with the Dummy. Perhaps not as much in stronger (and newer) devices, but quite noticeable when running multiple entities at once in the aforementioned device (even though multiple Dummies are somewhat unintended for this datapack's purpose).
 
-The Dummy's most resource-intensive function is walking, which utilizes macros and multiple teleports to reshape the Dummy. Spawning has nearly no effect, as it relies on `minecraft:marker` entities for spawn attempts, and all other behaviors also have little effect in comparison. Forceloading is less impactful than expected -- it is primarily disabled by default to avoid breaking other mods/datapacks which depend on force-loading to work.
+The Dummy's most resource-intensive function is walking, which utilizes macroand multiple teleports to reshape the Dummy. Spawning has nearly no effect, as it relies on `minecraft:marker` entities for spawn attempts, and all other behaviors also have little effect in comparison. Forceloading is less impactful than expected -- it is primarily disabled by default to avoid breaking other mods/datapacks which depend on force-loading to work.
 
 If performance is a concern, the Dummy's update rate is editable by changing these fake players' `lumenfuchs.dummy` score:
 

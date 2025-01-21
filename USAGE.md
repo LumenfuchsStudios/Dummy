@@ -59,7 +59,7 @@ The datapack provides settings for tweaking nearly all of the Dummy's behavior, 
 
 > Flags are bits of data saved at storage `lumenfuchs:flags`, which tell the datapack how to operate. All settings are saved as flags in the same location.
 
-All settings can be seen and edited on the datapack's **settings panel**, accessible by running the command `/trigger lumenfuchs:settings`
+All settings can be seen and edited on the datapack's **settings panel**, accessible by running the command `/trigger the_stall:settings`
 
 ### Appearance
 

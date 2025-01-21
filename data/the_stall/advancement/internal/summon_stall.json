@@ -1,0 +1,18 @@
+{
+	"criteria": {
+		"build_totem": {
+			"trigger": "placed_block",
+			"conditions": {
+				"location": [
+					{
+						"condition": "reference",
+						"name": "the_stall:stall_totem"
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"function": "the_stall:events/totem_built"
+	}
+}

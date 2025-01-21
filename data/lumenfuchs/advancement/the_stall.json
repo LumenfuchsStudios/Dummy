@@ -1,0 +1,21 @@
+{
+	"parent": "lumenfuchs:root",
+	"display": {
+		"icon": {
+			"id": "black_concrete"
+		},
+		"title": {
+			"text": "The Dummy",
+			"color": "black",
+			"obfuscated": true,
+			"bold": true
+		},
+		"description": "Safety was never an option.",
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"met_stall": {
+			"trigger": "impossible"
+		}
+	}
+}

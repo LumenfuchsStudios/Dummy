@@ -1,0 +1,73 @@
+{
+	"condition": "all_of",
+	"terms": [
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": "#the_stall:totem_material"
+				}
+			},
+			"offsetY": -2
+		},
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": "#the_stall:totem_material"
+				}
+			},
+			"offsetY": -1
+		},
+		{
+			"condition": "any_of",
+			"terms": [
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#the_stall:totem_material"
+						}
+					},
+					"offsetX": 1,
+					"offsetY": -1
+				},
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#the_stall:totem_material"
+						}
+					},
+					"offsetZ": 1,
+					"offsetY": -1
+				}
+			]
+		},
+		{
+			"condition": "any_of",
+			"terms": [
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#the_stall:totem_material"
+						}
+					},
+					"offsetX": -1,
+					"offsetY": -1
+				},
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#the_stall:totem_material"
+						}
+					},
+					"offsetZ": -1,
+					"offsetY": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+## * AydenTFoxx @ 2025-01-15
+## * 
+## * Displays a helpful message for first-time users.
+
+
+tellraw @s [ "", \
+	{ "text": "\" ~~~~~~~~~~~~~~~~~~~~~~~~ \"", "color": "dark_purple" }, "\n\n", \
+	{ "text": "Hello! Welcome to " }, \
+	{ "text": "Lumenfuchs","color": "yellow", "clickEvent": { "action": "open_url", "value": "https://github.com/LumenfuchsStudios" } }, \
+	{ "text": "' " }, \
+	{ "text": "Stall", "color": "green" }, \
+	{ "text": " datapack.\nIts main feature is the " }, \
+	{ "text": "Stall", "bold": true }, \
+	{ "text": ", an entity whose main\nhobby is to stalk you around anywhere.\n\n" }, \
+	{ "text": "* ", "color": "gold" }, { "text": "To test the creature on your own, click ", "color": "gray" }, { "text": "here", "color": "dark_aqua", "hoverEvent": { "action": "show_text", "contents": "Summon Dummy" }, "clickEvent": { "action": "run_command", "value": "/function the_stall:dummy_lib/summon" } }, ".\n", \
+	{ "text": "* ", "color": "gold" }, { "text": "To see all available settings of this datapack, see ", "color": "gray" }, { "text": "here", "color": "dark_aqua", "hoverEvent": { "action": "show_text", "contents": "Open Settings" }, "clickEvent": { "action": "run_command", "value": "/trigger the_stall.settings" } }, ".\n\n  ", \
+	{ "text": "[Note: Work In Progress!]", "color": "gold" }, "\n\n", \
+	{ "text": " All things you see here are currently WIP!\n Bugs are likely, features are lacking. Here be dragons!\n\n" }, \
+	{ "text": "\" ~~~~~~~~~~~~~~~~~~~~~~~~ \"", "color": "dark_purple" } \
+]

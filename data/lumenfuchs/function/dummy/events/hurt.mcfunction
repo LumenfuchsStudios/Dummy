@@ -17,7 +17,7 @@ execute if items entity @p weapon.mainhand debug_stick[custom_data={ goldark.ite
 
 # Display audiovisual feedback
 execute unless entity @s[tag=lumenfuchs.dummy.is_dead] run playsound entity.generic.hurt neutral @a[distance=..16] ~ ~ ~
-$execute unless entity @s[tag=lumenfuchs.dummy.is_dead] run particle block{ block_state: $(material) } ~ ~1 ~ 0.0 0.0 0.0 1.0 12
+$execute unless entity @s[tag=lumenfuchs.dummy.is_dead] run particle item{ item: $(material) } ~ ~1 ~ 0.0 0.0 0.0 1.0 12
 
 # Display "red" hurt overlay
 execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, distance=..3] if function lumenfuchs:dummy/utils/is_matching_guid \

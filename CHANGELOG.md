@@ -8,6 +8,10 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
+## v1.1.2 - Unreleased
+
+* 🐛 Fixed potential incompatibility with non-block items for the Dummy's material.
+
 ## v1.1.1 - 2025-01-19
 
 ### Codename: `Hotfix: Dummy Book`

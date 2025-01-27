@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-17
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-24
 ## * 
 ## * Ticks all code from this datapack at a custom rate.
 
@@ -6,8 +6,8 @@
 ## FUNCTION MANAGEMENT
 
 # Update functions
-execute if score #dummy_lib_tick_a dummy_lib.dummy >= #dummy_lib_tick_rate_a dummy_lib.dummy as @e[type=interaction, tag=dummy_lib.entity.dummy, tag=the_stall.entity.stall] at @s run function dummy_lib:entity/update_a with storage dummy_lib:flags the_stall
-execute if score #dummy_lib_tick_b dummy_lib.dummy >= #dummy_lib_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=dummy_lib.entity.dummy, tag=the_stall.entity.stall, tag=!dummy_lib.dummy.is_dead] at @s if loaded ~ ~ ~ run function dummy_lib:entity/update_b with storage dummy_lib:flags the_stall
+execute if score #dummy_lib_tick_a dummy_lib.dummy >= #dummy_lib_tick_rate_a dummy_lib.dummy as @e[type=interaction, tag=dummy_lib.entity.dummy, tag=the_stall.entity.stall] at @s run function dummy_lib:entity/update_a { namespace: "the_stall" }
+execute if score #dummy_lib_tick_b dummy_lib.dummy >= #dummy_lib_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=dummy_lib.entity.dummy, tag=the_stall.entity.stall, tag=!dummy_lib.dummy.is_dead] at @s if loaded ~ ~ ~ run function the_stall:entity/update_b with storage dummy_lib:flags the_stall
 
 
 ## SETTINGS TRIGGER

@@ -77,7 +77,7 @@
 					"condition": "location_check",
 					"predicate": {
 						"block": {
-							"blocks": "#lumenfuchs:transparent"
+							"blocks": "#dummy_lib:transparent"
 						}
 					},
 					"offsetY": -1
@@ -86,7 +86,7 @@
 					"condition": "location_check",
 					"predicate": {
 						"block": {
-							"blocks": "#lumenfuchs:transparent"
+							"blocks": "#dummy_lib:transparent"
 						}
 					},
 					"offsetY": -2

@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-13 .. 2025-01-17
+## * AydenTFoxx @ 2025-01-13 .. 2025-01-24
 ## * 
 ## * Updates the dummy with entity-like and custom behavior.
 
@@ -13,11 +13,6 @@ execute if data storage dummy_lib:flags { the_stall: { stalk_player: true, stare
 $execute if data storage dummy_lib:flags { the_stall: { stalk_player: true } } unless entity @p[distance=..$(stare_player_distance)] anchored eyes run rotate @s facing ^ ^ ^1
 
 
-# Wave limbs
-execute if entity @s[tag=dummy_lib.dummy.is_walking] as @e[type=item_display, tag=dummy_lib.entity.dummy_limb, tag=!dummy_lib.dummy_limb.torso, tag=!dummy_lib.dummy_limb.head, tag=the_stall.entity.stall_limb, distance=..2] if function dummy_lib:utils/is_matching_guid at @s run function dummy_lib:physics/wave_limb
-execute if entity @s[tag=dummy_lib.dummy.is_hurt] as @e[type=item_display, tag=dummy_lib.entity.dummy_limb, tag=!dummy_lib.dummy_limb.torso, tag=!dummy_lib.dummy_limb.head, tag=the_stall.entity.stall_limb, distance=..2] if function dummy_lib:utils/is_matching_guid at @s run function dummy_lib:physics/wave_limb_strong
-
-
 # Play ambience (presence)
 $execute if predicate dummy_lib:random/1 as @a[distance=..$(stare_player_distance)] \
 		run playsound $(ambience_presence) hostile @s ^ ^ ^ 2 0.5 0.1
@@ -29,26 +24,8 @@ $execute if predicate dummy_lib:random/5 as @p[distance=..$(stalk_player_distanc
 
 ## # BEHAVIOR
 
-## Damage
-
-# Simulate damage
-execute if data entity @s attack run return run function the_stall:entity/damage { amount: 1 }
-
-# Enable invulnerability frames
-scoreboard players remove @s[tag=dummy_lib.dummy.is_hurt] dummy_lib.dummy 1
-scoreboard players set @s[tag=dummy_lib.dummy.is_hurt, scores={ dummy_lib.dummy=-1 }] dummy_lib.dummy 3
-
-
-# Reset color
-execute if entity @s[tag=dummy_lib.dummy.is_hurt] if score @s dummy_lib.dummy matches 2 run function dummy_lib:utils/reset_material
-
-# Reset rotation
-execute if entity @s[tag=dummy_lib.dummy.is_hurt] if score @s dummy_lib.dummy matches 0 run function dummy_lib:physics/reset_limbs
-
-
-# Reset invulnerability
-tag @s[tag=dummy_lib.dummy.is_hurt, scores={ dummy_lib.dummy=..0 }] remove dummy_lib.dummy.is_hurt
-scoreboard players reset @s[scores={ dummy_lib.dummy=..0 }] dummy_lib.dummy
+# Run default behaviors
+function dummy_lib:entity/update_b { namespace: "the_stall" }
 
 
 ## Move

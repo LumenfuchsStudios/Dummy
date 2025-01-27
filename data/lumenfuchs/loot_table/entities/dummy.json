@@ -1,0 +1,51 @@
+{
+    "type": "advancement_reward",
+    "pools": [
+        {
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "wither_skeleton_spawn_egg",
+                    "functions": [
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "item_name": "{ \"text\": \"Dummy Spawn Egg\" }",
+                                "lore": [ "{ \"text\": \"A vile creature lies within.\", \"color\": \"gray\", \"italic\": false }" ],
+                                "rarity": "uncommon",
+                                "enchantment_glint_override": true,
+                                "entity_data": { "id": "marker", "Tags": [ "lumenfuchs.dummy.vessel" ] }
+                            }
+                        }
+                    ],
+                    "quality": 2,
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "endermite_spawn_egg",
+                    "functions": [
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "item_name": "{ \"text\": \"Seeker Spawn Egg\" }",
+                                "lore": [ "{ \"text\": \"A pumpkin lies inside.\", \"color\": \"gray\", \"italic\": false }" ],
+                                "rarity": "rare",
+                                "enchantment_glint_override": true,
+                                "entity_data": { "id": "marker", "Tags": [ "lumenfuchs.seeker.vessel" ] }
+                            }
+                        }
+                    ],
+                    "quality": 1,
+                    "weight": 5
+                },
+                {
+                    "type": "empty",
+                    "weight": 10
+                }
+            ],
+            "rolls": 1
+        }
+    ],
+    "random_sequence": "lumenfuchs:dummy_eg"
+}

@@ -25,5 +25,8 @@ particle large_smoke ~ ~0.5 ~ 0.0 0.2 0.0 0.01 4
 particle portal ~ ~1 ~ 0.0 0.2 0.0 0.5 8
 
 
+# Drop loot
+execute if score @s lumenfuchs.clock matches 40.. if predicate lumenfuchs:random/50 run loot spawn ~ ~ ~ loot lumenfuchs:entities/dummy
+
 # Remove dummy
 execute if score @s lumenfuchs.clock matches 40.. run function lumenfuchs:dummy/events/remove

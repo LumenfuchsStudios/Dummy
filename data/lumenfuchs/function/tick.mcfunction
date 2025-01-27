@@ -14,6 +14,10 @@ scoreboard players add #lumenfuchs_tick_b lumenfuchs.dummy 1
 execute if score #lumenfuchs_tick_a lumenfuchs.dummy >= #lumenfuchs_tick_rate_a lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy] at @s run function lumenfuchs:dummy/update_a with storage lumenfuchs:flags dummy
 execute if score #lumenfuchs_tick_b lumenfuchs.dummy >= #lumenfuchs_tick_rate_b lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy, tag=!lumenfuchs.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:dummy/update_b with storage lumenfuchs:flags dummy
 
+execute if score #lumenfuchs_tick_a lumenfuchs.dummy >= #lumenfuchs_tick_rate_a lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker] at @s run function lumenfuchs:seeker/update_a with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_b lumenfuchs.dummy >= #lumenfuchs_tick_rate_b lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker, tag=!lumenfuchs.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:seeker/update_b with storage lumenfuchs:flags dummy
+
+
 # Reset clock
 execute if score #lumenfuchs_tick_a lumenfuchs.dummy >= #lumenfuchs_tick_rate_a lumenfuchs.dummy run scoreboard players set #lumenfuchs_tick_a lumenfuchs.dummy 0
 execute if score #lumenfuchs_tick_b lumenfuchs.dummy >= #lumenfuchs_tick_rate_b lumenfuchs.dummy run scoreboard players set #lumenfuchs_tick_b lumenfuchs.dummy 0
@@ -67,3 +71,6 @@ execute if data storage lumenfuchs:flags { dummy: { natural_spawning: true } } r
 
 # Replace vessel with Dummy
 execute as @e[type=marker, tag=lumenfuchs.dummy.vessel] at @s positioned ~-0.5 ~ ~-0.5 run function lumenfuchs:dummy/events/summon_egg
+
+# Replace vessel with Seeker
+execute as @e[type=marker, tag=lumenfuchs.seeker.vessel] at @s positioned ~-0.5 ~ ~-0.5 run function lumenfuchs:seeker/events/summon_egg

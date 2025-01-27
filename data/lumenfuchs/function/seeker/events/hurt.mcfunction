@@ -20,7 +20,7 @@ execute unless entity @s[tag=lumenfuchs.dummy.is_dead] run playsound entity.gene
 $execute unless entity @s[tag=lumenfuchs.dummy.is_dead] run particle block{ block_state: { Name: $(material) } } ~ ~1 ~ 0.0 0.0 0.0 1.0 12
 
 # Display "red" hurt overlay
-execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, distance=..3] if function lumenfuchs:dummy/utils/is_matching_guid \
+execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.head, distance=..3] if function lumenfuchs:dummy/utils/is_matching_guid \
 		run data modify entity @s item.id set string storage lumenfuchs:flags dummy.material_hurt
 
 

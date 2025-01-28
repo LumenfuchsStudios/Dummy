@@ -88,7 +88,7 @@ execute as @a[scores={ lumenfuchs.settings=315 }] run function lumenfuchs:settin
 ## [Confirm Setting]
 # Fail if no book is held
 execute as @a[scores={ lumenfuchs.settings=300 }] unless items entity @s weapon.mainhand writable_book \
-		run return run tellraw @s { "text": "You must hold the book for editing this setting!", "color": "red" }
+		run return run tellraw @s { "text": "You must hold the book to edit this setting!", "color": "red" }
 
 # Write to storage
 execute as @a[scores={ lumenfuchs.settings=300 }] run function lumenfuchs:settings/_utils/write_to_storage with entity @s SelectedItem.components.minecraft:custom_data."lumenfuchs.settings_dummy"

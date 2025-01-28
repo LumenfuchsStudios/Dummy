@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-13 .. 2025-01-16
+## * AydenTFoxx @ 2025-01-13 .. 2025-01-28
 ## * 
 ## * Summons a "fake Player" entity, with a block display-based model.
 
@@ -98,8 +98,10 @@ advancement grant @a[advancements={ lumenfuchs:the_dummy=false }, distance=..16]
 
 ## Set GUID
 
-execute positioned ~0.5 ~1 ~0.5 run scoreboard players operation @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, distance=..2] lumenfuchs.guid = #lumenfuchs_guid lumenfuchs.guid
+execute positioned ~0.5 ~1 ~0.5 as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, distance=..2] \
+		unless score @s lumenfuchs.guid matches 1.. \
+		run scoreboard players operation @s lumenfuchs.guid = #lumenfuchs_guid lumenfuchs.guid
 
-scoreboard players operation @e[type=interaction, tag=lumenfuchs.entity.dummy, distance=..1] lumenfuchs.guid = #lumenfuchs_guid lumenfuchs.guid
+execute as @e[type=interaction, tag=lumenfuchs.entity.dummy, distance=..1] unless score @s lumenfuchs.guid matches 1.. run scoreboard players operation @s lumenfuchs.guid = #lumenfuchs_guid lumenfuchs.guid
 
 scoreboard players add #lumenfuchs_guid lumenfuchs.guid 1

@@ -8,6 +8,14 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
+## v1.2.1 - 2025-01-28
+
+### Codename: `Hotfix: MissingNoSettings`
+
+* 🐛 Fixed upgrading from previous versions breaking the Dummy's behavior.
+* 🔧 Added versioning system to keep track of when the user upgrades their world's datapack from a previous version.
+  * For the sake of retroactively fixing previous versions' issues with missing settings, the local version is set to a version behind the latest upon first load. This will be fixed within the next update.
+
 ## v1.2.0 - 2025-01-27
 
 ### Codename: `Seeker`

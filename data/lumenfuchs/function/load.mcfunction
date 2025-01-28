@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-11 .. 2025-01-13
+## * AydenTFoxx @ 2025-01-11 .. 2025-01-28
 ## * 
 ## * Initializes features required for the proper functioning of the datapack.
 
@@ -6,7 +6,7 @@
 ## # INIT
 
 # Wait until Player is loaded
-execute unless entity @e[type=player] run return run schedule function lumenfuchs:load 20t
+execute unless entity @n[type=player] run return run schedule function lumenfuchs:load 20t
 
 # Display join message
 execute unless data storage lumenfuchs:flags { first_load_true: true } run tellraw @a { "translate": "%s has joined the world.", "color": "yellow", "with": [ { "selector": "@p" } ], "hoverEvent": { "action": "show_text", "contents": [ "First time here? Try running ", { "text": "/function lumenfuchs:help", "color": "yellow" }, " for a start!" ] }, "clickEvent": { "action": "suggest_command", "value": "/trigger lumenfuchs.settings set 200" } }
@@ -63,6 +63,24 @@ scoreboard players enable @a lumenfuchs.settings
 
 
 ## # FLAGS
+
+# Set datapack latest version
+# 1 - 1.0.0
+# 2 - 1.1.0
+# 3 - 1.1.1
+# 4 - 1.2.0
+# 5 - 1.2.1
+scoreboard players set #lumenfuchs_dummy.target_version lumenfuchs.dummy 5
+
+# Set current version to one behind latest
+execute unless score #lumenfuchs_dummy.current_version lumenfuchs.dummy matches 1.. \
+        run scoreboard players set #lumenfuchs_dummy.current_version lumenfuchs.dummy 4
+
+
+# Update to latest version
+execute if score #lumenfuchs_dummy.current_version lumenfuchs.dummy < #lumenfuchs_dummy.target_version lumenfuchs.dummy \
+        run return run function lumenfuchs:upgrade_version
+
 
 # Initialize settings
 execute unless data storage lumenfuchs:flags { first_load: true } run function lumenfuchs:load_settings

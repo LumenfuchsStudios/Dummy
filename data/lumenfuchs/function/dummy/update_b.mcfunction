@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-13 .. 2025-01-17
+## * AydenTFoxx @ 2025-01-13 .. 2025-01-27
 ## * 
 ## * Updates the dummy with entity-like and custom behavior.
 
@@ -67,12 +67,15 @@ $execute unless entity @s[tag=lumenfuchs.dummy.is_walking] if entity @p[distance
 $execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] run function lumenfuchs:dummy/physics/reset_limbs
 $execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] run tag @s remove lumenfuchs.dummy.is_walking
 
-execute if entity @s[tag=lumenfuchs.dummy.is_walking] positioned ^ ^ ^0.2 if predicate lumenfuchs:block/stop_dummy_move run tag @s remove lumenfuchs.dummy.is_walking
+execute if entity @s[tag=lumenfuchs.dummy.is_walking] if entity @p[distance=..64] \
+		positioned ^ ^ ^0.2 if predicate lumenfuchs:block/stop_dummy_move \
+		run tag @s remove lumenfuchs.dummy.is_walking
+
 tag @s[tag=lumenfuchs.dummy.is_walking, tag=lumenfuchs.dummy.looked_at] remove lumenfuchs.dummy.is_walking
 
 
 # Move towards nearest player
-execute if entity @s[tag=lumenfuchs.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at] positioned ^ ^ ^0.2 unless predicate lumenfuchs:block/stop_dummy_move positioned ^ ^ ^-0.2 run function lumenfuchs:dummy/physics/move { direction: "^ ^ ^0.1" }
+execute if entity @s[tag=lumenfuchs.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at] run function lumenfuchs:dummy/physics/move { direction: "^ ^ ^0.1" }
 
 
 ## Attack

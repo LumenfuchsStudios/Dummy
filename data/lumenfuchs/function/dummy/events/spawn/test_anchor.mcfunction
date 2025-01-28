@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-17 .. 2025-01-27
+## * 
+## * Verifies if the given anchor's position is valid for spawning. If true, the Dummy is summoned.
+
+
 ## VERIFY
 
 # Debug: Display visual feedback
@@ -21,7 +26,7 @@ execute if predicate lumenfuchs:block/light_dangerous unless entity @p[distance=
 execute unless entity @s[tag=lumenfuchs.dummy_spawn.summon_dummy] run return run kill @s[type=#lumenfuchs:technical]
 
 
-## SUMMON
+## SUCCESS
 
 # Debug: Notify success
 execute if data storage lumenfuchs:flags { debug_mode: 1b } run say Summoned
@@ -35,7 +40,7 @@ effect give @a[distance=..32] darkness 8 0 true
 
 # Display audiovisual feedback
 particle large_smoke ~ ~0.5 ~ 0.1 0.2 0.1 0.05 24
-playsound ambient.cave hostile @p[distance=..32] ~ ~ ~ 1.5 0.8 0.5
+playsound ambient.cave hostile @p[distance=..64] ~ ~ ~ 1.5 0.8 0.5
 
 
 # Summon Dummy

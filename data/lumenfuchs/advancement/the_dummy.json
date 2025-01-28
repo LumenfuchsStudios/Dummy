@@ -10,8 +10,7 @@
 			"obfuscated": true,
 			"bold": true
 		},
-		"description": "Safety was never an option.",
-		"announce_to_chat": true
+		"description": "Safety was never an option."
 	},
 	"criteria": {
 		"met_dummy": {

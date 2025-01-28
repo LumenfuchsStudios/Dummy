@@ -1,6 +1,6 @@
-## * AydenTFoxx | 2025-01-13 .. 2025-01-16
+## * AydenTFoxx @ 2025-01-27
 ## * 
-## * Summons a "fake Player" entity, with a block display-based model.
+## * Summons a Dummy-like entity with a Carved Pumpkin on its head.
 
 
 ## Core

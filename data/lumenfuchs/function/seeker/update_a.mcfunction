@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-16 .. 2025-01-17
+## * AydenTFoxx @ 2025-01-27
 ## * 
 ## * Updates the dummy with entity-like and custom behavior.
 
@@ -21,4 +21,4 @@ execute if loaded ~ ~ ~ unless block ~ ~-0.1 ~ #lumenfuchs:transparent run score
 
 
 ## Ignore if dead
-execute if loaded ~ ~ ~ if entity @s[tag=lumenfuchs.dummy.is_dead] run return run function lumenfuchs:seeker/events/death
+execute if loaded ~ ~ ~ if entity @s[tag=lumenfuchs.dummy.is_dead] run return run function lumenfuchs:dummy/events/death

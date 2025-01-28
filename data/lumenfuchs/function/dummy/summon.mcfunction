@@ -1,4 +1,4 @@
-## * AydenTFoxx | 2025-01-13 .. 2025-01-16
+## * AydenTFoxx @ 2025-01-13 .. 2025-01-16
 ## * 
 ## * Summons a "fake Player" entity, with a block display-based model.
 

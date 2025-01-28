@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-13 .. 2025-01-17
+## * AydenTFoxx @ 2025-01-27
 ## * 
 ## * Updates the dummy with entity-like and custom behavior.
 
@@ -23,7 +23,7 @@ $execute if data storage lumenfuchs:flags { dummy: { stalk_player: true } } unle
 
 
 # Wave limbs
-execute if entity @s[tag=lumenfuchs.dummy.is_walking] as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.torso, tag=!lumenfuchs.dummy_limb.head, distance=..2] if function lumenfuchs:dummy/utils/is_matching_guid at @s run function lumenfuchs:dummy/physics/wave_limb
+execute if entity @s[tag=lumenfuchs.dummy.is_walking] as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.torso, tag=!lumenfuchs.dummy_limb.head, distance=..2] if function lumenfuchs:dummy/utils/is_matching_guid at @s run function lumenfuchs:seeker/utils/wave_limb
 execute if entity @s[tag=lumenfuchs.dummy.is_hurt] as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.torso, tag=!lumenfuchs.dummy_limb.head, distance=..2] if function lumenfuchs:dummy/utils/is_matching_guid at @s run function lumenfuchs:dummy/physics/wave_limb_strong
 
 
@@ -78,7 +78,10 @@ $execute unless entity @s[tag=lumenfuchs.dummy.is_walking] if entity @n[type=!#l
 $execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @n[type=!#lumenfuchs:technical, type=!player, distance=..$(stalk_player_distance)] run function lumenfuchs:dummy/physics/reset_limbs
 $execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @n[type=!#lumenfuchs:technical, type=!player, distance=..$(stalk_player_distance)] run tag @s remove lumenfuchs.dummy.is_walking
 
-execute if entity @s[tag=lumenfuchs.dummy.is_walking] positioned ^ ^ ^0.2 if predicate lumenfuchs:block/stop_dummy_move run tag @s remove lumenfuchs.dummy.is_walking
+execute if entity @s[tag=lumenfuchs.dummy.is_walking] if entity @n[type=!#lumenfuchs:technical, type=!player, distance=..32] \
+		positioned ^ ^ ^0.2 if predicate lumenfuchs:block/stop_dummy_move \
+		run tag @s remove lumenfuchs.dummy.is_walking
+
 tag @s[tag=lumenfuchs.dummy.is_walking, tag=lumenfuchs.dummy.looked_at] remove lumenfuchs.dummy.is_walking
 
 
@@ -86,7 +89,7 @@ tag @s[tag=lumenfuchs.dummy.is_walking, tag=lumenfuchs.dummy.looked_at] remove l
 execute if entity @s[tag=lumenfuchs.dummy.looked_at] if data storage lumenfuchs:flags { dummy: { stare_player: true } } run return run function lumenfuchs:dummy/utils/turn_towards_player
 
 # Move towards nearest mob
-execute if entity @s[tag=lumenfuchs.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at] positioned ^ ^ ^0.2 unless predicate lumenfuchs:block/stop_dummy_move positioned ^ ^ ^-0.2 run function lumenfuchs:dummy/physics/move { direction: "^ ^ ^0.15" }
+execute if entity @s[tag=lumenfuchs.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at] positioned ^ ^ ^0.2 unless predicate lumenfuchs:block/stop_dummy_move positioned ^ ^ ^-0.2 run function lumenfuchs:dummy/physics/move { direction: "^ ^ ^0.25" }
 
 
 ## Attack

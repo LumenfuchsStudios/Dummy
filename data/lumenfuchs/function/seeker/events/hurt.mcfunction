@@ -1,6 +1,6 @@
-## * AydenTFoxx @ 2025-01-14 .. 2025-01-17
+## * AydenTFoxx @ 2025-01-27
 ## * 
-## * Simulates the dummy taking damage.
+## * Simulates the Seeker taking damage.
 
 
 # Remove trigger
@@ -13,6 +13,9 @@ execute if entity @s[tag=lumenfuchs.dummy.is_hurt] run return fail
 # If harming item was Golden Arcane's Remover Stick, instantly perish.
 execute if items entity @p weapon.mainhand stick[custom_data={ goldark.items.remover_stick: true }] run return run function lumenfuchs:dummy/utils/force_remove
 execute if items entity @p weapon.mainhand debug_stick[custom_data={ goldark.items.remover_stick: true }] run return run function lumenfuchs:dummy/utils/force_remove
+
+# If harming item was The Cleanser, deal extra damage
+execute if items entity @p weapon.mainhand stick[custom_data={ lumenfuchs.items.dummy_remover: true }] run function lumenfuchs:dummy/events/hit_by_cleanser
 
 
 # Display audiovisual feedback

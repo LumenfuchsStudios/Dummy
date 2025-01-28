@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-19
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-27
 ## * 
 ## * Executes all actions from the settings panel.
 
@@ -36,7 +36,8 @@ execute if entity @a[scores={ lumenfuchs.settings=213 }] run data modify storage
 execute if entity @a[scores={ lumenfuchs.settings=214 }] run data modify storage lumenfuchs:flags dummy.forceload_chunks set value false
 execute if entity @a[scores={ lumenfuchs.settings=215 }] run data modify storage lumenfuchs:flags dummy.natural_spawning set value false
 
-execute if entity @a[scores={ lumenfuchs.settings=216 }] run data modify storage lumenfuchs:flags dummy.spawn_under_skylight set value false
+execute if entity @a[scores={ lumenfuchs.settings=216 }] run data modify storage lumenfuchs:flags dummy.spawn_under_skylight set value true
+execute if entity @a[scores={ lumenfuchs.settings=217 }] run data modify storage lumenfuchs:flags dummy.drop_loot set value true
 
 execute if entity @a[scores={ lumenfuchs.settings=400 }] run data remove storage lumenfuchs:flags first_load
 
@@ -63,6 +64,7 @@ execute as @a[scores={ lumenfuchs.settings=305 }] run function lumenfuchs:settin
 execute as @a[scores={ lumenfuchs.settings=306 }] run function lumenfuchs:settings/natural_spawning
 
 execute as @a[scores={ lumenfuchs.settings=316 }] run function lumenfuchs:settings/spawn_under_skylight
+execute as @a[scores={ lumenfuchs.settings=317 }] run function lumenfuchs:settings/drop_loot
 
 
 ## EDIT

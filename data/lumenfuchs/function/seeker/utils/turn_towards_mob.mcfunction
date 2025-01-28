@@ -1,7 +1,7 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-27
+## * AydenTFoxx @ 2025-01-27
 ## * 
-## * Turns the dummy towards its target player.
-## * Also plays stepping noises while walking towards that player.
+## * Turns the Seeker towards its target mob.
+## * Also plays stepping noises while walking towards that mob.
 
 
 # Look at mob
@@ -30,7 +30,7 @@ execute if entity @s[tag=lumenfuchs.dummy.is_walking] if score @n[type=item_disp
 execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.head, distance=..3] \
 		run rotate @s facing entity @n[type=!#lumenfuchs:technical, type=!player, distance=..128] eyes
 
-# Copy player's rotation (dummy)
+# Copy player's rotation (Seeker)
 rotate @s facing entity @n[type=!#lumenfuchs:technical, type=!player, distance=..128]
 
 

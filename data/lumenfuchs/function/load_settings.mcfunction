@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-27
 ## * 
 ## * Loads all settings for the datapack at their default values.
 
@@ -30,9 +30,13 @@ execute unless data storage lumenfuchs:flags dummy.forceload_chunks run data mod
 # Allows the Dummy entity to spawn naturally in complete darkness; Highly experimental.
 execute unless data storage lumenfuchs:flags dummy.natural_spawning run data modify storage lumenfuchs:flags dummy.natural_spawning set value false
 
-## (dummy.spawn_under_skylight) | Default: OFF
+## (dummy.spawn_under_skylight) | Default: ON
 # Allows the Dummy entity to spawn in blocks with direct view to the sky.
-execute unless data storage lumenfuchs:flags dummy.spawn_under_skylight run data modify storage lumenfuchs:flags dummy.spawn_under_skylight set value false
+execute unless data storage lumenfuchs:flags dummy.spawn_under_skylight run data modify storage lumenfuchs:flags dummy.spawn_under_skylight set value true
+
+## (dummy.drop_loot) | Default: ON
+# Allows the Dummy entity to drop random items upon death.
+execute unless data storage lumenfuchs:flags dummy.drop_loot run data modify storage lumenfuchs:flags dummy.drop_loot set value true
 
 
 #? Weirdness

@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-27
 ## * 
 ## * Evaluates if a limb's GUID is the same as the dummy's.
 
@@ -7,6 +7,6 @@
 ##? OTHERWISE RETURN False
 
 
-execute if score @s lumenfuchs.guid = @n[type=interaction, tag=lumenfuchs.entity.dummy, distance=..2] lumenfuchs.guid run return 1
+execute if score @s lumenfuchs.guid = @n[type=interaction, tag=lumenfuchs.entity, distance=..2] lumenfuchs.guid run return 1
 
 return 0

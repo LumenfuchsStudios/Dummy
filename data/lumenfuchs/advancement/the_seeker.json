@@ -1,0 +1,17 @@
+{
+	"parent": "lumenfuchs:the_dummy",
+	"display": {
+		"icon": {
+			"id": "carved_pumpkin"
+		},
+		"title": "The Seeker",
+		"description": "Perhaps even Dummies may be rebels.",
+		"frame": "goal",
+		"hidden": true
+	},
+	"criteria": {
+		"spawned_seeker": {
+			"trigger": "impossible"
+		}
+	}
+}

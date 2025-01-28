@@ -1,3 +1,8 @@
+## * AydenTFoxx @ 2025-01-17
+## * 
+## * Creates an "anchor" for spawning the Dummy, then teleports it to the given coordinate.
+
+
 # Summon marker
 summon marker ~ ~ ~ { Tags: [ lumenfuchs.entity.dummy_spawn ] }
 

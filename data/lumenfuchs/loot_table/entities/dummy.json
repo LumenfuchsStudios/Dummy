@@ -1,0 +1,82 @@
+{
+    "type": "advancement_reward",
+    "pools": [
+        {
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "stick",
+                    "functions": [
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "item_name": "{ \"text\": \"The Cleanser\" }",
+                                "lore": [ "{ \"text\": \"\\\"The banishment of all shadowy creatures.\\\"\", \"color\": \"gray\", \"italic\": false }" ],
+                                "rarity": "uncommon",
+                                "enchantment_glint_override": true,
+                                "custom_data": {
+                                    "lumenfuchs.items.dummy_remover": true
+                                }
+                            }
+                        }
+                    ],
+                    "quality": 3,
+                    "weight": 3
+                },
+                {
+                    "type": "item",
+                    "name": "wither_skeleton_spawn_egg",
+                    "functions": [
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "item_name": "{ \"text\": \"Dummy Spawn Egg\" }",
+                                "lore": [ "{ \"text\": \"A vile creature lies within.\", \"color\": \"gray\", \"italic\": false }" ],
+                                "rarity": "uncommon",
+                                "enchantment_glint_override": true,
+                                "entity_data": { "id": "marker", "Tags": [ "lumenfuchs.dummy.vessel" ] }
+                            }
+                        }
+                    ],
+                    "quality": 2,
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "endermite_spawn_egg",
+                    "functions": [
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "item_name": "{ \"text\": \"Seeker Spawn Egg\" }",
+                                "lore": [ "{ \"text\": \"A pumpkin lies inside.\", \"color\": \"gray\", \"italic\": false }" ],
+                                "rarity": "rare",
+                                "enchantment_glint_override": true,
+                                "entity_data": { "id": "marker", "Tags": [ "lumenfuchs.seeker.vessel" ] }
+                            }
+                        }
+                    ],
+                    "quality": 1,
+                    "weight": 5
+                },
+                {
+                    "type": "tag",
+                    "name": "lumenfuchs:dummy_material",
+                    "expand": true,
+                    "weight": 8
+                },
+                {
+                    "type": "empty",
+                    "quality": -1,
+                    "weight": 10
+                }
+            ],
+            "rolls": 1,
+            "bonus_rolls": {
+                "min": 0,
+                "max": 2
+            }
+        }
+    ],
+    "random_sequence": "lumenfuchs:dummy_eg"
+}

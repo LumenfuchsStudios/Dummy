@@ -8,6 +8,22 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
+## v1.2.0 - 2025-01-27
+
+### Codename: `Seeker`
+
+* 🐛 Fixed option for reverting settings not working when cheats are disabled.
+* ⭐ Added Seeker entity, a Dummy-adjacent being who targets mobs instead of the player.
+* ⭐ Added Cleanser item, a tool for ~murdering~ disposing of Dummies and Seekers more easily.
+* ⭐ Added loot for defeating the Dummy.
+  * Possible loot includes all blocks usable for the Dummy Totem, spawn eggs for the Dummy and the Seeker entities, and the new Cleanser item.
+* ⭐ Added new setting for allowing the Dummy to drop any loot (enabled by default).
+* 🔺 Changed setting "Spawn under Sunlight" to be enabled by default.
+  * It still requires "Natural Spawning" to be enabled, however, which is still disabled by default.
+* 🔺 Removed chance for Dummy's natural spawning to fail even if that position was valid.
+* 🔺 Greatly shortened intervals for attempting to spawn the Dummy, increasing its effective occurrence.
+* 🔧 Added "dummy material" item tag mirroring its respective block tag.
+
 ## v1.1.1 - 2025-01-19
 
 ### Codename: `Hotfix: Dummy Book`

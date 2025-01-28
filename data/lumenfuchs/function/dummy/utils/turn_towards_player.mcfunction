@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-17
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-28
 ## * 
 ## * Turns the dummy towards its target player.
 ## * Also plays stepping noises while walking towards that player.
@@ -26,22 +26,28 @@ execute if entity @s[tag=lumenfuchs.dummy.is_walking] if score @n[type=item_disp
 		run function lumenfuchs:dummy/utils/play_step_noise
 
 
-# Copy player's rotation (limbs)
+## Copy player's rotation
+
+# Limbs
 execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.head, distance=..3] \
 		run rotate @s facing entity @p eyes
 
-# Copy player's rotation (dummy)
+# Dummy
 rotate @s facing entity @p
 
+## Remove Y-axis rotation
 
-# Remove Y-axis rotation
+# Limbs
 execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.head, distance=..3] \
 		run data remove entity @s Rotation[1]
+
+# Dummy
+execute if entity @n[type=!#lumenfuchs:technical, type=!player, distance=..64] run data remove entity @s Rotation[1]
+
 
 # Add interpolation
 execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.head, distance=..3] \
 		run data modify entity @s interpolation_duration set value 20
-
 
 # Reset score
 scoreboard players reset @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..2] lumenfuchs.dummy

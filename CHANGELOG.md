@@ -8,6 +8,11 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
+## v1.2.2 - Unreleased
+
+* 🐛 Fixed Dummy "stealing" limbs from nearby Dummies when spawned too close to one another.
+* 🐛 Fixed Seeker (and potentially Dummy) bunny-hopping when attacking/walking towards nearby targets.
+
 ## v1.2.1 - 2025-01-28
 
 ### Codename: `Hotfix: MissingNoSettings`

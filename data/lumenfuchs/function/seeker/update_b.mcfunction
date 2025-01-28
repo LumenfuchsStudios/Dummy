@@ -72,11 +72,11 @@ execute if entity @s[tag=lumenfuchs.dummy.looked_at] at @p positioned ^ ^ ^1 fac
 
 
 # Start walking
-$execute unless entity @s[tag=lumenfuchs.dummy.is_walking] if entity @n[type=!#lumenfuchs:technical, type=!player, distance=..$(stalk_player_distance)] positioned ^ ^ ^0.2 unless predicate lumenfuchs:block/stop_dummy_move if predicate lumenfuchs:random/10 run tag @s add lumenfuchs.dummy.is_walking
+$execute unless entity @s[tag=lumenfuchs.dummy.is_walking] if entity @n[type=!#lumenfuchs:technical, type=!player, distance=1..$(stalk_player_distance)] positioned ^ ^ ^0.2 unless predicate lumenfuchs:block/stop_dummy_move if predicate lumenfuchs:random/10 run tag @s add lumenfuchs.dummy.is_walking
 
 # Stop walking
-$execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @n[type=!#lumenfuchs:technical, type=!player, distance=..$(stalk_player_distance)] run function lumenfuchs:dummy/physics/reset_limbs
-$execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @n[type=!#lumenfuchs:technical, type=!player, distance=..$(stalk_player_distance)] run tag @s remove lumenfuchs.dummy.is_walking
+$execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @n[type=!#lumenfuchs:technical, type=!player, distance=1..$(stalk_player_distance)] run function lumenfuchs:dummy/physics/reset_limbs
+$execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @n[type=!#lumenfuchs:technical, type=!player, distance=1..$(stalk_player_distance)] run tag @s remove lumenfuchs.dummy.is_walking
 
 execute if entity @s[tag=lumenfuchs.dummy.is_walking] if entity @n[type=!#lumenfuchs:technical, type=!player, distance=..32] \
 		positioned ^ ^ ^0.2 if predicate lumenfuchs:block/stop_dummy_move \

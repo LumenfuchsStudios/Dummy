@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-27
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-28
 ## * 
 ## * Ticks all code from this datapack at a custom rate.
 
@@ -11,11 +11,11 @@ scoreboard players add #lumenfuchs_tick_b lumenfuchs.dummy 1
 
 
 # Update dummy entities
-execute if score #lumenfuchs_tick_a lumenfuchs.dummy >= #lumenfuchs_tick_rate_a lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy] at @s run function lumenfuchs:dummy/update_a with storage lumenfuchs:flags dummy
-execute if score #lumenfuchs_tick_b lumenfuchs.dummy >= #lumenfuchs_tick_rate_b lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy, tag=!lumenfuchs.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:dummy/update_b with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_a lumenfuchs.dummy = #lumenfuchs_tick_rate_a lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy] at @s run function lumenfuchs:dummy/update_a with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_b lumenfuchs.dummy = #lumenfuchs_tick_rate_b lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy, tag=!lumenfuchs.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:dummy/update_b with storage lumenfuchs:flags dummy
 
-execute if score #lumenfuchs_tick_a lumenfuchs.dummy >= #lumenfuchs_tick_rate_a lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker] at @s run function lumenfuchs:seeker/update_a with storage lumenfuchs:flags dummy
-execute if score #lumenfuchs_tick_b lumenfuchs.dummy >= #lumenfuchs_tick_rate_b lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker, tag=!lumenfuchs.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:seeker/update_b with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_a lumenfuchs.dummy = #lumenfuchs_tick_rate_a lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker] at @s run function lumenfuchs:seeker/update_a with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_b lumenfuchs.dummy = #lumenfuchs_tick_rate_b lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker, tag=!lumenfuchs.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:seeker/update_b with storage lumenfuchs:flags dummy
 
 
 # Reset clock

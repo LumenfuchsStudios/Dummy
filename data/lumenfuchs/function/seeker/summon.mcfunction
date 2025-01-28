@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-27
+## * AydenTFoxx @ 2025-01-27 .. 2025-01-28
 ## * 
 ## * Summons a Dummy-like entity with a Carved Pumpkin on its head.
 
@@ -95,8 +95,10 @@ execute positioned ~0.5 ~1 ~0.5 as @e[type=item_display, tag=lumenfuchs.entity.d
 
 ## Set GUID
 
-execute positioned ~0.5 ~1 ~0.5 run scoreboard players operation @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, distance=..2] lumenfuchs.guid = #lumenfuchs_guid lumenfuchs.guid
+execute positioned ~0.5 ~1 ~0.5 as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, distance=..2] \
+		unless score @s lumenfuchs.guid matches 1.. \
+		run scoreboard players operation @s lumenfuchs.guid = #lumenfuchs_guid lumenfuchs.guid
 
-scoreboard players operation @e[type=interaction, tag=lumenfuchs.entity.seeker, distance=..1] lumenfuchs.guid = #lumenfuchs_guid lumenfuchs.guid
+execute as @e[type=interaction, tag=lumenfuchs.entity.seeker, distance=..1] unless score @s lumenfuchs.guid matches 1.. run scoreboard players operation @s lumenfuchs.guid = #lumenfuchs_guid lumenfuchs.guid
 
 scoreboard players add #lumenfuchs_guid lumenfuchs.guid 1

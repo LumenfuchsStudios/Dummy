@@ -159,11 +159,25 @@ If all conditions pass, a Dummy is summoned at that position; Players within a 3
 
 This feature is still in early stages, and may not satisfy all users. Therefore, it is disabled by default.
 
-#### dummy.spawn_under_skylight (Default: `false`)
+#### dummy.spawn_under_skylight (Default: `true`)
 
 If enabled and `dummy.natural_spawning` is also set to `true`, the Dummy is able to spawn in blocks with no cover above it (i.e. directly exposed to the sky). This mainly allows the Dummy to spawn on the world's surface as opposed to only within caves or under unlit structures.
 
 The player still must not be under skylight for the game to attempt a Dummy spawning; It does, however, allow for more spawn opportunities, and brings the Dummy a bit closer (but never truly) to how regular hostile mobs spawn in the regular game.
+
+#### dummy.drop_loot (Default: `true`)
+
+If enabled, the Dummy will drop one to three random items from its own loot pool. These include all blocks from the `#lumenfuchs:dummy_material` item tag, spawn eggs for the Dummy and Seeker entities, and the Cleanser item, which deals extra damage to both entities added by the datapack.
+
+The following table describes the Dummy's possible loot:
+
+| Item | Weight |
+| :--- | :----: |
+| Empty | 10 (36%) |
+| <img src="https://minecraft.wiki/images/Invicon_Black_Concrete.png" alt="Black Concrete block" style="width: 16px; height: auto;" /> Random Block | 8 (28%) |
+| <img src="https://minecraft.wiki/images/Invicon_Endermite_Spawn_Egg.png" alt="Endermite Spawn Egg" /> Seeker Spawn Egg | 5 (18%) |
+| <img src="https://minecraft.wiki/images/Invicon_Debug_Stick.gif" alt="Stick (Enchanted)" style="width: 16px; height: auto;" /> The Cleanser | 3 (11%) |
+| <img src="https://minecraft.wiki/images/Invicon_Wither_Skeleton_Spawn_Egg.png" alt="Wither Skeleton Spawn Egg" /> Dummy Spawn Egg | 2 (7%) |
 
 ## Performance
 
@@ -171,7 +185,7 @@ This datapack is written and tested on a relatively weak machine (Intel Core i3 
 
 That being said, there *is* a performance cost with the Dummy. Perhaps not as much in stronger (and newer) devices, but quite noticeable when running multiple entities at once in the aforementioned device (even though multiple Dummies are somewhat unintended for this datapack's purpose).
 
-The Dummy's most resource-intensive function is walking, which utilizes macroand multiple teleports to reshape the Dummy. Spawning has nearly no effect, as it relies on `minecraft:marker` entities for spawn attempts, and all other behaviors also have little effect in comparison. Forceloading is less impactful than expected -- it is primarily disabled by default to avoid breaking other mods/datapacks which depend on force-loading to work.
+The Dummy's most resource-intensive function is walking, which utilizes macros and multiple teleports to reshape the Dummy. Spawning has nearly no effect, as it relies on `minecraft:marker` entities for spawn attempts, and all other behaviors also have little effect in comparison. Forceloading is less impactful than expected -- it is primarily disabled by default to avoid breaking other mods/datapacks which depend on force-loading to work.
 
 If performance is a concern, the Dummy's update rate is editable by changing these fake players' `lumenfuchs.dummy` score:
 

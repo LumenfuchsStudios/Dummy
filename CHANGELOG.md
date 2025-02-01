@@ -8,7 +8,40 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
-## v1.2.2 - Unreleased
+## v1.3.0 - 2025-02-01
+
+### Codename: `Mood`
+
+* 🐛 Fixed Dummy and Seeker influencing each other's rotation on close range.
+* 🐛 Fixed welcoming message being triggered twice when first loading a world in v1.2.2.
+* 🐛 Fixed "dummy limbs" left in the world on certain rare bugs having no way of being removed with Survival-friendly methods.
+* ⭐ Dummy and Seeker now may randomly break light sources at their position, with the Dummy having a higher chance of doing so.
+* ⭐ Added "lock" mechanic to dummy entities when on "redstone source" blocks (Redstone Block and Torch), which prevent all custom behaviors from occurring while active.
+* 🔺 "Dummy Material" and "Dummy Hurt Material" have been expanded to allow customization of each individual limb of the Dummy.
+  * Their respective pages on the settings panel have been updated accordingly, with a submenu for each setting now available on their usual locations.
+* 🔺 Dummy's forceloading behavior now sets an "anchor" on unloaded chunks, which keeps that chunk loaded until the Dummy leaves to the next, or after 60 seconds.
+* 🔺 Expanded dummy entities' acceleration mechanic, now momentum can be much stronger in both upwards and downwards directions.
+  * The most notable effect of this is the Dummy having a noticeably stronger gravity.
+* 🔺 Greatly expanded dummy entities' range of sounds played when stepping on a variety of blocks.
+* 🔺 Added particle and audio effects for dummy entities when falling at high speeds.
+* 🔺 Reduced Dummy's "tolerance range" (i.e. the range until it starts ignoring obstacles such as gaps and redstone) from `64` to `32` blocks.
+* 🔺 Tweaked Dummy/Seeker's death animation.
+* 🔺 The Dummy and Seeker will now immediately play their death animation when falling into the Void.
+* 🔺 Changing a setting now instantly "refreshes" the settings panel with that change.
+  * Does not (yet?) apply to edits via Settings Books.
+* 🔺 Moved "Dummy Drops Loot" setting to "Behavior" category on the settings panel.
+* 🔺 The Dummy and Seeker no longer walk on "redstone source" blocks above or below their target direction.
+* 🔧 Added a "compatibility fix" upon datapack upgrading to prevent breaking existing worlds when updating to v1.3.0.
+  * Worlds with the previous "Dummy Material"/"Dummy Hurt Material" format will be automatically updated, with all limbs being set to the old value; This essentially makes this setting behave the same as in earlier versions.
+* 🔧 Changed versioning system to correctly set the latest datapack version on first load, and to only cause a reload if the world was already played before.
+* 🔧 Changed Dummy and Seeker's transformation property to use decomposed objects instead of matrixes.
+* 🔧 Changed dummy entities' damage simulation to occur on the first-phase update instead of the second.
+* 🔧 Added block tags for amethyst block variants, iron-related blocks, light-emitting objects, moss-type blocks, and redstone-source blocks.
+* 🔧 Added Lightning Bolt to "technical" entity tag.
+
+## v1.2.2 - 2025-01-28
+
+### Codename: `Hotfix: Rogue Dummy`
 
 * 🐛 Fixed Dummy "stealing" limbs from nearby Dummies when spawned too close to one another.
 * 🐛 Fixed Seeker (and potentially Dummy) bunny-hopping when attacking/walking towards nearby targets.

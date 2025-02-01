@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-30
+## * AydenTFoxx @ 2025-01-30 .. 2025-01-31
 ## * 
 ## * Creates a forceloading Marker to keep track of chunks loaded by the Dummy.
 
@@ -10,5 +10,4 @@ summon marker ~ ~ ~ { \
 
 
 # Set forceloading to given chunk
-execute as @n[type=marker, tag=lumenfuchs.entity.forceload, distance=0] unless loaded ~ ~ ~ \
-        run forceload add ~ ~ ~ ~
+execute unless loaded ~ ~ ~ run forceload add ~ ~

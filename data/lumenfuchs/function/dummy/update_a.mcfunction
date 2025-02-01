@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-16 .. 2025-01-30
+## * AydenTFoxx @ 2025-01-16 .. 2025-01-31
 ## * 
 ## * Updates the dummy with entity-like and custom behavior.
 
@@ -24,7 +24,7 @@ execute if loaded ~ ~ ~ unless block ~ ~-0.1 ~ #lumenfuchs:transparent \
 
 # Remove forceload
 execute if data storage lumenfuchs:flags { dummy: { forceload_chunks: true } } unless loaded ~ ~ ~ \
-        as @e[type=marker, tag=lumenfuchs.entity.forceload, distance=..128] at @s run function lumenfuchs:dummy/utils/forceload/remove
+        as @e[type=marker, tag=lumenfuchs.entity.forceload, distance=..64] at @s run function lumenfuchs:dummy/utils/forceload/remove
 
 ## Ignore if dead
 execute if loaded ~ ~ ~ if entity @s[tag=lumenfuchs.dummy.is_dead] run return run function lumenfuchs:dummy/events/death

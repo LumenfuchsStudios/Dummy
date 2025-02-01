@@ -1,4 +1,5 @@
 # Lumenfuchs' Dummypedia: How to Dummy
+
 ![The Dummy standing by an Oak tree](./.github/assets/dummy_tree.png)
 
 The datapack adds a singular entity: the Dummy. Relentless and nigh-unstoppable, knowing how it behaves is crucial for one's survival.

@@ -1,6 +1,10 @@
-## * AydenTFoxx @ 2025-01-13 .. 2025-01-27
+## * AydenTFoxx @ 2025-01-13 .. 2025-01-31
 ## * 
 ## * Updates the dummy with entity-like and custom behavior.
+
+
+## Ignore if current block is a Redstone Torch or Block.
+execute if predicate lumenfuchs:block/lock_dummy_movement run return run particle dust{ color: 12062476, scale: 1.2 } ~ ~0.5 ~ 0.2 0.3 0.2 1.0 8 force
 
 
 ## # AUDIO-VISUAL
@@ -29,28 +33,6 @@ $execute if predicate lumenfuchs:random/5 as @p[distance=..$(stalk_player_distan
 
 ## # BEHAVIOR
 
-## Damage
-
-# Simulate damage
-execute if data entity @s attack run return run function lumenfuchs:dummy/events/hurt with storage lumenfuchs:flags dummy
-
-# Enable invulnerability frames
-scoreboard players remove @s[tag=lumenfuchs.dummy.is_hurt] lumenfuchs.dummy 1
-scoreboard players set @s[tag=lumenfuchs.dummy.is_hurt, scores={ lumenfuchs.dummy=-1 }] lumenfuchs.dummy 3
-
-
-# Reset color
-execute if entity @s[tag=lumenfuchs.dummy.is_hurt] if score @s lumenfuchs.dummy matches 2 run function lumenfuchs:dummy/utils/reset_color
-
-# Reset rotation
-execute if entity @s[tag=lumenfuchs.dummy.is_hurt] if score @s lumenfuchs.dummy matches 0 run function lumenfuchs:dummy/physics/reset_limbs
-
-
-# Reset invulnerability
-tag @s[tag=lumenfuchs.dummy.is_hurt, scores={ lumenfuchs.dummy=..0 }] remove lumenfuchs.dummy.is_hurt
-scoreboard players reset @s[scores={ lumenfuchs.dummy=..0 }] lumenfuchs.dummy
-
-
 ## Move
 
 # Detect player looking at dummy
@@ -61,13 +43,13 @@ execute if entity @s[tag=lumenfuchs.dummy.looked_at] at @p positioned ^ ^ ^1 fac
 
 
 # Start walking
-$execute unless entity @s[tag=lumenfuchs.dummy.is_walking] if entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] positioned ^ ^ ^0.2 unless predicate lumenfuchs:block/stop_dummy_move if predicate lumenfuchs:random/5 run tag @s add lumenfuchs.dummy.is_walking
+$execute unless entity @s[tag=lumenfuchs.dummy.is_walking] if entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] if predicate lumenfuchs:random/5 run tag @s add lumenfuchs.dummy.is_walking
 
 # Stop walking
 $execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] run function lumenfuchs:dummy/physics/reset_limbs
 $execute if entity @s[tag=lumenfuchs.dummy.is_walking] unless entity @p[distance=$(stalk_player_threshold)..$(stalk_player_distance)] run tag @s remove lumenfuchs.dummy.is_walking
 
-execute if entity @s[tag=lumenfuchs.dummy.is_walking] if entity @p[distance=..64] \
+execute if entity @s[tag=lumenfuchs.dummy.is_walking] if entity @p[distance=..32] \
 		positioned ^ ^ ^0.2 if predicate lumenfuchs:block/stop_dummy_move \
 		run tag @s remove lumenfuchs.dummy.is_walking
 
@@ -92,7 +74,7 @@ $execute if data storage lumenfuchs:flags { dummy: { attack_player: true } } unl
 # Add tag
 $execute if data storage lumenfuchs:flags { dummy: { attack_player: true } } unless entity @s[tag=lumenfuchs.dummy.is_walking] if entity @p[distance=..$(attack_player_distance)] \
 		as @n[type=item_display, tag=lumenfuchs.dummy_limb.l_arm, distance=..3] if score @s lumenfuchs.clock matches 100.. \
-		run tag @n[type=interaction, tag=lumenfuchs.entity.dummy, tag=!lumenfuchs.dummy.is_attacking, distance=..2] add lumenfuchs.dummy.is_attacking
+		run tag @n[type=interaction, tag=lumenfuchs.entity.dummy, tag=!lumenfuchs.dummy.is_attacking, distance=..3] add lumenfuchs.dummy.is_attacking
 
 
 # Run attack

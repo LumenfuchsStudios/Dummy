@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-27
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-31
 ## * 
 ## * Loads all settings for the datapack at their default values.
 
@@ -10,25 +10,25 @@
 ## (dummy.material) | Default: "black_concrete"
 # The default material for the Dummy entity.
 execute unless data storage lumenfuchs:flags dummy.material \
-        run data modify storage lumenfuchs:flags dummy.material set value "black_concrete"
+        run function lumenfuchs:settings/_utils/bulk_edit_material { setting: "material", material: "black_concrete" }
 
 ## (dummy.material_hurt) | Default: "red_concrete"
 # The default material for the Dummy entity's hurt state.
 execute unless data storage lumenfuchs:flags dummy.material_hurt \
-        run data modify storage lumenfuchs:flags dummy.material_hurt set value "red_concrete"
+        run function lumenfuchs:settings/_utils/bulk_edit_material { setting: "material_hurt", material: "red_concrete" }
 
 
 ##? Behavior
 
 #? Misc.
 
-## (dummy.forceload_chunks) | Default: OFF
+## (dummy.forceload_chunks) | Default: ON
 # Forceloads the chunk at the Dummy entity's position.
-execute unless data storage lumenfuchs:flags dummy.forceload_chunks run data modify storage lumenfuchs:flags dummy.forceload_chunks set value false
+execute unless data storage lumenfuchs:flags dummy.forceload_chunks run data modify storage lumenfuchs:flags dummy.forceload_chunks set value true
 
-## (dummy.natural_spawning) | Default: OFF
-# Allows the Dummy entity to spawn naturally in complete darkness; Highly experimental.
-execute unless data storage lumenfuchs:flags dummy.natural_spawning run data modify storage lumenfuchs:flags dummy.natural_spawning set value false
+## (dummy.natural_spawning) | Default: ON
+# Allows the Dummy entity to spawn naturally in complete darkness.
+execute unless data storage lumenfuchs:flags dummy.natural_spawning run data modify storage lumenfuchs:flags dummy.natural_spawning set value true
 
 ## (dummy.spawn_under_skylight) | Default: ON
 # Allows the Dummy entity to spawn in blocks with direct view to the sky.

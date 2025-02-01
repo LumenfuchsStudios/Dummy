@@ -5,10 +5,34 @@
 			"condition": "location_check",
 			"predicate": {
 				"block": {
+					"blocks": "#lumenfuchs:redstone_source"
+				}
+			}
+		},
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": "#lumenfuchs:redstone_source"
+				}
+			},
+			"offsetY": 1
+		},
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
+					"blocks": "#lumenfuchs:redstone_source"
+				}
+			},
+			"offsetY": -1
+		},
+		{
+			"condition": "location_check",
+			"predicate": {
+				"block": {
 					"blocks": [
-						"redstone_wire",
-						"redstone_torch",
-						"redstone_wall_torch"
+						"redstone_wire"
 					],
 					"state": {
 						"power": "15"
@@ -53,9 +77,10 @@
 			"condition": "location_check",
 			"predicate": {
 				"block": {
-					"blocks": [
-						"redstone_block"
-					]
+					"blocks": "redstone_wire",
+					"state": {
+						"power": "11"
+					}
 				}
 			}
 		},
@@ -63,12 +88,12 @@
 			"condition": "location_check",
 			"predicate": {
 				"block": {
-					"blocks": [
-						"redstone_block"
-					]
+					"blocks": "redstone_wire",
+					"state": {
+						"power": "10"
+					}
 				}
-			},
-			"offsetY": -1
+			}
 		},
 		{
 			"condition": "all_of",

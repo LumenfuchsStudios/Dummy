@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-11 .. 2025-01-28
+## * AydenTFoxx @ 2025-01-11 .. 2025-01-31
 ## * 
 ## * Initializes features required for the proper functioning of the datapack.
 
@@ -11,7 +11,7 @@ execute unless entity @n[type=player] run return run schedule function lumenfuch
 # Display join message
 execute unless data storage lumenfuchs:flags { first_load_true: true } run tellraw @a { "translate": "%s has joined the world.", "color": "yellow", "with": [ { "selector": "@p" } ], "hoverEvent": { "action": "show_text", "contents": [ "First time here? Try running ", { "text": "/function lumenfuchs:help", "color": "yellow" }, " for a start!" ] }, "clickEvent": { "action": "suggest_command", "value": "/trigger lumenfuchs.settings set 200" } }
 
-execute if data storage lumenfuchs:flags { first_load_true: true } unless data storage lumenfuchs:flags { first_load: true } run tellraw @a { "text": "Hello again.", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": [ "Settings and Dummy summoning at ", { "text": "/function lumenfuchs:help", "color": "yellow" } ] }, "clickEvent": { "action": "suggest_command", "value": "/function lumenfuchs:help" }  }
+execute if data storage lumenfuchs:flags { first_load_true: true } unless data storage lumenfuchs:flags { first_load: true } run tellraw @a { "text": "Hello again.", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": "Your datapack got updated! Click here for a list of latest changes." }, "clickEvent": { "action": "open_url", "value": "https://github.com/LumenfuchsStudios/Dummy/blob/main/CHANGELOG.md" } }
 
 # Grant advancement
 advancement grant @a[advancements={ lumenfuchs:root=false }] only lumenfuchs:root
@@ -65,20 +65,21 @@ scoreboard players enable @a lumenfuchs.settings
 ## # FLAGS
 
 # Set datapack latest version
-# 1 - 1.0.0
-# 2 - 1.1.0
-# 3 - 1.1.1
-# 4 - 1.2.0
-# 5 - 1.2.1
-scoreboard players set #lumenfuchs_dummy.target_version lumenfuchs.dummy 5
+# 1 | 1.0.0
+# 2 | 1.1.0
+# 3 | 1.1.1
+# 4 | 1.2.0
+# 5 | 1.2.1 - 1.2.2
+# 6 | 1.3.0
+scoreboard players set #lumenfuchs_dummy.target_version lumenfuchs.dummy 6
 
-# Set current version to one behind latest
-execute unless score #lumenfuchs_dummy.current_version lumenfuchs.dummy matches 1.. \
-        run scoreboard players set #lumenfuchs_dummy.current_version lumenfuchs.dummy 4
+# Set current version to latest
+execute unless score #lumenfuchs_dummy.current_version lumenfuchs.dummy matches 1.. unless data storage lumenfuchs:flags { first_load: true } \
+        run scoreboard players operation #lumenfuchs_dummy.current_version lumenfuchs.dummy = #lumenfuchs_dummy.target_version lumenfuchs.dummy
 
 
 # Update to latest version
-execute if score #lumenfuchs_dummy.current_version lumenfuchs.dummy < #lumenfuchs_dummy.target_version lumenfuchs.dummy \
+execute unless score #lumenfuchs_dummy.current_version lumenfuchs.dummy = #lumenfuchs_dummy.target_version lumenfuchs.dummy \
         run return run function lumenfuchs:upgrade_version
 
 

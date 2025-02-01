@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-18
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-30
 ## * 
 ## * Manages the dummy's various behaviors.
 
@@ -22,7 +22,10 @@ $tellraw @s [ "", \
 	{ "text": "$(stalk_player_threshold)", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": "Change setting?" }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 314" } }, "\n\n", \
 	{ "text": "[<] " , "color": "red", "hoverEvent": { "action": "show_text", "contents": "Reset to default?" }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 213" } }, \
 	{ "text": "Weeping Dummy: ", "color": "gray", "hoverEvent": { "action": "show_text", "contents": "If enabled, the Dummy will not move while being looked at." } }, \
-	{ "text": "$(freeze_when_stared)", "color": "aqua", "hoverEvent": { "action": "show_text", "contents": "Toggle setting?" }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 307" } }, "\n\n", \
+	{ "text": "$(freeze_when_stared)", "color": "aqua", "hoverEvent": { "action": "show_text", "contents": "Toggle setting?" }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 307" } }, "\n", \
+	{ "text": "[<] " , "color": "red", "hoverEvent": { "action": "show_text", "contents": "Reset to default?" }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 217" } }, \
+	{ "text": "Dummy Drops Loot: ", "color": "gray", "hoverEvent": { "action": "show_text", "contents": "If enabled, the Dummy may drop unique items upon death." } }, \
+	{ "text": "$(drop_loot)", "color": "aqua", "hoverEvent": { "action": "show_text", "contents": "Toggle setting?" }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 317" } }, "\n", \
 	{ "text": "[<] " , "color": "red", "hoverEvent": { "action": "show_text", "contents": "Reset to default?" }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 210" } }, \
 	{ "text": "Dummy Hurts on Touch: ", "color": "gray", "hoverEvent": { "action": "show_text", "contents": "If enabled, the Dummy has a thorns-like effect against all creatures." } }, \
 	{ "text": "$(harm_on_touch)", "color": "aqua", "hoverEvent": { "action": "show_text", "contents": "Toggle setting?" }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 303" } }, "\n\n", \

@@ -1,0 +1,31 @@
+{
+    "condition": "any_of",
+    "terms": [
+        {
+            "condition": "location_check",
+            "predicate": {
+                "block": {
+                    "blocks": "#lumenfuchs:redstone_source"
+                }
+            }
+        },
+        {
+            "condition": "location_check",
+            "predicate": {
+                "block": {
+                    "blocks": "#lumenfuchs:redstone_source"
+                }
+            },
+            "offsetY": 1
+        },
+        {
+            "condition": "location_check",
+            "predicate": {
+                "block": {
+                    "blocks": "#lumenfuchs:redstone_source"
+                }
+            },
+            "offsetY": -1
+        }
+    ]
+}

@@ -13,16 +13,16 @@ execute if entity @n[type=!#lumenfuchs:technical, type=!player, distance=1..] as
 
 
 # Add score
-scoreboard players add @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..2] lumenfuchs.dummy 1
+scoreboard players add @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..3] lumenfuchs.dummy 1
 
 # Ignore if not in attack mode until delay is ready
 # If stare_player is disabled, this is ignored entirely.
 execute if data storage lumenfuchs:flags { dummy: { stare_player: true } } unless entity @s[tag=lumenfuchs.dummy.is_attacking] \
-		unless score @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..2] lumenfuchs.dummy matches 10.. run return fail
+		unless score @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..3] lumenfuchs.dummy matches 10.. run return fail
 
 
 # Play audio if walking
-execute if entity @s[tag=lumenfuchs.dummy.is_walking] if score @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..2] lumenfuchs.dummy matches 10.. \
+execute if entity @s[tag=lumenfuchs.dummy.is_walking] if score @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..3] lumenfuchs.dummy matches 10.. \
 		run function lumenfuchs:dummy/utils/play_step_noise
 
 
@@ -30,7 +30,7 @@ execute if entity @s[tag=lumenfuchs.dummy.is_walking] if score @n[type=item_disp
 
 # Limbs
 execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuchs.dummy_limb.head, distance=..3] \
-		run rotate @s facing entity @n[type=!#lumenfuchs:technical, type=!player, distance=..128] eyes
+		if function lumenfuchs:dummy/utils/is_matching_guid run rotate @s facing entity @n[type=!#lumenfuchs:technical, type=!player, distance=..128] eyes
 
 # Seeker
 rotate @s facing entity @n[type=!#lumenfuchs:technical, type=!player, distance=..128]
@@ -50,4 +50,4 @@ execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, tag=!lumenfuc
 		run data modify entity @s interpolation_duration set value 20
 
 # Reset score
-scoreboard players reset @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..2] lumenfuchs.dummy
+scoreboard players reset @n[type=item_display, tag=lumenfuchs.dummy_limb.torso, distance=..3] lumenfuchs.dummy

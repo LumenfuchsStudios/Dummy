@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-14 .. 2025-01-27
+## * AydenTFoxx @ 2025-01-14 .. 2025-01-31
 ## * 
 ## * Simulates the dummy taking damage.
 
@@ -20,11 +20,10 @@ execute if items entity @p weapon.mainhand stick[custom_data={ lumenfuchs.items.
 
 # Display audiovisual feedback
 execute unless entity @s[tag=lumenfuchs.dummy.is_dead] run playsound entity.generic.hurt neutral @a[distance=..16] ~ ~ ~
-$execute unless entity @s[tag=lumenfuchs.dummy.is_dead] run particle block{ block_state: { Name: $(material) } } ~ ~1 ~ 0.0 0.0 0.0 1.0 12
+$execute unless entity @s[tag=lumenfuchs.dummy.is_dead] run particle block{ block_state: { Name: $(torso) } } ~ ~1 ~ 0.0 0.0 0.0 1.0 12
 
 # Display "red" hurt overlay
-execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb, distance=..3] if function lumenfuchs:dummy/utils/is_matching_guid \
-		run data modify entity @s item.id set string storage lumenfuchs:flags dummy.material_hurt
+function lumenfuchs:dummy/utils/set_hurt_overlay
 
 
 # Remove health
@@ -33,8 +32,8 @@ scoreboard players remove @s lumenfuchs.health 1
 execute if score @s lumenfuchs.health matches ..0 run return run function lumenfuchs:dummy/events/death
 
 # Stop attack
-execute if entity @s[tag=lumenfuchs.dummy.is_attacking] run scoreboard players set @n[type=item_display, tag=lumenfuchs.dummy_limb.l_arm, distance=..2] lumenfuchs.clock 1
-execute if entity @s[tag=lumenfuchs.dummy.is_attacking] as @n[type=item_display, tag=lumenfuchs.dummy_limb.l_arm, distance=..2] run function lumenfuchs:dummy/utils/attack_revert
+execute if entity @s[tag=lumenfuchs.dummy.is_attacking] as @e[type=item_display, tag=lumenfuchs.dummy_limb.l_arm, distance=..2] if function lumenfuchs:dummy/utils/is_matching_guid run scoreboard players set @s lumenfuchs.clock 1
+execute if entity @s[tag=lumenfuchs.dummy.is_attacking] as @e[type=item_display, tag=lumenfuchs.dummy_limb.l_arm, distance=..2] if function lumenfuchs:dummy/utils/is_matching_guid run function lumenfuchs:dummy/utils/attack_revert
 
 # Stop walking
 tag @s[tag=lumenfuchs.dummy.is_walking] remove lumenfuchs.dummy.is_walking

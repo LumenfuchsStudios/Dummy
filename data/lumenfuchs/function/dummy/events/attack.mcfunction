@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-16
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-30
 ## * 
 ## * Performs the dummy's signature ability.
 
@@ -27,4 +27,4 @@ execute if predicate lumenfuchs:random/5 run playsound ambient.soul_sand_valley.
 weather thunder 25t
 
 # Teleport lightning to player
-execute as @e[type=lightning_bolt, distance=..128] run tp @s @p[distance=1..]
+tp @e[type=lightning_bolt, distance=..128] @p[distance=1..]

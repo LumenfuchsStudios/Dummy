@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-28
+## * AydenTFoxx @ 2025-01-15 .. 2025-01-31
 ## * 
 ## * Ticks all code from this datapack at a custom rate.
 
@@ -17,6 +17,9 @@ execute if score #lumenfuchs_tick_b lumenfuchs.dummy = #lumenfuchs_tick_rate_b l
 execute if score #lumenfuchs_tick_a lumenfuchs.dummy = #lumenfuchs_tick_rate_a lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker] at @s run function lumenfuchs:seeker/update_a with storage lumenfuchs:flags dummy
 execute if score #lumenfuchs_tick_b lumenfuchs.dummy = #lumenfuchs_tick_rate_b lumenfuchs.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker, tag=!lumenfuchs.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:seeker/update_b with storage lumenfuchs:flags dummy
 
+# Remove stray limbs if Dummy was killed without removing them
+execute as @e[type=item_display, tag=lumenfuchs.entity.dummy_limb] at @s unless entity @n[type=interaction, tag=lumenfuchs.entity, distance=..8] run function lumenfuchs:dummy/events/death
+
 
 # Reset clock
 execute if score #lumenfuchs_tick_a lumenfuchs.dummy >= #lumenfuchs_tick_rate_a lumenfuchs.dummy run scoreboard players set #lumenfuchs_tick_a lumenfuchs.dummy 0
@@ -28,6 +31,10 @@ execute if score #lumenfuchs_tick_b lumenfuchs.dummy >= #lumenfuchs_tick_rate_b 
 # Display settings messages
 execute as @a[scores={ lumenfuchs.settings=1 }] run function lumenfuchs:settings/_menu
 execute as @a[scores={ lumenfuchs.settings=2 }] run function lumenfuchs:settings/_menu/appearance with storage lumenfuchs:flags dummy
+
+execute as @a[scores={ lumenfuchs.settings=21 }] run function lumenfuchs:settings/_menu/appearance_i with storage lumenfuchs:flags dummy.material
+execute as @a[scores={ lumenfuchs.settings=22 }] run function lumenfuchs:settings/_menu/appearance_ii with storage lumenfuchs:flags dummy.material_hurt
+
 execute as @a[scores={ lumenfuchs.settings=3 }] run function lumenfuchs:settings/_menu/ambience with storage lumenfuchs:flags dummy
 execute as @a[scores={ lumenfuchs.settings=4 }] run function lumenfuchs:settings/_menu/behavior with storage lumenfuchs:flags dummy
 execute as @a[scores={ lumenfuchs.settings=5 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
@@ -38,10 +45,10 @@ execute as @a[scores={ lumenfuchs.settings=200 }] run function lumenfuchs:help
 
 # Display "read-only settings" message
 execute as @a[scores={ lumenfuchs.settings=200.. }] if data storage lumenfuchs:flags { allow_edit_settings: false } \
-		run tellraw @s { "text": "Settings are read-only in this world.", "color": "red", "hoverEvent": { "action": "show_text", "contents": [ { "text": "Revert? ", "color": "yellow" }, { "text": "(Requires OP)", "color": "red" } ] }, "clickEvent": { "action": "run_command", "value": "/data modify storage lumenfuchs:flags allow_edit_settings set value true" } }
+		run tellraw @s { "text": "Settings are read-only in this world.", "color": "red", "hoverEvent": { "action": "show_text", "contents": [ { "text": "Revert? ", "color": "yellow" }, { "text": "(Requires OP)", "color": "red" } ] }, "clickEvent": { "action": "suggest_command", "value": "/data modify storage lumenfuchs:flags allow_edit_settings set value true" } }
 
 # Modify settings...
-execute if entity @a[scores={ lumenfuchs.settings=200.. }] run function lumenfuchs:settings/_actions
+execute as @a[scores={ lumenfuchs.settings=200.. }] run function lumenfuchs:settings/_actions
 
 
 # Reset trigger
@@ -74,3 +81,9 @@ execute as @e[type=marker, tag=lumenfuchs.dummy.vessel] at @s positioned ~-0.5 ~
 
 # Replace vessel with Seeker
 execute as @e[type=marker, tag=lumenfuchs.seeker.vessel] at @s positioned ~-0.5 ~ ~-0.5 run function lumenfuchs:seeker/events/summon_egg
+
+
+## DUMMY FORCELOADER
+
+# Update forceload entities
+execute as @e[type=marker, tag=lumenfuchs.entity.forceload] at @s run function lumenfuchs:dummy/utils/forceload/update

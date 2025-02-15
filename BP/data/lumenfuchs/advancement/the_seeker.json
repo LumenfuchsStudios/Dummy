@@ -1,0 +1,23 @@
+{
+	"parent": "lumenfuchs:the_dummy",
+	"display": {
+		"icon": {
+			"id": "carved_pumpkin"
+		},
+		"title": {
+			"translate": "advancements.lumenfuchs.the_seeker.title",
+			"fallback": "The Seeker"
+		},
+		"description": {
+			"translate": "advancements.lumenfuchs.the_seeker.description",
+			"fallback": "Perhaps even Dummies may be rebels."
+		},
+		"frame": "goal",
+		"hidden": true
+	},
+	"criteria": {
+		"spawned_seeker": {
+			"trigger": "impossible"
+		}
+	}
+}

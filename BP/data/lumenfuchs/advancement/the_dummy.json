@@ -1,0 +1,24 @@
+{
+	"parent": "lumenfuchs:root",
+	"display": {
+		"icon": {
+			"id": "black_concrete"
+		},
+		"title": {
+			"translate": "advancements.lumenfuchs.the_dummy.title",
+			"fallback": "The Dummy",
+			"color": "black",
+			"obfuscated": true,
+			"bold": true
+		},
+		"description": {
+			"translate": "advancements.lumenfuchs.the_dummy.description",
+			"fallback": "Safety was never an option."
+		}
+	},
+	"criteria": {
+		"met_dummy": {
+			"trigger": "impossible"
+		}
+	}
+}

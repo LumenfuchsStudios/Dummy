@@ -1,0 +1,209 @@
+{
+    "advancements.lumenfuchs.root.title": "Lumenfuchs Studios",
+    "advancements.lumenfuchs.root.description": "Lesser projects of the Golden Light.",
+
+    "advancements.lumenfuchs.the_dummy.title": "The Dummy",
+    "advancements.lumenfuchs.the_dummy.description": "Safety was never an option.",
+
+    "advancements.lumenfuchs.the_seeker.title": "The Seeker",
+    "advancements.lumenfuchs.the_seeker.description": "Perhaps even Dummies may be rebels.",
+
+
+    "item.lumenfuchs.dummy_spawn_egg": "Dummy Spawn Egg",
+    "item.lumenfuchs.dummy_spawn_egg.lore": "A vile creature lies within.",
+
+    "item.lumenfuchs.seeker_spawn_egg": "Seeker Spawn Egg",
+    "item.lumenfuchs.seeker_spawn_egg.lore": "A pumpkin lies inside.",
+
+    "item.lumenfuchs.cleanser": "The Cleanser",
+    "item.lumenfuchs.cleanser.lore": "\"The banishment of all shadowy creatures.\"",
+
+    "item.lumenfuchs.settings_book": "Write me!",
+    "item.lumenfuchs.settings_book.lore": "Editing setting \"%s\".",
+
+
+    "lumenfuchs.help.1": "Hello! Welcome to %s,\n a datapack whose main feature is the titular %s,",
+    "lumenfuchs.help.2": "an \"entity\" whose main hobby is to stalk you around,\n no matter how, no matter where.",
+    "lumenfuchs.help.3_a": "To test the creature on your own, click %s.",
+    "lumenfuchs.help.3_b": "To see all available settings of this datapack, see %s.",
+    "lumenfuchs.help.3_a_i": "Summon Dummy (Requires Cheats!)",
+    "lumenfuchs.help.3_b_i": "Open Settings",
+    "lumenfuchs.help.4": "[Note: Work In Progress!]",
+    "lumenfuchs.help.5": "All things you see here are currently WIP!\n Bugs are likely, features are lacking. Here be dragons!",
+
+    "lumenfuchs.help.click_here": "here",
+
+
+    "lumenfuchs.intro.init": "%s has joined the world.",
+    "lumenfuchs.intro.init.info": "First time here? Try running %s for a start!",
+
+    "lumenfuchs.intro.reload": "Hello again.",
+    "lumenfuchs.intro.reload.info": "Your datapack got updated! Click here for a list of latest changes.",
+
+
+    "lumenfuchs.settings.category_ambience.title": "Ambience...",
+    "lumenfuchs.settings.category_ambience.description": "Change the Dummy's ambient effects.",
+
+    "lumenfuchs.settings.category_appearance.title": "Appearance...",
+    "lumenfuchs.settings.category_appearance.description": "Change how the Dummy is rendered.",
+
+    "lumenfuchs.settings.category_behavior.title": "Behavior...",
+    "lumenfuchs.settings.category_behavior.description": "Change the Dummy's behaviors.",
+
+    "lumenfuchs.settings.category_misc.title": "Misc...",
+    "lumenfuchs.settings.category_misc.description": "Extra settings and storage management.",
+
+
+    "lumenfuchs.settings.menu_intro.i": "--> %s presents...",
+    "lumenfuchs.settings.menu_intro.ii": "    [ %s ]\n",
+
+    "lumenfuchs.settings.menu_title": "Settings: ",
+    "lumenfuchs.settings.menu_return": "<-- Return",
+    "lumenfuchs.settings.menu_refresh": "Refresh",
+
+
+    "lumenfuchs.settings.option_edit": "Change setting?",
+    "lumenfuchs.settings.option_toggle": "Toggle setting?",
+    "lumenfuchs.settings.option_reset": "Reset to default?",
+    "lumenfuchs.settings.option_revert": "Revert?",
+
+    "lumenfuchs.settings.option_reset_bulk": "Revert all to default?",
+    "lumenfuchs.settings.option_edit_bulk": "Edit all settings to one value?",
+
+    "lumenfuchs.settings.confirm_edit": "* Change %s to %s?",
+    "lumenfuchs.settings.confirm_edit_success": "# Set %s to %s.",
+    "lumenfuchs.settings.confirm_edit_info": "Click to write to storage.",
+    "lumenfuchs.settings.confirm_edit_fail_book": "Please hold the %s book for saving this setting!",
+    "lumenfuchs.settings.confirm_edit_fail_other": "You must hold the book to edit this setting!",
+
+
+    "lumenfuchs.settings.read_only": "Settings are read-only in this world.",
+    "lumenfuchs.settings.operator_only": " (Requires OP)",
+
+
+    "lumenfuchs.settings.reset_first_load.title": "[ Restore First Load ]",
+    "lumenfuchs.settings.reset_first_load.description": "Removes the \"first load\" flag, allowing any missing settings to be set properly.",
+    "lumenfuchs.settings.reset_first_load.warning": "Use to fix missing settings issues.",
+
+    "lumenfuchs.settings.reset_all_settings.title": "[ Restore All Settings ]",
+    "lumenfuchs.settings.reset_all_settings.description": "Restores all settings to their default values.",
+    "lumenfuchs.settings.reset_all_settings.warning": "Warning! This is an irreversible action!",
+
+    "lumenfuchs.settings.lock_settings.title": "[ Disable Settings Editing ]",
+    "lumenfuchs.settings.lock_settings.description": "Locks all settings as read-only. Requires operator privileges.",
+    "lumenfuchs.settings.lock_settings.warning": "Caution! You cannot undo this without operator permissions!",
+
+
+    "lumenfuchs.setting.ambience_presence.title": "Ambient Sound: ",
+    "lumenfuchs.setting.ambience_presence.description": "The sound played by the Dummy to all nearby players.",
+
+    "lumenfuchs.setting.ambience_target.title": "Stalking Sound: ",
+    "lumenfuchs.setting.ambience_target.description": "The sound played by the Dummy to its targeted player.",
+
+
+    "lumenfuchs.setting.material.title": "Dummy Material...",
+    "lumenfuchs.setting.material.description": "Change the block textures used by the Dummy.",
+
+    "lumenfuchs.setting.material_hurt.title": "Dummy Hurt Material...",
+    "lumenfuchs.setting.material_hurt.description": "Change the \"hurt overlay\" displayed by the Dummy when hit by a player.",
+
+    "lumenfuchs.setting.material.head.title": "Head: ",
+    "lumenfuchs.setting.material.head.description": "The block texture of the Dummy's head.",
+    "lumenfuchs.setting.material_hurt.head.description": "The block texture of the Dummy's head when hurt.",
+
+    "lumenfuchs.setting.material.head.additions": "The Seeker's worn Pumpkin is unaffected by this setting.",
+
+    "lumenfuchs.setting.material.torso.title": "Torso: ",
+    "lumenfuchs.setting.material.torso.description": "The block texture of the Dummy's torso.",
+    "lumenfuchs.setting.material_hurt.torso.description": "The block texture of the Dummy's torso when hurt.",
+
+    "lumenfuchs.setting.material.torso.additions": "This also defines the hurt particles of the Dummy.",
+
+    "lumenfuchs.setting.material.left_arm.title": "Left Arm: ",
+    "lumenfuchs.setting.material.left_arm.description": "The block texture of the Dummy's left arm.",
+    "lumenfuchs.setting.material_hurt.left_arm.description": "The block texture of the Dummy's left arm when hurt.",
+
+    "lumenfuchs.setting.material.right_arm.title": "Right Arm: ",
+    "lumenfuchs.setting.material.right_arm.description": "The block texture of the Dummy's right arm.",
+    "lumenfuchs.setting.material_hurt.right_arm.description": "The block texture of the Dummy's right arm when hurt.",
+
+    "lumenfuchs.setting.material.left_leg.title": "Left Leg: ",
+    "lumenfuchs.setting.material.left_leg.description": "The block texture of the Dummy's left leg.",
+    "lumenfuchs.setting.material_hurt.left_leg.description": "The block texture of the Dummy's left leg when hurt.",
+
+    "lumenfuchs.setting.material.right_leg.title": "Right Leg: ",
+    "lumenfuchs.setting.material.right_leg.description": "The block texture of the Dummy's right leg.",
+    "lumenfuchs.setting.material_hurt.right_leg.description": "The block texture of the Dummy's right leg when hurt.",
+
+
+    "lumenfuchs.setting.stare_player.title": "Dummy Stares Player: ",
+    "lumenfuchs.setting.stare_player.description": "If enabled, the Dummy will always look at the nearest player.",
+
+    "lumenfuchs.setting.stare_player_distance.title": "Dummy Staring Distance: ",
+    "lumenfuchs.setting.stare_player_distance.description": "How far can the Dummy stare players.",
+
+    "lumenfuchs.setting.stalk_player.title": "Dummy Stalks Player: ",
+    "lumenfuchs.setting.stalk_player.description": "If enabled, the Dummy will walk towards the nearest player.",
+
+    "lumenfuchs.setting.stalk_player_distance.title": "Dummy Stalking Distance: ",
+    "lumenfuchs.setting.stalk_player_distance.description": "How far can the Dummy stalk a player.",
+
+    "lumenfuchs.setting.stalk_player_threshold.title": "Dummy Stalking Threshold: ",
+    "lumenfuchs.setting.stalk_player_threshold.description": "The max distance a Dummy will approach a player before stopping.",
+
+    "lumenfuchs.setting.freeze_when_stared.title": "Weeping Dummy: ",
+    "lumenfuchs.setting.freeze_when_stared.description": "If enabled, the Dummy will not move while being looked at.",
+
+    "lumenfuchs.setting.drop_loot.title": "Dummy Drops Loot: ",
+    "lumenfuchs.setting.drop_loot.description": "If enabled, the Dummy may drop unique items upon death.",
+
+    "lumenfuchs.setting.harm_on_touch.title": "Dummy Hurts on Touch: ",
+    "lumenfuchs.setting.harm_on_touch.description": "If enabled, the Dummy has a thorns-like effect against all creatures.",
+
+    "lumenfuchs.setting.attack_player.title": "Dummy \"Attacks\" Player: ",
+    "lumenfuchs.setting.attack_player.description": "If enabled, the Dummy will perform an \"attack\" ability when near a player.",
+
+    "lumenfuchs.setting.attack_player_distance.title": "Dummy \"Attack\" Distance: ",
+    "lumenfuchs.setting.attack_player_distance.description": "How close the Dummy needs to be to perform its \"attack\" ability.",
+
+
+    "lumenfuchs.setting.forceload_chunks.title": "Forceload Chunks: ",
+    "lumenfuchs.setting.forceload_chunks.description": "If enabled, the Dummy will always forceload its own chunks.",
+    "lumenfuchs.setting.forceload_chunks.additions": "May cause higher usage of resources; If your device can't handle the extra chunks being loaded, consider disabling this.",
+
+    "lumenfuchs.setting.natural_spawning.title": "Natural Spawning: ",
+    "lumenfuchs.setting.natural_spawning.description": "If enabled, the Dummy can spawn on particularly dark areas.",
+    "lumenfuchs.setting.natural_spawning.additions": "Works best in caves and when there is no light near the player.",
+
+    "lumenfuchs.setting.spawn_under_skylight.title": "Spawn under Skylight: ",
+    "lumenfuchs.setting.spawn_under_skylight.description": "If enabled, the Dummy can spawn in blocks exposed to the sky.",
+    "lumenfuchs.setting.spawn_under_skylight.additions": "Requires \"Natural Spawning\" to be enabled to work.",
+
+
+    "lumenfuchs.toggle_setting.attack_player.enable": "# Violence has been enabled..",
+    "lumenfuchs.toggle_setting.attack_player.disable": "# Violence has been disabled..",
+
+    "lumenfuchs.toggle_setting.drop_loot.enable": "# Dummy Loot has been enabled..",
+    "lumenfuchs.toggle_setting.drop_loot.disable": "# Dummy Loot has been disabled..",
+
+    "lumenfuchs.toggle_setting.forceload_chunks.enable": "# Force-loading has been enabled..",
+    "lumenfuchs.toggle_setting.forceload_chunks.disable": "# Force-loading has been disabled..",
+
+    "lumenfuchs.toggle_setting.freeze_when_stared.enable": "# Weeping has been enabled..",
+    "lumenfuchs.toggle_setting.freeze_when_stared.disable": "# Weeping has been disabled..",
+
+    "lumenfuchs.toggle_setting.harm_on_touch.enable": "# Thorns have been enabled.",
+    "lumenfuchs.toggle_setting.harm_on_touch.disable": "# Thorns have been disabled.",
+
+    "lumenfuchs.toggle_setting.natural_spawning.enable": "# Natural Spawning has been enabled..",
+    "lumenfuchs.toggle_setting.natural_spawning.disable": "# Natural Spawning has been disabled..",
+
+    "lumenfuchs.toggle_setting.spawn_under_skylight.enable": "# Moonlight Spawning has been enabled..",
+    "lumenfuchs.toggle_setting.spawn_under_skylight.disable": "# Moonlight Spawning has been disabled..",
+
+    "lumenfuchs.toggle_setting.stalk_player.enable": "# Stalking has been enabled..",
+    "lumenfuchs.toggle_setting.stalk_player.disable": "# Stalking has been disabled..",
+
+    "lumenfuchs.toggle_setting.stare_player.enable": "# Staring has been enabled..",
+    "lumenfuchs.toggle_setting.stare_player.disable": "# Staring has been disabled.."
+}

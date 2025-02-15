@@ -1,0 +1,17 @@
+{
+    "function": "set_count",
+    "count": 0,
+    "conditions": [
+        {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "equipment": {
+                    "mainhand": {
+                        "items": "writable_book"
+                    }
+                }
+            }
+        }
+    ]
+}

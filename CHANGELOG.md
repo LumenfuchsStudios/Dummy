@@ -8,6 +8,18 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
+## v1.3.1 - Unreleased
+
+### Codename: `DUMMYLANG`
+
+* ✳️ Separated Dummy's code into `BP` and `RP` folders: The former holds the original datapack; The latter, the newest translations resource pack.
+* 🐛 Fixed Dummy/Seeker sinking on Dirt Path blocks.
+* ⭐ Added Brazilian Portuguese translation for the Dummy datapack.
+* 🔺 Changed Dummy natural spawning sound to be hopefully more noticeable.
+* 🔧 Added translation support for the entirety of the datapack.
+  * If a proper translation is not found (or the resource pack is not present), the English version is used instead.
+  * Debug-only messages are not included or affected by this change.
+
 ## v1.3.0 - 2025-02-01
 
 ### Codename: `Mood`

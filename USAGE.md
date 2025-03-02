@@ -67,11 +67,15 @@ All settings can be seen and edited on the datapack's **settings panel**, access
 
 This defines the `id` of the item used by the Dummy's `item_display` entities. Works best when set to a block, as it fully shows the Dummy's model. If set to `minecraft:air`, the Dummy is invisible.
 
+Has several suffixed variants, each for a given part of the Dummy's body: `.head`, `.torso`, `left_arm`, `right_arm`, `.left_leg`, and `.right_leg`. The suffix `_all` (`dummy.material_all`) sets all previous variants to its value, similar to this setting's behavior prior to v1.3.0. The `_all` flag is always removed after being applied.
+
 Some textures can look off here, as all limbs except the head will display a stretched texture instead of its original resolution.
 
 #### dummy.material_hurt (Default: `minecraft:red_concrete`)
 
 This defines the `id` of the item used by the Dummy's `item_display` entities when it is hit by a player. Works best as a red-tinted block, which simulates entities' red overlay when hurt. If set to the same as `dummy.material`, this effect is disabled.
+
+As with the above, has several suffixed variants, each for a given part of the Dummy's body: `.head`, `.torso`, `left_arm`, `right_arm`, `.left_leg`, and `.right_leg`. The suffix `_all` (`dummy.material_all`) sets all previous variants to its value, similar to this setting's behavior prior to v1.3.0. The `_all` flag is always removed after being applied.
 
 As with the above setting, materials may vary in how well they fit the Dummy's model.
 
@@ -140,25 +144,23 @@ Mobs damaged by this feature do not aggro on the Dummy, and can actually get kil
 
 ### Miscellaneous
 
-#### dummy.forceload_chunks (Default: `false`)
+#### dummy.forceload_chunks (Default: `true`)
 
 If enabled, the Dummy will force-load its current position whenever unloaded. When set to `false`, the Dummy will not move or perform any of its behaviors (including physics) until within loaded chunks again.
 
-When triggered, the Dummy removes force-loading within a 32-block radius, then adds a force-load to its own position. Due to this and possible concerns with high SSD usage, this setting is disabled by default.
+When triggered, the Dummy creates a "forceload anchor" at its position; When entering a new unloaded chunk, the previous anchor is removed and a new one is added. If the Dummy enters a chunk loaded by other means (e.g. the player or a chunk loader machine), the leftover anchor is removed after 60 seconds have passed.
 
-#### dummy.natural_spawning (Default: `false`)
+#### dummy.natural_spawning (Default: `true`)
 
 If enabled, the Dummy has a chance to naturally spawn in dark areas when the player is in a poorly lit environment.
 
 When enabled, standing in a location with light level of 5 or lower has a chance to spawn a Dummy every 8-10 minutes. While within this range, the game has a 10% chance to choose a random block in a 32x16x32 radius around the player. Then, the following is checked:
 
 * If a Dummy entity is already present, it immediately fails.
+* If `dummy.spawn_under_skylight` is disabled and the block can see the sky, it fails.
 * If the target block or the block above it are not of type `#dummy_lib:transparent`, it fails.
-* Otherwise, has a 50% chance to succeed.
 
 If all conditions pass, a Dummy is summoned at that position; Players within a 32-block radius receive 8 seconds of Darkness II, and the closest player hears a cave sound ("Eerie noise" in subtitles), indicating they're most likely to be targeted by the newly spawned Dummy.
-
-This feature is still in early stages, and may not satisfy all users. Therefore, it is disabled by default.
 
 #### dummy.spawn_under_skylight (Default: `true`)
 

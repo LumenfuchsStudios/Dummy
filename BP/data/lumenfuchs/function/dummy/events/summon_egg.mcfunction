@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-17 .. 2025-01-27
+## * AydenTFoxx @ 2025-01-17 .. 2025-02-20
 ## * 
 ## * Creates a Dummy entity from its respective spawn egg.
 
@@ -7,4 +7,4 @@
 function lumenfuchs:dummy/summon
 
 # Remove vessel
-kill @s[type=#lumenfuchs:technical]
+kill @s[type=#dummy_lib:technical]

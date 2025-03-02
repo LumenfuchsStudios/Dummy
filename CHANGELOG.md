@@ -8,9 +8,22 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
-## v1.3.1 - Unreleased
+## v1.4.0 - Unreleased
 
-### Codename: `DUMMYLANG`
+### Codename: `DummyLib`
+
+* 🐛 Fixed "Dummy Drops Loot" setting triggering the wrong page in the settings panel.
+* ⭐ Overhauled the Dummy's attack ability!
+  * Now charges up a powerful blast with tremendous reach, targeted towards the nearest player to the Dummy's position; If none is found, all creatures within a decent radius shall suffice instead.
+  * The Dummy's attack is powerful, but can be interrupted if the Dummy itself is hurt while charging its attack ability.
+* 🔺 Dummy's natural spawning no longer ticks if the player is in open skylight.
+* 🔺 Dummy now only lasts in a world for up to 3600 ticks, after which it despawns in a similar fashion to the Seeker.
+* 🔧 Introduced **DummyLib**, a library for creating Dummy-like entities, with basic behaviors and utility functions for a highly customizable experience.
+  * *Lumenfuchs' Dummy*'s both "dummy entites" (Dummy and Seeker) are run with DummyLib!
+
+## v1.3.1 - 2025-02-15
+
+### Codename: `Dummy-Lang`
 
 * ✳️ Separated Dummy's code into `BP` and `RP` folders: The former holds the original datapack; The latter, the newest translations resource pack.
 * 🐛 Fixed Dummy/Seeker sinking on Dirt Path blocks.

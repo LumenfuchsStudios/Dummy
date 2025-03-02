@@ -1,24 +1,13 @@
-## * AydenTFoxx @ 2025-01-15
+## * AydenTFoxx @ 2025-01-15 .. 2025-03-01
 ## * 
 ## * Lowers the dummy's arm after its attack.
 
 
-# Remove attacking flag
-tag @n[type=interaction, tag=lumenfuchs.entity.dummy, tag=lumenfuchs.dummy.is_attacking, distance=..2] remove lumenfuchs.dummy.is_attacking
-
 # Remove score
-scoreboard players remove @s lumenfuchs.clock 2
-scoreboard players reset @s[scores={ lumenfuchs.clock=..0 }] lumenfuchs.clock
+scoreboard players remove @s dummy_lib.clock 8
 
+# Remove tag
+tag @s[scores={ dummy_lib.clock=..0 }] remove dummy_lib.dummy.is_floating
 
-# Rotate back
-execute store result entity @s Rotation[1] float -1.0 run scoreboard players get @s lumenfuchs.clock
-
-# Set interpolation
-data modify entity @s interpolation_duration set value 4
-
-
-# Return 1 if dummy is back to normal, 0 otherwise
-execute unless score @s lumenfuchs.clock matches ..0 run return 0
-
-return 1
+# Reset score
+scoreboard players reset @s[scores={ dummy_lib.clock=..0 }] dummy_lib.clock

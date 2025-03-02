@@ -40,7 +40,7 @@ The datapack is a proof-of-concept at creating entities without basing it on an 
 
 The Dummy is composed of six `minecraft:item_display` entities (the "limbs" -- arms, legs, torso and head) and one `minecraft:interaction` (the hitbox).
 
-All composing entities are assigned a Globally Unique Identifier (with the `lumenfuchs.guid` objective) at spawn, which the `interaction` entity uses for moving the correct limbs around. A custom *move* function is implemented (as `lumenfuchs:dummy/physics/move`), which teleports all limbs by their GUID to the target position, then realigns each one with the correct Y position. All other functions which target the limbs also use this GUID for ensuring the targeted limb belongs to that Dummy.
+All composing entities are assigned a Globally Unique Identifier (with the `dummy_lib.guid` objective) at spawn, which the `interaction` entity uses for moving the correct limbs around. A custom *move* function is implemented (as `lumenfuchs:dummy/physics/move`), which teleports all limbs by their GUID to the target position, then realigns each one with the correct Y position. All other functions which target the limbs also use this GUID for ensuring the targeted limb belongs to that Dummy.
 
 Some observations on working with a non-mob custom entity:
 
@@ -112,7 +112,7 @@ The Dummy will not walk in the following conditions, regardless of this setting:
 * The Dummy is being stared at while `dummy.freeze_when_stared` is enabled;
 * The block the Dummy would walk to is a Redstone Wire (with power 12 or above) or a Redstone Block;
 * There is a hole deeper than two blocks where the Dummy would walk to.
-  * A hole is determined if the two blocks below the target position are of type `#lumenfuchs:transparent`.
+  * A hole is determined if the two blocks below the target position are of type `#dummy_lib:transparent`.
 
 #### dummy.stalk_player_distance (Default: `512` blocks)
 
@@ -153,7 +153,7 @@ If enabled, the Dummy has a chance to naturally spawn in dark areas when the pla
 When enabled, standing in a location with light level of 5 or lower has a chance to spawn a Dummy every 8-10 minutes. While within this range, the game has a 10% chance to choose a random block in a 32x16x32 radius around the player. Then, the following is checked:
 
 * If a Dummy entity is already present, it immediately fails.
-* If the target block or the block above it are not of type `#lumenfuchs:transparent`, it fails.
+* If the target block or the block above it are not of type `#dummy_lib:transparent`, it fails.
 * Otherwise, has a 50% chance to succeed.
 
 If all conditions pass, a Dummy is summoned at that position; Players within a 32-block radius receive 8 seconds of Darkness II, and the closest player hears a cave sound ("Eerie noise" in subtitles), indicating they're most likely to be targeted by the newly spawned Dummy.
@@ -188,7 +188,7 @@ That being said, there *is* a performance cost with the Dummy. Perhaps not as mu
 
 The Dummy's most resource-intensive function is walking, which utilizes macros and multiple teleports to reshape the Dummy. Spawning has nearly no effect, as it relies on `minecraft:marker` entities for spawn attempts, and all other behaviors also have little effect in comparison. Forceloading is less impactful than expected -- it is primarily disabled by default to avoid breaking other mods/datapacks which depend on force-loading to work.
 
-If performance is a concern, the Dummy's update rate is editable by changing these fake players' `lumenfuchs.dummy` score:
+If performance is a concern, the Dummy's update rate is editable by changing these fake players' `dummy_lib.dummy` score:
 
 * `#lumenfuchs_tick_rate_a` (Default: `1`) defines the delay in ticks for updating the Dummy's physics, as well as for checking and adding/removing forceloaded chunks.
 * `#lumenfuchs_tick_rate_b` (Default: `2`) defines the delay in ticks for updating the Dummy's behaviors and animations.

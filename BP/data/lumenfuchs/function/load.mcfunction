@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-11 .. 2025-02-14
+## * AydenTFoxx @ 2025-01-11 .. 2025-02-20
 ## * 
 ## * Initializes features required for the proper functioning of the datapack.
 
@@ -19,26 +19,6 @@ advancement grant @a[advancements={ lumenfuchs:root=false }] only lumenfuchs:roo
 
 ## # SCOREBOARDS
 
-## GUID (lumenfuchs)
-# A globally-unique method of identifying a registered entity.
-scoreboard objectives add lumenfuchs.guid dummy { "text": "GUID", "color": "gray", "bold": true }
-
-## Clock (lumenfuchs)
-# A tick-based clock for managing time-based functions.
-scoreboard objectives add lumenfuchs.clock dummy { "text": "Clock", "color": "blue" }
-
-## Dummy (lumenfuchs)
-# A multiuse objective for generic usage by any function.
-scoreboard objectives add lumenfuchs.dummy dummy { "text": "Dummy", "color": "green" }
-
-## Health (lumenfuchs)
-# A dummy objective for storing custom entity health.
-scoreboard objectives add lumenfuchs.health dummy { "text": "Health", "color": "yellow" }
-
-## Momentum (lumenfuchs)
-# A meter of how fast an entity currently is. Used for custom movement calculation.
-scoreboard objectives add lumenfuchs.momentum dummy { "text": "Momentum", "color": "red" }
-
 ## Settings (lumenfuchs)
 # A trigger objective for managing the datapack's settings.
 scoreboard objectives add lumenfuchs.settings trigger { "text": "Settings", "color": "aqua", "obfuscated": true }
@@ -46,16 +26,12 @@ scoreboard objectives add lumenfuchs.settings trigger { "text": "Settings", "col
 
 ## DEFAULT VALUES
 
-# Initialize GUID for identifier generation
-execute unless score #lumenfuchs_guid lumenfuchs.guid matches 1.. \
-        run scoreboard players set #lumenfuchs_guid lumenfuchs.guid 1
-
 # Initialize custom tick rate
-execute unless score #lumenfuchs_tick_rate_a lumenfuchs.dummy matches 1.. \
-        run scoreboard players set #lumenfuchs_tick_rate_a lumenfuchs.dummy 1
+execute unless score #lumenfuchs_tick_rate_a dummy_lib.dummy matches 1.. \
+        run scoreboard players set #lumenfuchs_tick_rate_a dummy_lib.dummy 1
 
-execute unless score #lumenfuchs_tick_rate_b lumenfuchs.dummy matches 1.. \
-        run scoreboard players set #lumenfuchs_tick_rate_b lumenfuchs.dummy 2
+execute unless score #lumenfuchs_tick_rate_b dummy_lib.dummy matches 1.. \
+        run scoreboard players set #lumenfuchs_tick_rate_b dummy_lib.dummy 2
 
 
 # Enable Settings trigger for all players
@@ -71,15 +47,15 @@ scoreboard players enable @a lumenfuchs.settings
 # 4 | 1.2.0
 # 5 | 1.2.1 - 1.2.2
 # 6 | 1.3.0 - 1.3.1
-scoreboard players set #lumenfuchs_dummy.target_version lumenfuchs.dummy 6
+scoreboard players set #lumenfuchs_dummy.target_version dummy_lib.dummy 6
 
 # Set current version to latest
-execute unless score #lumenfuchs_dummy.current_version lumenfuchs.dummy matches 1.. unless data storage lumenfuchs:flags { first_load: true } \
-        run scoreboard players operation #lumenfuchs_dummy.current_version lumenfuchs.dummy = #lumenfuchs_dummy.target_version lumenfuchs.dummy
+execute unless score #lumenfuchs_dummy.current_version dummy_lib.dummy matches 1.. unless data storage lumenfuchs:flags { first_load: true } \
+        run scoreboard players operation #lumenfuchs_dummy.current_version dummy_lib.dummy = #lumenfuchs_dummy.target_version dummy_lib.dummy
 
 
 # Update to latest version
-execute unless score #lumenfuchs_dummy.current_version lumenfuchs.dummy = #lumenfuchs_dummy.target_version lumenfuchs.dummy \
+execute unless score #lumenfuchs_dummy.current_version dummy_lib.dummy = #lumenfuchs_dummy.target_version dummy_lib.dummy \
         run return run function lumenfuchs:upgrade_version
 
 

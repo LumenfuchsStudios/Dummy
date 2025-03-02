@@ -1,5 +1,6 @@
 {
 	"values": [
-		"lumenfuchs:tick"
+		"lumenfuchs:tick",
+		"dummy_lib:__core/tick"
 	]
 }

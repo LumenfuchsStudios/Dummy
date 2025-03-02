@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-31
+## * AydenTFoxx @ 2025-01-15 .. 2025-03-01
 ## * 
 ## * Executes all actions from the settings panel.
 
@@ -52,17 +52,18 @@ execute if entity @s[scores={ lumenfuchs.settings=211 }] run data modify storage
 execute if entity @s[scores={ lumenfuchs.settings=212 }] run data modify storage lumenfuchs:flags dummy.attack_player_distance set value 4
 
 execute if entity @s[scores={ lumenfuchs.settings=213 }] run data modify storage lumenfuchs:flags dummy.freeze_when_stared set value true
+execute if entity @s[scores={ lumenfuchs.settings=217 }] run data modify storage lumenfuchs:flags dummy.drop_loot set value true
 
 execute if entity @s[scores={ lumenfuchs.settings=205..213 }] run function lumenfuchs:settings/_menu/behavior with storage lumenfuchs:flags dummy
+execute if entity @s[scores={ lumenfuchs.settings=217 }] run function lumenfuchs:settings/_menu/behavior with storage lumenfuchs:flags dummy
 
 # Misc
 execute if entity @s[scores={ lumenfuchs.settings=214 }] run data modify storage lumenfuchs:flags dummy.forceload_chunks set value true
 execute if entity @s[scores={ lumenfuchs.settings=215 }] run data modify storage lumenfuchs:flags dummy.natural_spawning set value true
 
 execute if entity @s[scores={ lumenfuchs.settings=216 }] run data modify storage lumenfuchs:flags dummy.spawn_under_skylight set value true
-execute if entity @s[scores={ lumenfuchs.settings=217 }] run data modify storage lumenfuchs:flags dummy.drop_loot set value true
 
-execute if entity @s[scores={ lumenfuchs.settings=214..217 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
+execute if entity @s[scores={ lumenfuchs.settings=214..216 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
 
 execute if entity @s[scores={ lumenfuchs.settings=400 }] run data remove storage lumenfuchs:flags first_load
 
@@ -83,19 +84,20 @@ execute as @s[scores={ lumenfuchs.settings=303 }] run function lumenfuchs:settin
 execute as @s[scores={ lumenfuchs.settings=304 }] run function lumenfuchs:settings/attack_player
 
 execute as @s[scores={ lumenfuchs.settings=307 }] run function lumenfuchs:settings/freeze_when_stared
+execute as @s[scores={ lumenfuchs.settings=317 }] run function lumenfuchs:settings/drop_loot
 
 execute if entity @s[scores={ lumenfuchs.settings=301..304 }] run function lumenfuchs:settings/_menu/behavior with storage lumenfuchs:flags dummy
 execute if entity @s[scores={ lumenfuchs.settings=307 }] run function lumenfuchs:settings/_menu/behavior with storage lumenfuchs:flags dummy
+execute if entity @s[scores={ lumenfuchs.settings=317 }] run function lumenfuchs:settings/_menu/behavior with storage lumenfuchs:flags dummy
 
 # Misc
 execute as @s[scores={ lumenfuchs.settings=305 }] run function lumenfuchs:settings/forceload
 execute as @s[scores={ lumenfuchs.settings=306 }] run function lumenfuchs:settings/natural_spawning
 
 execute as @s[scores={ lumenfuchs.settings=316 }] run function lumenfuchs:settings/spawn_under_skylight
-execute as @s[scores={ lumenfuchs.settings=317 }] run function lumenfuchs:settings/drop_loot
 
 execute if entity @s[scores={ lumenfuchs.settings=305..306 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
-execute if entity @s[scores={ lumenfuchs.settings=316..317 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
+execute if entity @s[scores={ lumenfuchs.settings=316 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
 
 
 ## * EDIT

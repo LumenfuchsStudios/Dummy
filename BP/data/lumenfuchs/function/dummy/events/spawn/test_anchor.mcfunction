@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-17 .. 2025-02-11
+## * AydenTFoxx @ 2025-01-17 .. 2025-03-01
 ## * 
 ## * Verifies if the given anchor's position is valid for spawning. If true, the Dummy is summoned.
 
@@ -10,20 +10,20 @@ execute if data storage lumenfuchs:flags { debug_mode: 1b } run particle end_rod
 
 
 # Ignore if Dummy already exists
-execute if entity @n[type=interaction, tag=lumenfuchs.entity.dummy, distance=..512] run return run kill @s[type=#lumenfuchs:technical]
+execute if entity @n[type=interaction, tag=lumenfuchs.entity.dummy, distance=..512] run return run kill @s[type=#dummy_lib:technical]
 
 # Ignore if block is under skylight (and spawn_under_skylight is disabled)
 execute unless data storage lumenfuchs:flags { dummy: { spawn_under_skylight: true } } \
-		if predicate lumenfuchs:block/can_see_sky run return run kill @s[type=#lumenfuchs:technical]
+		if predicate dummy_lib:block/is_under_skylight run return run kill @s[type=#dummy_lib:technical]
 
 
 # Check if position is valid
-execute if predicate lumenfuchs:block/light_dangerous unless entity @p[distance=..8] \
-		unless block ~ ~-1 ~ #lumenfuchs:transparent if block ~ ~ ~ #lumenfuchs:transparent if block ~ ~1 ~ #lumenfuchs:transparent \
+execute if predicate dummy_lib:block/light/none unless entity @p[distance=..8] \
+		unless block ~ ~-1 ~ #dummy_lib:transparent if block ~ ~ ~ #dummy_lib:transparent if block ~ ~1 ~ #dummy_lib:transparent \
 		run tag @s add lumenfuchs.dummy_spawn.summon_dummy
 
 # Ignore if failed
-execute unless entity @s[tag=lumenfuchs.dummy_spawn.summon_dummy] run return run kill @s[type=#lumenfuchs:technical]
+execute unless entity @s[tag=lumenfuchs.dummy_spawn.summon_dummy] run return run kill @s[type=#dummy_lib:technical]
 
 
 ## SUCCESS
@@ -32,7 +32,7 @@ execute unless entity @s[tag=lumenfuchs.dummy_spawn.summon_dummy] run return run
 execute if data storage lumenfuchs:flags { debug_mode: 1b } run say Summoned
 
 # Reset players' spawning timer
-scoreboard players reset @a[scores={ lumenfuchs.dummy=1.. }, distance=..128] lumenfuchs.dummy
+scoreboard players reset @a[scores={ dummy_lib.dummy=1.. }, distance=..128] dummy_lib.dummy
 
 
 # Apply Darkness
@@ -47,4 +47,4 @@ playsound ambient.nether_wastes.mood master @p[distance=..64] ~ ~ ~ 2 0.5 0.5
 function lumenfuchs:dummy/summon
 
 # Remove self
-kill @s[type=#lumenfuchs:technical]
+kill @s[type=#dummy_lib:technical]

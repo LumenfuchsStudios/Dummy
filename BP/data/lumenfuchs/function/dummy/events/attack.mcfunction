@@ -1,30 +1,36 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-01-30
+## * AydenTFoxx @ 2025-01-15 .. 2025-03-01
 ## * 
-## * Performs the dummy's signature ability.
+## * Performs the dummy's signature "attack" ability.
 
 
-# Trigger aggro from nearby mobs towards player
-execute as @e[type=!#lumenfuchs:technical, distance=..32] \
-		run data modify entity @s AngerTime set value 40
+# STOP EVERYTHING!!1! (kris get the banana)
+stopsound @a[distance=..64]
 
-execute as @e[type=!#lumenfuchs:technical, distance=..32] \
-		run data modify entity @s AngryAt set from entity @p[distance=..16] UUID
-
-
-# Regain lost health, if any
-execute unless score @s lumenfuchs.health matches 8 if predicate lumenfuchs:random/1 \
-		run scoreboard players add @s lumenfuchs.health 1
+# Damage nearest victim
+execute if entity @p[gamemode=!creative, gamemode=!spectator, distance=..64] run damage @p[gamemode=!creative, gamemode=!spectator, distance=..64] 8 sonic_boom by @s
+execute unless entity @p[gamemode=!creative, gamemode=!spectator, distance=..64] as @e[type=!#dummy_lib:technical, distance=..16] run damage @s 8 sonic_boom by @n[type=interaction, tag=lumenfuchs.entity.dummy]
 
 
-# Apply Darkness
-effect give @a[tag=!goldark.effects.purity, distance=..24] darkness 4 1 true
+# Display audiovisual feedback
+execute anchored eyes run particle flame ^ ^ ^1 0.3 0.4 0.3 0.05 24 force
 
-# Play audio feedback
-execute if predicate lumenfuchs:random/5 run playsound ambient.soul_sand_valley.mood neutral @a[distance=..16] ~ ~ ~ 0.8 0.5
+execute at @p[gamemode=!creative, gamemode=!spectator, distance=..64] run particle large_smoke ~ ~0.8 ~ 0.15 0.3 0.15 0.05 16
+execute unless entity @p[gamemode=!creative, gamemode=!spectator, distance=..64] at @e[type=!#dummy_lib:technical, distance=..16] run particle explosion ~ ~0.5 ~ 0.0 0.0 0.0 1 1 force
+
+playsound entity.warden.sonic_boom master @a[distance=..32] ~ ~ ~ 2 0.7 0.2
+playsound ambient.soul_sand_valley.mood master @a[distance=..32] ~ ~ ~ 1 0.8 0.5
 
 
-# Set moody weather
-weather thunder 25t
+# Gamble for health
+execute if predicate dummy_lib:random/50 run scoreboard players remove @s dummy_lib.health 1
+execute if predicate dummy_lib:random/50 run scoreboard players add @s dummy_lib.health 1
 
-# Teleport lightning to player
-tp @e[type=lightning_bolt, distance=..128] @p[distance=1..]
+# Apply self knockback
+function dummy_lib:physics/move { direction: "^ ^0.2 ^-0.4" }
+
+
+# Reset attack trigger
+scoreboard players set @s dummy_lib.clock -80
+
+# Remove anti-gravity
+tag @s remove dummy_lib.dummy.is_floating

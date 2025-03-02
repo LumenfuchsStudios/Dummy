@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-27
+## * AydenTFoxx @ 2025-01-27 .. 2025-02-20
 ## * 
 ## * Summons a Seeker dummy entity.
 
@@ -11,4 +11,4 @@ advancement grant @p[advancements={ lumenfuchs:the_seeker=false }, distance=..8]
 
 
 # Remove vessel
-kill @s[type=#lumenfuchs:technical]
+kill @s[type=#dummy_lib:technical]

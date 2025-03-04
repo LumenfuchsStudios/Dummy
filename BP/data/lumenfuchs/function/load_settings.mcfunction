@@ -38,6 +38,10 @@ execute unless data storage lumenfuchs:flags dummy.spawn_under_skylight run data
 # Allows the Dummy entity to drop random items upon death.
 execute unless data storage lumenfuchs:flags dummy.drop_loot run data modify storage lumenfuchs:flags dummy.drop_loot set value true
 
+## (dummy.griefing) | Default: ON
+# Allows the Dummy entity to commit destructive actions in the world, such as breaking torches and tunneling through dimensions.
+execute unless data storage lumenfuchs:flags dummy.griefing run data modify storage lumenfuchs:flags dummy.griefing set value true
+
 
 #? Weirdness
 

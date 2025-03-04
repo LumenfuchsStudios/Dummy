@@ -177,6 +177,10 @@
     "lumenfuchs.setting.spawn_under_skylight.description": "Se habilitado, o Dummy pode aparecer em blocos com visão direta ao céu.",
     "lumenfuchs.setting.spawn_under_skylight.additions": "Requer \"Spawn Natural\" ativo para ter efeito.",
 
+    "lumenfuchs.setting.griefing.title": "Dummy Griefing: ",
+    "lumenfuchs.setting.griefing.description": "Se habilitado, o Dummy pode colocar e quebrar blocos no mundo.",
+    "lumenfuchs.setting.griefing.additions": "Não afeta a \"explosão\" inicial ao ativar um Dummy Totem.",
+
 
     "lumenfuchs.toggle_setting.attack_player.enable": "# Violência foi habilitada.",
     "lumenfuchs.toggle_setting.attack_player.disable": "# Violência foi desabilitada.",
@@ -198,6 +202,9 @@
 
     "lumenfuchs.toggle_setting.spawn_under_skylight.enable": "# Spawn ao Luar foi habilitado.",
     "lumenfuchs.toggle_setting.spawn_under_skylight.disable": "# Spawn ao Luar foi desabilitado.",
+
+    "lumenfuchs.toggle_setting.griefing.enable": "# Vandalismo foi habilitado.",
+    "lumenfuchs.toggle_setting.griefing.disable": "# Vandalismo foi desabilitado.",
 
     "lumenfuchs.toggle_setting.stalk_player.enable": "# Stalking foi habilitado.",
     "lumenfuchs.toggle_setting.stalk_player.disable": "# Stalking foi desabilitado.",

@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-15 .. 2025-03-02
 ## * 
 ## * Performs the dummy's signature "attack" ability.
 
@@ -15,7 +15,7 @@ execute unless entity @p[gamemode=!creative, gamemode=!spectator, distance=..64]
 execute anchored eyes run particle flame ^ ^ ^1 0.3 0.4 0.3 0.05 24 force
 
 execute at @p[gamemode=!creative, gamemode=!spectator, distance=..64] run particle large_smoke ~ ~0.8 ~ 0.15 0.3 0.15 0.05 16
-execute unless entity @p[gamemode=!creative, gamemode=!spectator, distance=..64] at @e[type=!#dummy_lib:technical, distance=..16] run particle explosion ~ ~0.5 ~ 0.0 0.0 0.0 1 1 force
+execute unless entity @p[gamemode=!creative, gamemode=!spectator, distance=..64] at @e[type=!#dummy_lib:technical, type=!player, distance=..16] run particle explosion ~ ~1 ~ 0.0 0.0 0.0 1 1 force
 
 playsound entity.warden.sonic_boom master @a[distance=..32] ~ ~ ~ 2 0.7 0.2
 playsound ambient.soul_sand_valley.mood master @a[distance=..32] ~ ~ ~ 1 0.8 0.5

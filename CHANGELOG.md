@@ -8,18 +8,30 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
-## v1.4.0 - Unreleased
+## v1.4.0 - 2025-03-04
 
 ### Codename: `DummyLib`
 
 * 🐛 Fixed "Dummy Drops Loot" setting triggering the wrong page in the settings panel.
+* 🐛 Fixed trailing punctuation in the English translation of the datapack.
+* 🐛 Fixed Dummy walking aimlessly in the wrong direction when too far away from the player.
 * ⭐ Overhauled the Dummy's attack ability!
-  * Now charges up a powerful blast with tremendous reach, targeted towards the nearest player to the Dummy's position; If none is found, all creatures within a decent radius shall suffice instead.
-  * The Dummy's attack is powerful, but can be interrupted if the Dummy itself is hurt while charging its attack ability.
+  * Now charges up a powerful blast with tremendous reach, targeted towards the nearest player to the Dummy's position; If none is found, all creatures within a great radius shall suffice instead.
+  * The Dummy's attack is powerful, but can be interrupted if the Dummy itself is hurt while charging its attack ability. With the right timing, you can even deal double damage to the Dummy instead.
+* ⭐ Added new "Warp" abilities for Dummy, for use when no players can be found in a large radius:
+  * *Dimensional Bore* drops the Dummy all the way to the Void, breaking (configurable) any non-indestructible blocks (such as Bedrock) in the way.
+    * A random player is also set to immediately attempt a Dummy natural spawning, if conditions are appropriate.
+    * This will only trigger if the Dummy is left alone in a dimension with no players at all.
+  * *Spatial Warp* (soon!) causes the Dummy to teleport around its nearest player with the same algorithm used for spawning it.
+    * This will trigger when the Dummy can't *stare* a nearby player; If it can still *walk towards them*, the Dummy might cancel this ability in favor of simply walking instead.
+* ⭐ Added new setting to control the Dummy's "destructive" abilities.
+  * This new setting also defines whether the Dummy and Seeker are able to break light-emitting blocks in their feet, which previously had no means to be disabled.
 * 🔺 Dummy's natural spawning no longer ticks if the player is in open skylight.
+* 🔺 Dummy's natural spawning now summons a Dummy on light levels 0-7, for consistency with the levels it triggers for the player themselves.
 * 🔺 Dummy now only lasts in a world for up to 3600 ticks, after which it despawns in a similar fashion to the Seeker.
+* 🔺 The Dummy no longer targets players in Spectator mode for any of its behaviors.
 * 🔧 Introduced **DummyLib**, a library for creating Dummy-like entities, with basic behaviors and utility functions for a highly customizable experience.
-  * *Lumenfuchs' Dummy*'s both "dummy entites" (Dummy and Seeker) are run with DummyLib!
+  * *Lumenfuchs' Dummy*'s both "dummy entities" (Dummy and Seeker) are run with DummyLib!
 
 ## v1.3.1 - 2025-02-15
 

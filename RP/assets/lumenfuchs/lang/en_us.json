@@ -179,31 +179,38 @@
     "lumenfuchs.setting.spawn_under_skylight.description": "If enabled, the Dummy can spawn in blocks exposed to the sky.",
     "lumenfuchs.setting.spawn_under_skylight.additions": "Requires \"Natural Spawning\" to be enabled to work.",
 
+    "lumenfuchs.setting.griefing.title": "Dummy Griefing: ",
+    "lumenfuchs.setting.griefing.description": "If enabled, the Dummy can place and break blocks in your world.",
+    "lumenfuchs.setting.griefing.additions": "Does not affect the initial \"blast\" of an activated Dummy Totem.",
 
-    "lumenfuchs.toggle_setting.attack_player.enable": "# Violence has been enabled..",
-    "lumenfuchs.toggle_setting.attack_player.disable": "# Violence has been disabled..",
 
-    "lumenfuchs.toggle_setting.drop_loot.enable": "# Dummy Loot has been enabled..",
-    "lumenfuchs.toggle_setting.drop_loot.disable": "# Dummy Loot has been disabled..",
+    "lumenfuchs.toggle_setting.attack_player.enable": "# Violence has been enabled.",
+    "lumenfuchs.toggle_setting.attack_player.disable": "# Violence has been disabled.",
 
-    "lumenfuchs.toggle_setting.forceload_chunks.enable": "# Force-loading has been enabled..",
-    "lumenfuchs.toggle_setting.forceload_chunks.disable": "# Force-loading has been disabled..",
+    "lumenfuchs.toggle_setting.drop_loot.enable": "# Dummy Loot has been enabled.",
+    "lumenfuchs.toggle_setting.drop_loot.disable": "# Dummy Loot has been disabled.",
 
-    "lumenfuchs.toggle_setting.freeze_when_stared.enable": "# Weeping has been enabled..",
-    "lumenfuchs.toggle_setting.freeze_when_stared.disable": "# Weeping has been disabled..",
+    "lumenfuchs.toggle_setting.forceload_chunks.enable": "# Force-loading has been enabled.",
+    "lumenfuchs.toggle_setting.forceload_chunks.disable": "# Force-loading has been disabled.",
+
+    "lumenfuchs.toggle_setting.freeze_when_stared.enable": "# Weeping has been enabled.",
+    "lumenfuchs.toggle_setting.freeze_when_stared.disable": "# Weeping has been disabled.",
 
     "lumenfuchs.toggle_setting.harm_on_touch.enable": "# Thorns have been enabled.",
     "lumenfuchs.toggle_setting.harm_on_touch.disable": "# Thorns have been disabled.",
 
-    "lumenfuchs.toggle_setting.natural_spawning.enable": "# Natural Spawning has been enabled..",
-    "lumenfuchs.toggle_setting.natural_spawning.disable": "# Natural Spawning has been disabled..",
+    "lumenfuchs.toggle_setting.natural_spawning.enable": "# Natural Spawning has been enabled.",
+    "lumenfuchs.toggle_setting.natural_spawning.disable": "# Natural Spawning has been disabled.",
 
-    "lumenfuchs.toggle_setting.spawn_under_skylight.enable": "# Moonlight Spawning has been enabled..",
-    "lumenfuchs.toggle_setting.spawn_under_skylight.disable": "# Moonlight Spawning has been disabled..",
+    "lumenfuchs.toggle_setting.spawn_under_skylight.enable": "# Moonlight Spawning has been enabled.",
+    "lumenfuchs.toggle_setting.spawn_under_skylight.disable": "# Moonlight Spawning has been disabled.",
 
-    "lumenfuchs.toggle_setting.stalk_player.enable": "# Stalking has been enabled..",
-    "lumenfuchs.toggle_setting.stalk_player.disable": "# Stalking has been disabled..",
+    "lumenfuchs.toggle_setting.griefing.enable": "# Vandalism has been enabled.",
+    "lumenfuchs.toggle_setting.griefing.disable": "# Vandalism has been disabled.",
 
-    "lumenfuchs.toggle_setting.stare_player.enable": "# Staring has been enabled..",
-    "lumenfuchs.toggle_setting.stare_player.disable": "# Staring has been disabled.."
+    "lumenfuchs.toggle_setting.stalk_player.enable": "# Stalking has been enabled.",
+    "lumenfuchs.toggle_setting.stalk_player.disable": "# Stalking has been disabled.",
+
+    "lumenfuchs.toggle_setting.stare_player.enable": "# Staring has been enabled.",
+    "lumenfuchs.toggle_setting.stare_player.disable": "# Staring has been disabled."
 }

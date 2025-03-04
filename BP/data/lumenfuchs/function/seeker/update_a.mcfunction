@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-27 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-27 .. 2025-03-02
 ## * 
 ## * Updates the Seeker with entity-like and custom behavior.
 
@@ -23,8 +23,8 @@ execute unless loaded ~ ~ ~ run return fail
 ## BEHAVIOR
 
 # Break light sources
-execute if block ~ ~ ~ #lumenfuchs:luminous unless block ~ ~ ~ redstone_torch \
-        if predicate dummy_lib:random/1 run setblock ~ ~ ~ air destroy
+execute if data storage lumenfuchs:flags { dummy: { griefing: true } } if predicate dummy_lib:random/1 \
+        if block ~ ~ ~ #lumenfuchs:luminous unless block ~ ~ ~ redstone_torch run setblock ~ ~ ~ air destroy
 
 
 ## MISC

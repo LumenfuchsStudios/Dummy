@@ -1,14 +1,14 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-02-20
+## * AydenTFoxx @ 2025-01-15 .. 2025-03-04
 ## * 
 ## * Turns the dummy towards its target player.
 ## * Also plays stepping noises while walking towards that player.
 
 
 # Look at player
-execute if entity @p[distance=1..] as @n[type=item_display, tag=dummy_lib.dummy_limb.head, distance=..3] at @s \
-		run rotate @s facing entity @p[distance=1..] eyes
+execute if entity @p[gamemode=!spectator, distance=1..] as @n[type=item_display, tag=dummy_lib.dummy_limb.head, distance=..3] at @s \
+		run rotate @s facing entity @p[gamemode=!spectator, distance=1..] eyes
 
-execute if entity @p[distance=1..] as @n[type=item_display, tag=dummy_lib.dummy_limb.head, distance=..3] \
+execute if entity @p[gamemode=!spectator, distance=1..] as @n[type=item_display, tag=dummy_lib.dummy_limb.head, distance=..3] \
 		store result entity @s Rotation[1] float 0.5 run data get entity @s Rotation[1]
 
 
@@ -30,10 +30,10 @@ execute if entity @s[tag=dummy_lib.dummy.is_walking] if score @n[type=item_displ
 
 # Limbs
 execute as @e[type=item_display, tag=dummy_lib.entity.dummy_limb, tag=!dummy_lib.dummy_limb.head, distance=..3] \
-		if function dummy_lib:utils/is_matching_guid run rotate @s facing entity @p eyes
+		if function dummy_lib:utils/is_matching_guid run rotate @s facing entity @p[gamemode=!spectator] eyes
 
 # Dummy
-rotate @s facing entity @p
+rotate @s facing entity @p[gamemode=!spectator]
 
 ## Remove Y-axis rotation
 

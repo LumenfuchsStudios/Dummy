@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-16 .. 2025-02-20
+## * AydenTFoxx @ 2025-01-16 .. 2025-03-02
 ## * 
 ## * Updates the Dummy with entity-like and custom behavior.
 
@@ -26,9 +26,8 @@ execute unless loaded ~ ~ ~ run return fail
 execute if data entity @s attack run function lumenfuchs:dummy/events/hurt with storage lumenfuchs:flags dummy.material
 
 # Break light sources
-execute if block ~ ~ ~ #lumenfuchs:luminous unless block ~ ~ ~ redstone_torch \
-        if predicate dummy_lib:random/10 run setblock ~ ~ ~ air destroy
-
+execute if data storage lumenfuchs:flags { dummy: { griefing: true } } if predicate dummy_lib:random/10 \
+        if block ~ ~ ~ #lumenfuchs:luminous unless block ~ ~ ~ redstone_torch run setblock ~ ~ ~ air destroy
 
 ## MISC
 

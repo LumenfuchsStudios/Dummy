@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-27 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-27 .. 2025-03-02
 ## * 
 ## * Updates the Seeker with entity-like and custom behavior.
 
@@ -42,10 +42,10 @@ $execute if predicate dummy_lib:random/5 \
 ## Move
 
 # Detect player looking at dummy
-$execute if data storage lumenfuchs:flags { dummy: { freeze_when_stared: true } } at @p[distance=..$(stare_player_distance)] positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 if entity @p[distance=..0.1] run tag @s add lumenfuchs.dummy.looked_at
+$execute if data storage lumenfuchs:flags { dummy: { freeze_when_stared: true } } at @p[gamemode=!spectator, distance=..$(stare_player_distance)] positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 if entity @p[gamemode=!spectator, distance=..0.1] run tag @s add lumenfuchs.dummy.looked_at
 
 # Remove looking tag
-execute if entity @s[tag=lumenfuchs.dummy.looked_at] at @p positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 unless entity @p[distance=..0.1] run tag @s remove lumenfuchs.dummy.looked_at
+execute if entity @s[tag=lumenfuchs.dummy.looked_at] at @p positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 unless entity @p[gamemode=!spectator, distance=..0.1] run tag @s remove lumenfuchs.dummy.looked_at
 
 
 # Start walking

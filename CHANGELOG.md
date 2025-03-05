@@ -22,7 +22,7 @@ Legend:
   * *Dimensional Bore* drops the Dummy all the way to the Void, breaking (configurable) any non-indestructible blocks (such as Bedrock) in the way.
     * A random player is also set to immediately attempt a Dummy natural spawning, if conditions are appropriate.
     * This will only trigger if the Dummy is left alone in a dimension with no players at all.
-  * *Spatial Warp* (soon!) causes the Dummy to teleport around its nearest player with the same algorithm used for spawning it.
+  * *Spatial Fold* (soon!) causes the Dummy to teleport around its nearest player with the same algorithm used for spawning it.
     * This will trigger when the Dummy can't *stare* a nearby player; If it can still *walk towards them*, the Dummy might cancel this ability in favor of simply walking instead.
 * ⭐ Added new setting to control the Dummy's "destructive" abilities.
   * This new setting also defines whether the Dummy and Seeker are able to break light-emitting blocks in their feet, which previously had no means to be disabled.

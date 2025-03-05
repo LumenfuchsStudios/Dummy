@@ -43,8 +43,8 @@ execute if score @s dummy_lib.dummy matches 180 if data storage lumenfuchs:flags
 
 # Dig through blocks (breakable: non Dragon-immune)
 # If dummy.griefing is set to false, this has the same behavior as for unbreakables.
-execute if score @s dummy_lib.dummy matches 180.. unless block ~ ~-1 ~ #dragon_immune run particle soul_fire_flame ^ ^ ^0.5 0.1 0.1 0.1 0.01 2
-execute if score @s dummy_lib.dummy matches 180.. unless block ~ ~-1 ~ #dragon_immune run particle soul_fire_flame ^ ^ ^-0.5 0.1 0.1 0.1 0.01 2
+execute if score @s dummy_lib.dummy matches 180.. unless block ~ ~-1 ~ #dragon_immune run particle soul_fire_flame ^ ^ ^0.5 0.1 0.1 0.1 0.01 2 force
+execute if score @s dummy_lib.dummy matches 180.. unless block ~ ~-1 ~ #dragon_immune run particle soul_fire_flame ^ ^ ^-0.5 0.1 0.1 0.1 0.01 2 force
 
 execute if score @s dummy_lib.dummy matches 180.. unless data storage lumenfuchs:flags { dummy: { griefing: true } } \
 		run return run function dummy_lib:physics/move { direction: "~ ~-0.5 ~" }

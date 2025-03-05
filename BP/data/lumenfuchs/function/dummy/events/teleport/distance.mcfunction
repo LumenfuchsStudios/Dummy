@@ -9,7 +9,7 @@ execute unless score @s dummy_lib.dummy matches 20.. if predicate dummy_lib:rand
 
 
 # Display Warp indicator
-particle soul_fire_flame ~ ~1.5 ~ 0.05 0.05 0.05 0.05 6 force
+particle soul_fire_flame ~ ~1.2 ~ 0.05 0.05 0.05 0.03 8 force
 
 # Prepare warp
 function lumenfuchs:dummy/events/teleport/_prepare

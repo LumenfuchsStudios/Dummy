@@ -1,6 +1,6 @@
 ## * AydenTFoxx @ 2025-01-13 .. 2025-03-04
 ## * 
-## * Summons a "fake Player" entity, with a Block Display-based model.
+## * Summons a "fake Player" entity, with an Item Display-based model.
 
 
 ## Core

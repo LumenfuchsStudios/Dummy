@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-11 .. 2025-02-20
+## * AydenTFoxx @ 2025-01-11 .. 2025-03-02
 ## * 
 ## * Initializes features required for the proper functioning of the datapack.
 
@@ -47,7 +47,8 @@ scoreboard players enable @a lumenfuchs.settings
 # 4 | 1.2.0
 # 5 | 1.2.1 - 1.2.2
 # 6 | 1.3.0 - 1.3.1
-scoreboard players set #lumenfuchs_dummy.target_version dummy_lib.dummy 6
+# 7 | 1.4.0
+scoreboard players set #lumenfuchs_dummy.target_version dummy_lib.dummy 7
 
 # Set current version to latest
 execute unless score #lumenfuchs_dummy.current_version dummy_lib.dummy matches 1.. unless data storage lumenfuchs:flags { first_load: true } \

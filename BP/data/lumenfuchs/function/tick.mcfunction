@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-15 .. 2025-03-04
 ## * 
 ## * Ticks all code from this datapack at a custom rate.
 
@@ -53,7 +53,7 @@ scoreboard players set @a[scores={ lumenfuchs.settings=1.. }] lumenfuchs.setting
 
 # Tick spawning timer when in poorly lit areas
 execute if data storage lumenfuchs:flags { dummy: { natural_spawning: true } } unless entity @n[type=interaction, tag=lumenfuchs.entity.dummy] \
-		as @a at @s if predicate dummy_lib:block/light/low unless predicate dummy_lib:block/is_under_skylight \
+		as @a[gamemode=!spectator] at @s if predicate dummy_lib:block/light/low unless predicate dummy_lib:block/is_under_skylight \
 		run function lumenfuchs:dummy/events/spawn/tick_spawning
 
 # Attempt spawning
@@ -63,9 +63,9 @@ execute if data storage lumenfuchs:flags { dummy: { natural_spawning: true } } a
 
 # Remove score when outside valid areas
 execute if data storage lumenfuchs:flags { dummy: { natural_spawning: true } } unless entity @n[type=interaction, tag=lumenfuchs.entity.dummy] \
-		as @a[scores={ dummy_lib.dummy=1.. }, predicate=!dummy_lib:block/light/low] at @s run scoreboard players remove @s dummy_lib.dummy 1
+		as @a[gamemode=!spectator, scores={ dummy_lib.dummy=1.. }, predicate=!dummy_lib:block/light/low] at @s run scoreboard players remove @s dummy_lib.dummy 1
 
-execute if data storage lumenfuchs:flags { dummy: { natural_spawning: true } } run scoreboard players reset @a[scores={ dummy_lib.dummy=..0 }] dummy_lib.dummy
+execute if data storage lumenfuchs:flags { dummy: { natural_spawning: true } } run scoreboard players reset @a[gamemode=!spectator, scores={ dummy_lib.dummy=..0 }] dummy_lib.dummy
 
 
 ## DUMMY SUMMONING (EGG)

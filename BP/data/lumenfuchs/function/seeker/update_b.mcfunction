@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-27 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-27 .. 2025-03-04
 ## * 
 ## * Updates the Seeker with entity-like and custom behavior.
 
@@ -20,7 +20,9 @@ execute if score @s lumenfuchs.settings matches 600.. run return run function du
 
 # Turn to mob
 $execute if data storage lumenfuchs:flags { dummy: { stare_player: true } } if entity @n[type=!#dummy_lib:technical, type=!player, distance=0.5..$(stare_player_distance)] run function lumenfuchs:seeker/utils/turn_towards_mob
-execute if data storage lumenfuchs:flags { dummy: { stalk_player: true, stare_player: false } } if entity @s[tag=dummy_lib.dummy.is_walking] anchored eyes run function lumenfuchs:seeker/utils/turn_towards_mob
+$execute if data storage lumenfuchs:flags { dummy: { stalk_player: true } } unless entity @n[type=!#dummy_lib:technical, type=!player, distance=0.5..$(stare_player_distance)] if entity @s[tag=dummy_lib.dummy.is_walking] anchored eyes run function lumenfuchs:seeker/utils/turn_towards_mob
+
+$execute if data storage lumenfuchs:flags { dummy: { stalk_player: true } } unless entity @n[type=!#dummy_lib:technical, type=!player, distance=0.5..$(stare_player_distance)] as @n[type=item_display, tag=dummy_lib.dummy_limb.head, distance=..3] if function dummy_lib:utils/is_matching_guid run data modify entity @s Rotation set from entity @n[type=item_display, tag=dummy_lib.dummy_limb.torso, distance=..3] Rotation
 
 
 # Wave limbs
@@ -42,10 +44,10 @@ $execute if predicate dummy_lib:random/5 \
 ## Move
 
 # Detect player looking at dummy
-$execute if data storage lumenfuchs:flags { dummy: { freeze_when_stared: true } } at @p[distance=..$(stare_player_distance)] positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 if entity @p[distance=..0.1] run tag @s add lumenfuchs.dummy.looked_at
+$execute if data storage lumenfuchs:flags { dummy: { freeze_when_stared: true } } at @p[gamemode=!spectator, distance=..$(stare_player_distance)] positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 if entity @p[gamemode=!spectator, distance=..0.1] run tag @s add lumenfuchs.dummy.looked_at
 
 # Remove looking tag
-execute if entity @s[tag=lumenfuchs.dummy.looked_at] at @p positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 unless entity @p[distance=..0.1] run tag @s remove lumenfuchs.dummy.looked_at
+execute if entity @s[tag=lumenfuchs.dummy.looked_at] at @p positioned ^ ^ ^1 facing entity @s feet positioned ^ ^ ^-1 unless entity @p[gamemode=!spectator, distance=..0.1] run tag @s remove lumenfuchs.dummy.looked_at
 
 
 # Start walking

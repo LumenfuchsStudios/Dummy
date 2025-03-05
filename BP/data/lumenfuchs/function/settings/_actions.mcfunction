@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-15 .. 2025-03-02
 ## * 
 ## * Executes all actions from the settings panel.
 
@@ -62,8 +62,10 @@ execute if entity @s[scores={ lumenfuchs.settings=214 }] run data modify storage
 execute if entity @s[scores={ lumenfuchs.settings=215 }] run data modify storage lumenfuchs:flags dummy.natural_spawning set value true
 
 execute if entity @s[scores={ lumenfuchs.settings=216 }] run data modify storage lumenfuchs:flags dummy.spawn_under_skylight set value true
+execute if entity @s[scores={ lumenfuchs.settings=218 }] run data modify storage lumenfuchs:flags dummy.griefing set value true
 
 execute if entity @s[scores={ lumenfuchs.settings=214..216 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
+execute if entity @s[scores={ lumenfuchs.settings=218 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
 
 execute if entity @s[scores={ lumenfuchs.settings=400 }] run data remove storage lumenfuchs:flags first_load
 
@@ -95,9 +97,11 @@ execute as @s[scores={ lumenfuchs.settings=305 }] run function lumenfuchs:settin
 execute as @s[scores={ lumenfuchs.settings=306 }] run function lumenfuchs:settings/natural_spawning
 
 execute as @s[scores={ lumenfuchs.settings=316 }] run function lumenfuchs:settings/spawn_under_skylight
+execute as @s[scores={ lumenfuchs.settings=318 }] run function lumenfuchs:settings/griefing
 
 execute if entity @s[scores={ lumenfuchs.settings=305..306 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
 execute if entity @s[scores={ lumenfuchs.settings=316 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
+execute if entity @s[scores={ lumenfuchs.settings=318 }] run function lumenfuchs:settings/_menu/misc with storage lumenfuchs:flags dummy
 
 
 ## * EDIT

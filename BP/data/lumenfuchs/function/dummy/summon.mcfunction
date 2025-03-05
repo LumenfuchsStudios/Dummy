@@ -1,6 +1,6 @@
-## * AydenTFoxx @ 2025-01-13 .. 2025-02-20
+## * AydenTFoxx @ 2025-01-13 .. 2025-03-04
 ## * 
-## * Summons a "fake Player" entity, with a block display-based model.
+## * Summons a "fake Player" entity, with an Item Display-based model.
 
 
 ## Core
@@ -115,6 +115,10 @@ summon item_display ~0.5 ~1.64 ~0.5 { \
 ## Set Health
 execute as @e[type=interaction, tag=lumenfuchs.entity.dummy, distance=..1] unless score @s dummy_lib.guid matches 1.. run scoreboard players set @s dummy_lib.health 8
 
+# Inherit Health (Respawn)
+execute if score @s dummy_lib.health matches 1.. as @e[type=interaction, tag=lumenfuchs.entity.dummy, distance=..1] unless score @s dummy_lib.guid matches 1.. run scoreboard players operation @s dummy_lib.health = @n[type=marker, tag=lumenfuchs.dummy_spawn.summon_dummy, distance=..1] dummy_lib.health
+
+
 ## Set Materials
 execute positioned ~0.5 ~1 ~0.5 as @n[type=item_display, tag=dummy_lib.dummy_limb.head, distance=..2] \
 		unless score @s dummy_lib.guid matches 1.. run data modify entity @s item.id set string storage lumenfuchs:flags dummy.material.head
@@ -133,6 +137,7 @@ execute positioned ~0.5 ~1 ~0.5 as @n[type=item_display, tag=dummy_lib.dummy_lim
 
 execute positioned ~0.5 ~1 ~0.5 as @n[type=item_display, tag=dummy_lib.dummy_limb.r_leg, distance=..2] \
 		unless score @s dummy_lib.guid matches 1.. run data modify entity @s item.id set string storage lumenfuchs:flags dummy.material.right_leg
+
 
 ## Grant Advancement
 advancement grant @a[advancements={ lumenfuchs:the_dummy=false }, distance=..16] only lumenfuchs:the_dummy

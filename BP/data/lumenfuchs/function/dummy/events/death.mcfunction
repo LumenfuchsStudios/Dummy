@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-14 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-14 .. 2025-03-02
 ## * 
 ## * Pauses the Dummy for a moment then removes it.
 
@@ -23,11 +23,11 @@ effect give @a[distance=..16] darkness 4 0
 rotate @s ~20 ~
 
 # Display visual feedback
-particle large_smoke ^ ^0.5 ^0.5 0.0 0.2 0.0 0.01 4
+particle large_smoke ^ ^0.5 ^0.5 0.0 0.2 0.0 0.01 4 force
 particle large_smoke ^ ^0.5 ^-0.5 0.0 0.2 0.0 0.01 4
 particle portal ~ ~1 ~ 0.0 0.2 0.0 0.5 8
 
-execute if score @s dummy_lib.clock matches 59.. run particle flash ~ ~0.8 ~
+execute if score @s dummy_lib.clock matches 59.. run particle flash ~ ~0.8 ~ 0.0 0.0 0.0 1 1 force
 
 
 ## END

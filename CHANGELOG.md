@@ -8,6 +8,19 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
+## v1.4.1 - Unreleased
+
+### Codename: `Hotfix: Codex`
+
+* ✳️ Added "Hotfix: " prefix to PATCH releases in the changelog for better consistency.
+* 🐛 Fixed datapack's intro message not falling back to English when no translation was available.
+* ⭐ Added a new drop for the Dummy: the *Void Shard*.
+  * By holding right-click, the player can "charge" a powerful blast of dark energy, akin to the Dummy's own attack.
+  * Holding it in the offhand and using the item allows for an alternative attack, which targets multiple mobs at the cost of lessened damage.
+  * Exclusively dropped by the Dummy; Drop chance is separate from other items (i.e. it has a separate pool).
+* ⭐ \[WIP\] Added Dummynomicon, a comprehensive resource containing all knowledge regarding the Dummy one may ever need.
+  <!-- * \[WIP\] A "secret" variant regarding the Seeker may also be discovered. Perhaps fusing the two may reveal even more knowledge otherwise hidden away in plain sight... -->
+
 ## v1.4.0 - 2025-03-04
 
 ### Codename: `DummyLib`
@@ -35,7 +48,7 @@ Legend:
 
 ## v1.3.1 - 2025-02-15
 
-### Codename: `Dummy-Lang`
+### Codename: `Hotfix: DummyLang`
 
 * ✳️ Separated Dummy's code into `BP` and `RP` folders: The former holds the original datapack; The latter, the newest translations resource pack.
 * 🐛 Fixed Dummy/Seeker sinking on Dirt Path blocks.

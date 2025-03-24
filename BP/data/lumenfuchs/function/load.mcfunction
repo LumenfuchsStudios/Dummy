@@ -9,9 +9,9 @@
 execute unless entity @n[type=player] run return run schedule function lumenfuchs:load 20t
 
 # Display join message
-execute unless data storage lumenfuchs:flags { first_load_true: true } run tellraw @a { "translate": "lumenfuchs.intro.init", "color": "yellow", "with": [ { "selector": "@p" } ], "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.intro.init.info", "fallback": "First time here? Try running %s for a start!", "with": [ { "text": "/function lumenfuchs:help", "color": "yellow" } ] } }, "clickEvent": { "action": "suggest_command", "value": "/trigger lumenfuchs.settings set 200" } }
+execute unless data storage lumenfuchs:flags { first_load_true: true } run tellraw @a { "translate": "lumenfuchs.intro.init", "fallback": "%s has joined the world.", "color": "yellow", "with": [ { "selector": "@p" } ], "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.intro.init.info", "fallback": "First time here? Try running %s for a start!", "with": [ { "text": "/function lumenfuchs:help", "color": "yellow" } ] } }, "clickEvent": { "action": "suggest_command", "value": "/trigger lumenfuchs.settings set 200" } }
 
-execute if data storage lumenfuchs:flags { first_load_true: true } unless data storage lumenfuchs:flags { first_load: true } run tellraw @a { "translate": "lumenfuchs.intro.reload", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.intro.reload.info", "fallback": "Your datapack got updated! Click here for a list of latest changes." } }, "clickEvent": { "action": "open_url", "value": "https://github.com/LumenfuchsStudios/Dummy/blob/main/CHANGELOG.md" } }
+execute if data storage lumenfuchs:flags { first_load_true: true } unless data storage lumenfuchs:flags { first_load: true } run tellraw @a { "translate": "lumenfuchs.intro.reload", "fallback": "Hello again.", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.intro.reload.info", "fallback": "Your datapack got updated! Click here for a list of latest changes." } }, "clickEvent": { "action": "open_url", "value": "https://github.com/LumenfuchsStudios/Dummy/blob/main/CHANGELOG.md" } }
 
 # Grant advancement
 advancement grant @a[advancements={ lumenfuchs:root=false }] only lumenfuchs:root

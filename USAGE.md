@@ -8,7 +8,7 @@ The datapack adds a singular entity: the Dummy. Relentless and nigh-unstoppable,
 
 The Dummy is a condensed mass of darkness, said to be from the depths of the Void. Some even go as far as to say it is an omen which seeks those who are abandoned by their gods.
 
-By default, the Dummy does not spawn on its own (see [here](#dummynatural_spawning-default-false)). In order to be present in a world, the player must summon it by either of two methods:
+By default, the Dummy does not spawn on its own (see [here](#dummynatural_spawning-default-true)). In order to be present in a world, the player must summon it by either of two methods:
 
 * Running the command: `/function lumenfuchs:dummy/summon`
 * Building a Dummy Totem, made with (almost) any black-dyed material placed in a T shape, with a Glowstone block at its top.
@@ -40,7 +40,7 @@ The datapack is a proof-of-concept at creating entities without basing it on an 
 
 The Dummy is composed of six `minecraft:item_display` entities (the "limbs" -- arms, legs, torso and head) and one `minecraft:interaction` (the hitbox).
 
-All composing entities are assigned a Globally Unique Identifier (with the `dummy_lib.guid` objective) at spawn, which the `interaction` entity uses for moving the correct limbs around. A custom *move* function is implemented (as `lumenfuchs:dummy/physics/move`), which teleports all limbs by their GUID to the target position, then realigns each one with the correct Y position. All other functions which target the limbs also use this GUID for ensuring the targeted limb belongs to that Dummy.
+All composing entities are assigned a Globally Unique Identifier (with the `dummy_lib.guid` objective) at spawn, which the `interaction` entity uses for moving the correct limbs around. A custom *move* function is implemented (as `dummy_lib:physics/move`), which teleports all limbs by their GUID to the target position, then realigns each one with the correct Y position. All other functions which target the limbs also use this GUID for ensuring the targeted limb belongs to that Dummy.
 
 Some observations on working with a non-mob custom entity:
 
@@ -51,7 +51,7 @@ Some observations on working with a non-mob custom entity:
 
 The task is complex, and takes a significantly higher amount of time in comparison to using an existing entity for a base. However, unmatched levels of customizability are achievable by this approach, with entities being as simple or as complex as the developer desires.
 
-The Dummy is but a mere example. Many of its quirks are fitting to the character, but a decently-coded datapack could do much more with remarkable results. That is the goal of creating this datapack.
+The Dummy is but a mere example. Many of its quirks are fitting to the character, but a decently-coded datapack could do much more with remarkable results. That is the goal with creating this datapack.
 
 ## Settings
 
@@ -142,6 +142,20 @@ If the Dummy should harm mobs on physical contact. When set to `true`, the Dummy
 
 Mobs damaged by this feature do not aggro on the Dummy, and can actually get killed on their own by this.
 
+#### dummy.drop_loot (Default: `true`)
+
+If enabled, the Dummy will drop a random item from its own loot table. These include all blocks from the `#lumenfuchs:dummy_material` item tag, spawn eggs for the Dummy and Seeker entities, and the Cleanser item, which deals massively extra damage to both entities added by the datapack.
+
+The following table describes the Dummy's possible loot:
+
+| Item | Weight |
+| :--- | :----: |
+| Empty | 10 (36%) |
+| <img src="https://minecraft.wiki/images/Invicon_Black_Concrete.png" alt="Black Concrete block" style="width: 16px; height: auto;" /> Random Block | 8 (28%) |
+| <img src="https://minecraft.wiki/images/Invicon_Endermite_Spawn_Egg.png" alt="Endermite Spawn Egg" /> Seeker Spawn Egg | 5 (18%) |
+| <img src="https://minecraft.wiki/images/Invicon_Debug_Stick.gif" alt="Stick (Enchanted)" style="width: 16px; height: auto;" /> The Cleanser | 3 (11%) |
+| <img src="https://minecraft.wiki/images/Invicon_Wither_Skeleton_Spawn_Egg.png" alt="Wither Skeleton Spawn Egg" /> Dummy Spawn Egg | 2 (7%) |
+
 ### Miscellaneous
 
 #### dummy.forceload_chunks (Default: `true`)
@@ -168,19 +182,11 @@ If enabled and `dummy.natural_spawning` is also set to `true`, the Dummy is able
 
 The player still must not be under skylight for the game to attempt a Dummy spawning; It does, however, allow for more spawn opportunities, and brings the Dummy a bit closer (but never truly) to how regular hostile mobs spawn in the regular game.
 
-#### dummy.drop_loot (Default: `true`)
+#### dummy.griefing (Default: `true`)
 
-If enabled, the Dummy will drop one to three random items from its own loot pool. These include all blocks from the `#lumenfuchs:dummy_material` item tag, spawn eggs for the Dummy and Seeker entities, and the Cleanser item, which deals extra damage to both entities added by the datapack.
+If enabled, the Dummy's *Dimensional Bore* ability will be able to break blocks below itself when activated; Furthermore, luminous blocks (`#lumenfuchs:luminous`) will be randomly broken if the Dummy steps on them. When set to `false`, the Dummy will simply "sink" into terrain, and will not affect blocks within the world.
 
-The following table describes the Dummy's possible loot:
-
-| Item | Weight |
-| :--- | :----: |
-| Empty | 10 (36%) |
-| <img src="https://minecraft.wiki/images/Invicon_Black_Concrete.png" alt="Black Concrete block" style="width: 16px; height: auto;" /> Random Block | 8 (28%) |
-| <img src="https://minecraft.wiki/images/Invicon_Endermite_Spawn_Egg.png" alt="Endermite Spawn Egg" /> Seeker Spawn Egg | 5 (18%) |
-| <img src="https://minecraft.wiki/images/Invicon_Debug_Stick.gif" alt="Stick (Enchanted)" style="width: 16px; height: auto;" /> The Cleanser | 3 (11%) |
-| <img src="https://minecraft.wiki/images/Invicon_Wither_Skeleton_Spawn_Egg.png" alt="Wither Skeleton Spawn Egg" /> Dummy Spawn Egg | 2 (7%) |
+This setting will not change the 3x3x3 area at which blocks are broken upon building a Dummy Totem.
 
 ## Performance
 

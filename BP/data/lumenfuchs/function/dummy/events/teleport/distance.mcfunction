@@ -16,7 +16,7 @@ function lumenfuchs:dummy/events/teleport/_prepare
 
 
 # Spawn anchor
-execute if score @s dummy_lib.dummy matches 200.. at @p[gamemode=!spectator] \
+execute if score @s dummy_lib.dummy matches 200.. as @p[gamemode=!spectator] at @s \
 		unless score @s lumenfuchs.purity matches 12.. run function lumenfuchs:dummy/events/spawn/try_spawning
 
 

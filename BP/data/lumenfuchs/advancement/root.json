@@ -14,7 +14,7 @@
 			"fallback": "Lesser projects of the Golden Light."
 		},
 		"frame": "task",
-		"background": "minecraft:textures/block/tinted_glass.png",
+		"background": "block/tinted_glass",
 		"announce_to_chat": false,
 		"show_toast": false
 	},

@@ -1,7 +1,6 @@
 {
 	"pack": {
 		"description": "A curious entity with no concept of personal space.",
-		"pack_format": 61,
-		"supported_formats": [ 57, 61 ]
+		"pack_format": 71
 	}
 }

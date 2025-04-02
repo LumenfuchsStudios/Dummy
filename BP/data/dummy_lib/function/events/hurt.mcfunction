@@ -1,13 +1,10 @@
-## * AydenTFoxx @ 2025-01-14 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-14 .. 2025-04-01
 ## * 
 ## * Simulates the dummy entity taking damage.
 
 ## ? Function Arguments:
 #? torso: The ID of the material for the dummy entity's hurt particles; Reuses the torso's material by default.
 
-
-# Remove trigger
-data remove entity @s attack
 
 # Ignore if invulnerable
 execute if entity @s[tag=dummy_lib.dummy.is_hurt] run return fail
@@ -42,3 +39,6 @@ execute facing entity @p eyes run function dummy_lib:physics/move { direction: "
 
 # Add tag
 tag @s add dummy_lib.dummy.is_hurt
+
+# Remove trigger
+data remove entity @s attack

@@ -8,18 +8,28 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
-## v1.4.1 - Unreleased
+## v1.5.0 - 2025-04-01
 
-### Codename: `Hotfix: Codex`
+### Codename: `Ascent`
 
 * ✳️ Added "Hotfix: " prefix to PATCH releases in the changelog for better consistency.
+* ✳️ Updated icons for both the Datapack and Resource Pack.
+* ✳️ Upgraded minimum game version to 1.21.5; Support for 1.21.4 and below will be dropped.
 * 🐛 Fixed datapack's intro message not falling back to English when no translation was available.
 * ⭐ Added a new drop for the Dummy: the *Void Shard*.
   * By holding right-click, the player can "charge" a powerful blast of dark energy, akin to the Dummy's own attack.
   * Holding it in the offhand and using the item allows for an alternative attack, which targets multiple mobs at the cost of lessened damage.
   * Exclusively dropped by the Dummy; Drop chance is separate from other items (i.e. it has a separate pool).
-* ⭐ \[WIP\] Added Dummynomicon, a comprehensive resource containing all knowledge regarding the Dummy one may ever need.
-  <!-- * \[WIP\] A "secret" variant regarding the Seeker may also be discovered. Perhaps fusing the two may reveal even more knowledge otherwise hidden away in plain sight... -->
+* ⭐ Added new *Purity* mechanic for the Dummy:
+  * Killing a Dummy increases Purity by 1;
+  * Summoning a Dummy (via its Totem) decreases Purity by 1;
+  * Using the Void Shard has a chance to decrease Purity based on how many targets were hit, if at all.
+  * *Purity* affects the following mechanics:
+    * High Purity levels prevent the Dummy from naturally spawning near the player and grants the "Ascended Being" advancement;
+    * Low Purity levels make the Dummy's natural spawning faster, and grants the "Rotten Within" advancement.
+* 🔧 Killing a DummyLib entity now keeps the `minecraft:interaction`'s `attack` NBT.
+* 🔧 Introduced a WIP in-game book for relevant info on the datapack's functioning.
+  * Can only be given with the `/function lumenfuchs:items/dummy_book` command.
 
 ## v1.4.0 - 2025-03-04
 

@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-03-04
+## * AydenTFoxx @ 2025-03-04 .. 2025-04-02
 ## * 
 ## * "Respawns" the Dummy near a random/nearest player, with the same health it had beforehand.
 ## * Used whenever the Dummy is stuck and cannot target any player within its staring range.
@@ -16,7 +16,8 @@ function lumenfuchs:dummy/events/teleport/_prepare
 
 
 # Spawn anchor
-execute if score @s dummy_lib.dummy matches 200.. at @p[gamemode=!spectator] run function lumenfuchs:dummy/events/spawn/try_spawning
+execute if score @s dummy_lib.dummy matches 200.. as @p[gamemode=!spectator] at @s \
+		unless score @s lumenfuchs.purity matches 12.. run function lumenfuchs:dummy/events/spawn/try_spawning
 
 
 # Set health of new Dummy

@@ -27,6 +27,9 @@
     "item.lumenfuchs.settings_book": "Escreva-me!",
     "item.lumenfuchs.settings_book.lore": "Editando configuração \"%s\".",
 
+    "item.lumenfuchs.dummy_attack": "Fragmento do Vazio",
+    "item.lumenfuchs.dummy_attack.lore": "\"Uma fração do poder sombrio do Dummy.\"",
+
 
     "lumenfuchs.help.1": "Olá! Bem-vindo a %s,\n um datapack cujo item principal é o %s,",
     "lumenfuchs.help.2": "uma \"entidade\" cujo passatempo principal é te observar e perseguir,\n não importa como, não importa onde.",

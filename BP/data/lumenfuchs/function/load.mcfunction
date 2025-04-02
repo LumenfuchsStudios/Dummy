@@ -53,7 +53,7 @@ scoreboard players enable @a lumenfuchs.settings
 # 5 | 1.2.1 - 1.2.2
 # 6 | 1.3.0 - 1.3.1
 # 7 | 1.4.0
-# 8 | 1.5.0
+# 8 | 1.5.0 - 1.5.1
 scoreboard players set #lumenfuchs_dummy.target_version dummy_lib.dummy 8
 
 # Set current version to latest

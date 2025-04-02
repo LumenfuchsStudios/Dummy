@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-13 .. 2025-03-02
+## * AydenTFoxx @ 2025-01-13 .. 2025-04-02
 ## * 
 ## * Updates the Dummy with entity-like and custom behavior.
 
@@ -85,8 +85,9 @@ execute if score @s dummy_lib.dummy matches 20.. if entity @p[distance=0..] run 
 
 ## Attack
 
-# Harm non-player entities
-execute if data storage lumenfuchs:flags { dummy: { harm_on_touch: true } } run damage @n[type=!#dummy_lib:technical, distance=..1] 2 thorns by @s
+# Harm non-player entities (ignored by Purity)
+execute if data storage lumenfuchs:flags { dummy: { harm_on_touch: true } } as @e[type=!#dummy_lib:technical, distance=..1] \
+		unless score @s lumenfuchs.purity matches 12.. run damage @s 2 thorns by @n[type=interaction, tag=lumenfuchs.entity.dummy, distance=..2]
 
 
 # Prepare attack

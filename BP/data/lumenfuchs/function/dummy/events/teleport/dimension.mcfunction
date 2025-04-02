@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-03-02 .. 2025-03-04
+## * AydenTFoxx @ 2025-03-02 .. 2025-04-02
 ## * 
 ## * Tunnels through all non-unbreakable terrain until the Dummy hits the Void.
 ## * Used whenever the Dummy is stuck in a dimension where no other player is present.
@@ -31,7 +31,7 @@ execute if score @s dummy_lib.dummy matches 180 run playsound entity.wither.deat
 
 # Set natural spawning trigger to random player
 execute if score @s dummy_lib.dummy matches 180 as @r unless score @s dummy_lib.dummy matches 4000.. \
-		run scoreboard players set @s dummy_lib.dummy 4000
+		unless score @s lumenfuchs.purity matches 12.. run scoreboard players set @s dummy_lib.dummy 4000
 
 
 # Build Shrine at initial position

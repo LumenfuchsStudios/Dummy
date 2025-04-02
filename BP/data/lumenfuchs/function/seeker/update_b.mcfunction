@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-27 .. 2025-03-04
+## * AydenTFoxx @ 2025-01-27 .. 2025-04-02
 ## * 
 ## * Updates the Seeker with entity-like and custom behavior.
 
@@ -73,5 +73,6 @@ execute if entity @s[tag=dummy_lib.dummy.is_walking, tag=!lumenfuchs.dummy.looke
 
 ## Attack
 
-# Harm non-player entities
-execute if data storage lumenfuchs:flags { dummy: { harm_on_touch: true } } run damage @n[type=!#dummy_lib:technical, distance=..1] 2 thorns by @s
+# Harm non-player entities (ignored by Purity)
+execute if data storage lumenfuchs:flags { dummy: { harm_on_touch: true } } as @e[type=!#dummy_lib:technical, distance=..1] \
+		unless score @s lumenfuchs.purity matches 12.. run damage @s 2 thorns by @n[type=interaction, tag=lumenfuchs.entity.dummy, distance=..2]

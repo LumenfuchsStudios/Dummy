@@ -8,9 +8,23 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
+## v1.5.1 - 2025-04-02
+
+### Codename: `Hotfix: Folly`
+
+* ✳️ Created new branch for 1.21.2 to 1.21.4-compatible versions of the datapack (`devel-1.21.4`)
+  * Releases will now come in two flavors: `1.21.4-` (1.21.2 - 1.21.4) and `1.21.5+` (1.21.5 and above); Versions outside this range remain unsupported.
+    * This effectively keeps *Lumenfuchs' Dummy* as a 1.21.2+ project as it's always been. Happy April y'all :)
+* 🐛 Fixed translation keys for the Void Shard item being absent in both translation files.
+* 🔺 Changed impact of Purity on both extremes:
+  * High levels of Purity now prevent the Dummy from warping to the player; The player is also immune to the Dummy's "thorns" damage.
+    * The Dummy may still pathfind towards high-Purity players, however.
+  * The lowest levels of Purity now make the Void Shard even deadlier than before, but make the Dummy's attack *also* deadlier to the player!
+* 🔧 Fixed Seeker's unique tag prefixed with DummyLib's namespace rather than Lumenfuchs's. (i.e. `dummy_lib.entity.seeker` -> `lumenfuchs.entity.seeker`)
+
 ## v1.5.0 - 2025-04-01
 
-### Codename: `Ascent`
+### Codename: `Ascension`
 
 * ✳️ Added "Hotfix: " prefix to PATCH releases in the changelog for better consistency.
 * ✳️ Updated icons for both the Datapack and Resource Pack.

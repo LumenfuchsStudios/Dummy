@@ -10,7 +10,7 @@ Legend:
 
 ## v1.5.0 - 2025-04-01
 
-### Codename: `Ascent`
+### Codename: `Ascension`
 
 * ✳️ Added "Hotfix: " prefix to PATCH releases in the changelog for better consistency.
 * ✳️ Updated icons for both the Datapack and Resource Pack.

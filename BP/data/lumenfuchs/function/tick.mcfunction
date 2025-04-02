@@ -63,7 +63,7 @@ execute if data storage lumenfuchs:flags { dummy: { natural_spawning: true } } a
 
 # Remove score when outside valid areas
 execute if data storage lumenfuchs:flags { dummy: { natural_spawning: true } } unless entity @n[type=interaction, tag=lumenfuchs.entity.dummy] \
-		as @a[gamemode=!spectator, tag=!lumenfuchs.player.purity, scores={ dummy_lib.dummy=1.. }, predicate=!dummy_lib:block/light/low] at @s run scoreboard players remove @s dummy_lib.dummy 1
+		as @a[gamemode=!spectator, scores={ dummy_lib.dummy=1.. }, predicate=!dummy_lib:block/light/low] at @s run scoreboard players remove @s dummy_lib.dummy 1
 
 execute if data storage lumenfuchs:flags { dummy: { natural_spawning: true } } run scoreboard players reset @a[gamemode=!spectator, scores={ dummy_lib.dummy=..0 }] dummy_lib.dummy
 

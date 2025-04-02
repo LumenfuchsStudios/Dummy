@@ -21,7 +21,7 @@ Legend:
   * Holding it in the offhand and using the item allows for an alternative attack, which targets multiple mobs at the cost of lessened damage.
   * Exclusively dropped by the Dummy; Drop chance is separate from other items (i.e. it has a separate pool).
 * ⭐ Added new *Purity* mechanic for the Dummy:
-  * Killing a Dummy increases Purity by 1;
+  * Killing a Dummy/Seeker increases Purity by 1;
   * Summoning a Dummy (via its Totem) decreases Purity by 1;
   * Using the Void Shard has a chance to decrease Purity based on how many targets were hit, if at all.
   * *Purity* affects the following mechanics:

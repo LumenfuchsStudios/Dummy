@@ -13,7 +13,8 @@
         },
         "description": {
             "translate": "advancements.lumenfuchs.purity.description",
-            "fallback": "The shadows hold no power unto thyself."
+            "fallback": "The shadows hold no power unto thyself.",
+            "color": "yellow"
         },
         "frame": "challenge"
     },

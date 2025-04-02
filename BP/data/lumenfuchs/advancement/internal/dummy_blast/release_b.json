@@ -1,0 +1,31 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "consume_item",
+			"conditions": {
+				"item": {
+					"items": "enchanted_book",
+					"components": {
+						"custom_data": {
+							"lumenfuchs.items.dummy_attack": true
+						}
+					}
+				},
+				"player": {
+					"equipment": {
+						"offhand": {
+							"components": {
+								"custom_data": {
+									"lumenfuchs.items.dummy_attack": true
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "lumenfuchs:items/dummy_attack/release_b"
+	}
+}

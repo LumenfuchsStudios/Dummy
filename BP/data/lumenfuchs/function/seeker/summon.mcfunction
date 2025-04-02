@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-27 .. 2025-02-20
+## * AydenTFoxx @ 2025-01-27 .. 2025-04-01
 ## * 
 ## * Summons a Dummy-like entity with a Carved Pumpkin on its head.
 
@@ -6,7 +6,7 @@
 ## Core
 
 summon interaction ~0.5 ~ ~0.5 { \
-	CustomName: '{ "text": "LKRLSLPN", "color": "black", "obfuscated": true }', \
+	CustomName: { "text": "LKRLSLPN", "color": "black", "obfuscated": true }, \
 	CustomNameVisible: false, \
 	response: false, \
 	Tags: [ dummy_lib.entity, dummy_lib.entity.seeker ], \

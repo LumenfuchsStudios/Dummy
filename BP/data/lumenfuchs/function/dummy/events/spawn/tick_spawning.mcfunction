@@ -1,10 +1,14 @@
-## * AydenTFoxx @ 2025-01-17 .. 2025-03-04
+## * AydenTFoxx @ 2025-01-17 .. 2025-04-01
 ## * 
 ## * Periodically attempts to spawn the Dummy while the player is in dark areas.
 
 
 # Tick clock
 scoreboard players add @s dummy_lib.dummy 1
+
+# Double clock
+scoreboard players add @s[scores={ lumenfuchs.purity=..-10 }] dummy_lib.dummy 1
+
 
 # Roll for spawning
 execute if score @s dummy_lib.dummy matches 4000..8000 if predicate dummy_lib:random/10 \

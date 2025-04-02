@@ -1,0 +1,28 @@
+{
+    "parent": "lumenfuchs:purity",
+    "display": {
+        "icon": {
+            "id": "charcoal"
+        },
+        "title": {
+            "translate": "advancements.lumenfuchs.damnation.title",
+            "fallback": "Rotten Within"
+        },
+        "description": {
+            "translate": "advancements.lumenfuchs.damnation.description",
+            "fallback": "You are one with the corrupt forces of this world.",
+            "color": "gray"
+        },
+        "frame": "goal",
+        "hidden": true
+    },
+    "criteria": {
+        "max_purity": {
+            "trigger": "impossible"
+        }
+    },
+    "rewards": {
+        "experience": 12,
+        "function": "lumenfuchs:dummy/utils/purity/min"
+    }
+}

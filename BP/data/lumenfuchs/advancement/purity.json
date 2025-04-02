@@ -1,0 +1,30 @@
+{
+    "parent": "lumenfuchs:root",
+    "display": {
+        "icon": {
+            "id": "sugar",
+            "components": {
+                "enchantment_glint_override": true
+            }
+        },
+        "title": {
+            "translate": "advancements.lumenfuchs.purity.title",
+            "fallback": "Ascended Being"
+        },
+        "description": {
+            "translate": "advancements.lumenfuchs.purity.description",
+            "fallback": "The shadows hold no power unto thyself.",
+            "color": "yellow"
+        },
+        "frame": "challenge"
+    },
+    "criteria": {
+        "max_purity": {
+            "trigger": "impossible"
+        }
+    },
+    "rewards": {
+        "experience": 20,
+        "function": "lumenfuchs:dummy/utils/purity/max"
+    }
+}

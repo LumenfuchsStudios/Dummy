@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-03-04
+## * AydenTFoxx @ 2025-01-15 .. 2025-04-01
 ## * 
 ## * Turns the dummy towards its target player.
 ## * Also plays stepping noises while walking towards that player.
@@ -39,10 +39,10 @@ rotate @s facing entity @p[gamemode=!spectator]
 
 # Limbs
 execute as @e[type=item_display, tag=dummy_lib.entity.dummy_limb, tag=!dummy_lib.dummy_limb.head, distance=..3] \
-		run data remove entity @s Rotation[1]
+		run data modify entity @s Rotation[1] set value 0.0f
 
 # Dummy
-execute if entity @n[type=!#dummy_lib:technical, type=!player, distance=..32] run data remove entity @s Rotation[1]
+execute if entity @n[type=!#dummy_lib:technical, type=!player, distance=..32] run data modify entity @s Rotation[1] set value 0.0f
 
 
 # Add interpolation

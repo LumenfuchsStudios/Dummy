@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-27 .. 2025-04-01
+## * AydenTFoxx @ 2025-01-27 .. 2025-04-02
 ## * 
 ## * Summons a Dummy-like entity with a Carved Pumpkin on its head.
 
@@ -6,10 +6,10 @@
 ## Core
 
 summon interaction ~0.5 ~ ~0.5 { \
-	CustomName: { "text": "LKRLSLPN", "color": "black", "obfuscated": true }, \
+	CustomName: '{ "text": "LKRLSLPN", "color": "black", "obfuscated": true }', \
 	CustomNameVisible: false, \
 	response: false, \
-	Tags: [ dummy_lib.entity, dummy_lib.entity.seeker ], \
+	Tags: [ dummy_lib.entity, lumenfuchs.entity.seeker ], \
 	height: 1.8, \
 	width: 0.8 \
 }
@@ -113,7 +113,7 @@ summon item_display ~0.5 ~1.6 ~0.5 { \
 
 
 ## Set Health
-execute as @e[type=interaction, tag=dummy_lib.entity.seeker, distance=..1] unless score @s dummy_lib.guid matches 1.. run scoreboard players set @s dummy_lib.health 8
+execute as @e[type=interaction, tag=lumenfuchs.entity.seeker, distance=..1] unless score @s dummy_lib.guid matches 1.. run scoreboard players set @s dummy_lib.health 8
 
 ## Set Materials
 execute positioned ~0.5 ~1 ~0.5 as @n[type=item_display, tag=dummy_lib.dummy_limb.torso, distance=..2] \
@@ -137,6 +137,6 @@ execute positioned ~0.5 ~1 ~0.5 as @e[type=item_display, tag=dummy_lib.entity.du
 		unless score @s dummy_lib.guid matches 1.. \
 		run scoreboard players operation @s dummy_lib.guid = #dummy_lib_guid dummy_lib.guid
 
-execute as @e[type=interaction, tag=dummy_lib.entity.seeker, distance=..1] unless score @s dummy_lib.guid matches 1.. run scoreboard players operation @s dummy_lib.guid = #dummy_lib_guid dummy_lib.guid
+execute as @e[type=interaction, tag=lumenfuchs.entity.seeker, distance=..1] unless score @s dummy_lib.guid matches 1.. run scoreboard players operation @s dummy_lib.guid = #dummy_lib_guid dummy_lib.guid
 
 scoreboard players add #dummy_lib_guid dummy_lib.guid 1

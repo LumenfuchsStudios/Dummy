@@ -5,7 +5,7 @@
 		"big_dripleaf_stem",
 		"moss_block",
 		"moss_carpet",
-		"pale_moss_block",
-		"pale_moss_carpet"
+		{ "id": "pale_moss_block", "required": false },
+		{ "id": "pale_moss_carpet", "required": false }
 	]
 }

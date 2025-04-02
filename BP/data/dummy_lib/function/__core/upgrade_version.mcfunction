@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-28 .. 2025-04-01
+## * AydenTFoxx @ 2025-01-28 .. 2025-04-02
 ## * 
 ## * Upgrades the datapack's version to the latest, then forces a "reload" of its settings.
 
@@ -12,7 +12,7 @@ execute unless score #dummy_lib.current_version dummy_lib.dummy matches 1.. run 
 ## # UPGRADE
 
 ## DEBUG: Display feedback
-execute if data storage dummy_lib:flags { debug_mode: true } run tellraw @a [{ "text": "[" }, { "text": "DummyLib", "color": "yellow", "bold": true, "click_event": { "action": "open_url", "url": "https://modrinth.com/datapack/lumenfuchs-dummy" }}, { "translate": "] Updating datapack version to %s.", "with": [ { "score": { "name": "#dummy_lib.target_version", "objective": "dummy_lib.dummy" } } ] }]
+execute if data storage dummy_lib:flags { debug_mode: true } run tellraw @a [{ "text": "[" }, { "text": "DummyLib", "color": "yellow", "bold": true, "clickEvent": { "action": "open_url", "value": "https://modrinth.com/datapack/lumenfuchs-dummy" }}, { "translate": "] Updating datapack version to %s.", "with": [ { "score": { "name": "#dummy_lib.target_version", "objective": "dummy_lib.dummy" } } ] }]
 
 # Remove first load flag
 data remove storage dummy_lib:flags first_load

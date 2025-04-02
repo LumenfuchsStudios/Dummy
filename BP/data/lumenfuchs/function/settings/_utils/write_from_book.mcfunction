@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-18 .. 2025-04-01
+## * AydenTFoxx @ 2025-01-18 .. 2025-04-02
 ## * 
 ## * Prompts the user to change the given setting to the inputted value.
 
@@ -14,7 +14,7 @@ $tellraw @s [ \
 		"color": "yellow", \
 		"with": [ \
 			{ "text": "dummy.$(setting)", "color": "gray" }, \
-			{ "entity": "@s", "nbt": "SelectedItem.components.minecraft:writable_book_content.pages[0].raw", "color": "aqua", "hover_event": { "action": "show_text", "value": { "translate": "lumenfuchs.settings.confirm_edit_info", "fallback": "Click to write to storage." } }, "click_event": { "action": "run_command", "command": "/trigger lumenfuchs.settings set 300" } } \
+			{ "entity": "@s", "nbt": "SelectedItem.components.minecraft:writable_book_content.pages[0].raw", "color": "aqua", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.confirm_edit_info", "fallback": "Click to write to storage." } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 300" } } \
 		] \
 	} \
 ]

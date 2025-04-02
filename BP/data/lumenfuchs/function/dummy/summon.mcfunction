@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-13 .. 2025-04-01
+## * AydenTFoxx @ 2025-01-13 .. 2025-04-02
 ## * 
 ## * Summons a "fake Player" entity, with an Item Display-based model.
 
@@ -6,7 +6,7 @@
 ## Core
 
 summon interaction ~0.5 ~ ~0.5 { \
-	CustomName: { "text": "YNHZRFXN", "color": "black", "obfuscated": true }, \
+	CustomName: '{ "text": "YNHZRFXN", "color": "black", "obfuscated": true }', \
 	CustomNameVisible: false, \
 	response: false, \
 	Tags: [ dummy_lib.entity, lumenfuchs.entity.dummy ], \

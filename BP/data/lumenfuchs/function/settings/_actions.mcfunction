@@ -1,11 +1,11 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-04-01
+## * AydenTFoxx @ 2025-01-15 .. 2025-04-02
 ## * 
 ## * Executes all actions from the settings panel.
 
 
 ## Display error if allow_edit_settings is disabled
 execute if data storage lumenfuchs:flags { allow_edit_settings: false } \
-		run return run tellraw @s { "translate": "lumenfuchs.settings.read_only", "fallback": "Settings are read-only in this world.", "color": "red", "hover_event": { "action": "show_text", "value": [ { "translate": "lumenfuchs.settings.option_revert", "fallback": "Revert? ", "color": "yellow" }, { "translate": "lumenfuchs.settings.operator_only", "fallback": "(Requires OP)", "color": "red" } ] }, "click_event": { "action": "suggest_command", "command": "/data modify storage lumenfuchs:flags allow_edit_settings set value true" } }
+		run return run tellraw @s { "translate": "lumenfuchs.settings.read_only", "fallback": "Settings are read-only in this world.", "color": "red", "hoverEvent": { "action": "show_text", "contents": [ { "translate": "lumenfuchs.settings.option_revert", "fallback": "Revert? ", "color": "yellow" }, { "translate": "lumenfuchs.settings.operator_only", "fallback": "(Requires OP)", "color": "red" } ] }, "clickEvent": { "action": "suggest_command", "value": "/data modify storage lumenfuchs:flags allow_edit_settings set value true" } }
 
 
 ## * RESET

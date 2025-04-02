@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-03-05 .. 2025-04-01
+## * AydenTFoxx @ 2025-03-05 .. 2025-04-02
 ## * 
 ## * Executes an AoE Dummy blast a few blocks ahead of the player.
 ## ? This variant deals damage to all creatures around the target position.
@@ -50,6 +50,11 @@ execute anchored eyes positioned ^ ^-1 ^4 align y if block ~ ~ ~ #dummy_lib:tran
 
 execute anchored eyes positioned ^ ^-1 ^4 align y if block ~ ~ ~ #dummy_lib:transparent \
 		unless entity @s[distance=..1] run summon evoker_fangs ~0.5 ~ ~-0.5
+
+# Spawn Lightning (low Purity)
+execute anchored eyes positioned ^ ^-1 ^4 align y if block ~ ~ ~ #dummy_lib:transparent \
+		if entity @s[distance=1.., scores={ lumenfuchs.purity=..-16 }] run summon lightning_bolt ~ ~ ~
+
 
 # Remove Purity
 execute if predicate dummy_lib:random/20 run function lumenfuchs:dummy/utils/revoke_purity with entity @s

@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-03-04
+## * AydenTFoxx @ 2025-01-15 .. 2025-04-01
 ## * 
 ## * Ticks all code from this datapack at a custom rate.
 
@@ -14,8 +14,8 @@ scoreboard players add #lumenfuchs_tick_b dummy_lib.dummy 1
 execute if score #lumenfuchs_tick_a dummy_lib.dummy = #lumenfuchs_tick_rate_a dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy] at @s run function lumenfuchs:dummy/update_a with storage lumenfuchs:flags dummy
 execute if score #lumenfuchs_tick_b dummy_lib.dummy = #lumenfuchs_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy, tag=!dummy_lib.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:dummy/update_b with storage lumenfuchs:flags dummy
 
-execute if score #lumenfuchs_tick_a dummy_lib.dummy = #lumenfuchs_tick_rate_a dummy_lib.dummy as @e[type=interaction, tag=dummy_lib.entity.seeker] at @s run function lumenfuchs:seeker/update_a with storage lumenfuchs:flags dummy
-execute if score #lumenfuchs_tick_b dummy_lib.dummy = #lumenfuchs_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=dummy_lib.entity.seeker, tag=!dummy_lib.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:seeker/update_b with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_a dummy_lib.dummy = #lumenfuchs_tick_rate_a dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker] at @s run function lumenfuchs:seeker/update_a with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_b dummy_lib.dummy = #lumenfuchs_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker, tag=!dummy_lib.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:seeker/update_b with storage lumenfuchs:flags dummy
 
 
 # Reset clock

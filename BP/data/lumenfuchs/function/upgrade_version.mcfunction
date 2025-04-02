@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-28 .. 2025-04-01
+## * AydenTFoxx @ 2025-01-28 .. 2025-04-02
 ## * 
 ## * Upgrades the datapack's version to the latest, then forces a "reload" of its settings.
 
@@ -24,13 +24,13 @@ execute if score #lumenfuchs_dummy.current_version dummy_lib.dummy matches ..5 r
 execute if score #lumenfuchs_dummy.current_version dummy_lib.dummy matches ..5 run function lumenfuchs:settings/_utils/bulk_replace_material { setting: "material_hurt" }
 
 # DEBUG: Notify users
-execute if data storage lumenfuchs:flags { debug_mode: true } if score #lumenfuchs_dummy.current_version dummy_lib.dummy matches ..5 run tellraw @a [{ "text": "[" }, { "text": "The Dummy", "color": "gray", "bold": true, "hover_event": { "action": "show_text", "value": [{ "text": "Datapack: " }, { "text": "lumenfuchs", "color": "black", "obfuscated": true }] } }, { "text": "] Migrated " }, { "text": "dummy.material", "color": "gray" }, { "text": " and " }, { "text": "dummy.material_hurt", "color": "gray" }, { "text": " to new " }, { "text": "v1.3+", "color": "yellow" }, { "text": " format." } ]
+execute if data storage lumenfuchs:flags { debug_mode: true } if score #lumenfuchs_dummy.current_version dummy_lib.dummy matches ..5 run tellraw @a [{ "text": "[" }, { "text": "The Dummy", "color": "gray", "bold": true, "hoverEvent": { "action": "show_text", "contents": [{ "text": "Datapack: " }, { "text": "lumenfuchs", "color": "black", "obfuscated": true }] } }, { "text": "] Migrated " }, { "text": "dummy.material", "color": "gray" }, { "text": " and " }, { "text": "dummy.material_hurt", "color": "gray" }, { "text": " to new " }, { "text": "v1.3+", "color": "yellow" }, { "text": " format." } ]
 
 
 ## # UPGRADE
 
 ## DEBUG: Display feedback
-execute if data storage lumenfuchs:flags { debug_mode: true } run tellraw @a [{ "text": "[" }, { "text": "The Dummy", "color": "gray", "bold": true, "hover_event": { "action": "show_text", "value": [{ "text": "Datapack: " }, { "text": "Lumenfuchs' Dummy", "color": "yellow" }] } }, { "translate": "] Updating datapack version to %s.", "with": [ { "score": { "name": "#lumenfuchs_dummy.target_version", "objective": "dummy_lib.dummy" } } ] }]
+execute if data storage lumenfuchs:flags { debug_mode: true } run tellraw @a [{ "text": "[" }, { "text": "The Dummy", "color": "gray", "bold": true, "hoverEvent": { "action": "show_text", "contents": [{ "text": "Datapack: " }, { "text": "Lumenfuchs' Dummy", "color": "yellow" }] } }, { "translate": "] Updating datapack version to %s.", "with": [ { "score": { "name": "#lumenfuchs_dummy.target_version", "objective": "dummy_lib.dummy" } } ] }]
 
 # Remove first load flag
 data remove storage lumenfuchs:flags first_load

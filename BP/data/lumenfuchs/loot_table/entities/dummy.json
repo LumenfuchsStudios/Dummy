@@ -10,9 +10,9 @@
                         {
                             "function": "set_components",
                             "components": {
-                                "item_name": { "translate": "item.lumenfuchs.cleanser", "fallback": "The Cleanser" },
+                                "item_name": "{ \"translate\": \"item.lumenfuchs.cleanser\", \"fallback\": \"The Cleanser\" }",
                                 "lore": [
-                                    { "translate": "item.lumenfuchs.cleanser.lore", "fallback": "\"The banishment of all shadowy creatures.\"", "color": "gray", "italic": false }
+                                    "{ \"translate\": \"item.lumenfuchs.cleanser.lore\", \"fallback\": \"\\\"The banishment of all shadowy creatures.\\\"\", \"color\": \"gray\", \"italic\": false }"
                                 ],
                                 "rarity": "uncommon",
                                 "enchantment_glint_override": true,
@@ -32,9 +32,9 @@
                         {
                             "function": "set_components",
                             "components": {
-                                "item_name": { "translate": "item.lumenfuchs.dummy_spawn_egg", "fallback": "Dummy Spawn Egg" },
+                                "item_name": "{ \"translate\": \"item.lumenfuchs.dummy_spawn_egg\", \"fallback\": \"Dummy Spawn Egg\" }",
                                 "lore": [
-                                    {  "translate": "item.lumenfuchs.dummy_spawn_egg.lore", "fallback": "A vile creature lies within.", "color": "gray", "italic": false }
+                                    "{  \"translate\": \"item.lumenfuchs.dummy_spawn_egg.lore\", \"fallback\": \"A vile creature lies within.\", \"color\": \"gray\", \"italic\": false }"
                                 ],
                                 "rarity": "uncommon",
                                 "enchantment_glint_override": true,
@@ -57,9 +57,9 @@
                         {
                             "function": "set_components",
                             "components": {
-                                "item_name": {  "translate": "item.lumenfuchs.seeker_spawn_egg", "fallback": "Seeker Spawn Egg" },
+                                "item_name": "{  \"translate\": \"item.lumenfuchs.seeker_spawn_egg\", \"fallback\": \"Seeker Spawn Egg\" }",
                                 "lore": [
-                                    {  "translate": "item.lumenfuchs.seeker_spawn_egg.lore", "fallback": "A pumpkin lies inside.", "color": "gray", "italic": false }
+                                    "{  \"translate\": \"item.lumenfuchs.seeker_spawn_egg.lore\", \"fallback\": \"A pumpkin lies inside.\", \"color\": \"gray\", \"italic\": false }"
                                 ],
                                 "rarity": "rare",
                                 "enchantment_glint_override": true,
@@ -117,10 +117,10 @@
                                 "custom_data": {
                                     "lumenfuchs.items.dummy_attack": true
                                 },
-                                "item_name": { "translate": "item.lumenfuchs.dummy_attack", "fallback": "Void Shard" },
+                                "item_name": "{ \"translate\": \"item.lumenfuchs.dummy_attack\", \"fallback\": \"Void Shard\" }",
                                 "item_model": "echo_shard",
                                 "lore": [
-                                    { "translate": "item.lumenfuchs.dummy_attack.lore", "fallback": "\"A shard of the Dummy's grim power.\"", "italic": false, "color": "gray" }
+                                    "{ \"translate\": \"item.lumenfuchs.dummy_attack.lore\", \"fallback\": \"\\\"A shard of the Dummy's grim power.\\\"\", \"italic\": false, \"color\": \"gray\" }"
                                 ],
                                 "max_stack_size": 16,
                                 "rarity": "rare",

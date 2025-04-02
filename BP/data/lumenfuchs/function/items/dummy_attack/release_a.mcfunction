@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-03-05 .. 2025-04-01
+## * AydenTFoxx @ 2025-03-05 .. 2025-04-02
 ## * 
 ## * Executes a single-target Dummy blast a few blocks ahead of the player.
 ## ? This variant deals damage to the closest creature to the target position.
@@ -41,6 +41,11 @@ playsound ambient.crimson_forest.mood master @a[distance=..32] ~ ~ ~ 0.5 0.8 0.1
 # Spawn Evoker Fang
 execute anchored eyes positioned ^ ^-1 ^4 align y if block ~ ~ ~ #dummy_lib:transparent \
 		unless entity @s[distance=..1] run summon evoker_fangs ~ ~ ~
+
+# Inflict debuff (low Purity)
+execute anchored eyes positioned ^ ^-1 ^4 align y if block ~ ~ ~ #dummy_lib:transparent \
+		if entity @s[distance=1.., scores={ lumenfuchs.purity=..-16 }] run effect give @n[type=!#dummy_lib:technical, distance=..3, limit=3] wither 4 2
+
 
 # Remove Purity
 execute if predicate dummy_lib:random/10 run function lumenfuchs:dummy/utils/revoke_purity with entity @s

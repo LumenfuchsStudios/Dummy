@@ -1,10 +1,10 @@
-## * AydenTFoxx @ 2025-03-02 .. 2025-03-04
+## * AydenTFoxx @ 2025-03-02 .. 2025-04-07
 ## * 
 ## * Prepares the Dummy for its Warp abilities.
 
 
 # Tick timer
-scoreboard players add @s dummy_lib.dummy 2
+scoreboard players operation @s dummy_lib.dummy += #dummy_lib_tick_rate_b dummy_lib.dummy
 
 
 # Display audiovisual feedback

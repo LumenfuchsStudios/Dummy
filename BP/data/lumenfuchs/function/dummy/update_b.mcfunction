@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-13 .. 2025-04-02
+## * AydenTFoxx @ 2025-01-13 .. 2025-04-07
 ## * 
 ## * Updates the Dummy with entity-like and custom behavior.
 
@@ -6,13 +6,17 @@
 ## Ignore if current block is a Redstone Torch or Block.
 execute if predicate dummy_lib:block/dummy_stunlock run return fail
 
+## Ignore if on paralysis
+execute if entity @s[tag=dummy_lib.dummy.paralysis] run return fail
+
 
 ## # TIMER
 
 # Add score
-scoreboard players add @s lumenfuchs.settings 1
+scoreboard players operation @s lumenfuchs.settings += #dummy_lib_tick_rate_b dummy_lib.dummy
 
 # Remove self
+execute if score @s[tag=lumenfuchs.entity.mimic] lumenfuchs.settings matches 1300.. run return run function dummy_lib:utils/force_remove
 execute if score @s lumenfuchs.settings matches 3600.. run return run function dummy_lib:events/remove
 
 
@@ -24,8 +28,8 @@ $execute if data storage lumenfuchs:flags { dummy: { stalk_player: true } } unle
 
 
 # Wave limbs
-execute if entity @s[tag=dummy_lib.dummy.is_walking] as @e[type=item_display, tag=dummy_lib.entity.dummy_limb, tag=!dummy_lib.dummy_limb.torso, tag=!dummy_lib.dummy_limb.head, distance=..2] if function dummy_lib:utils/is_matching_guid run function dummy_lib:physics/wave_limb
-execute if entity @s[tag=dummy_lib.dummy.is_hurt] as @e[type=item_display, tag=dummy_lib.entity.dummy_limb, tag=!dummy_lib.dummy_limb.torso, tag=!dummy_lib.dummy_limb.head, distance=..2] if function dummy_lib:utils/is_matching_guid run function dummy_lib:physics/wave_limb_strong
+execute if entity @s[tag=dummy_lib.dummy.is_walking] as @e[type=item_display, tag=dummy_lib.entity.dummy_limb, tag=!dummy_lib.dummy_limb.torso, tag=!dummy_lib.dummy_limb.head, distance=..2, limit=8] if function dummy_lib:utils/is_matching_guid run function dummy_lib:physics/wave_limb
+execute if entity @s[tag=dummy_lib.dummy.is_hurt] as @e[type=item_display, tag=dummy_lib.entity.dummy_limb, tag=!dummy_lib.dummy_limb.torso, tag=!dummy_lib.dummy_limb.head, distance=..2, limit=8] if function dummy_lib:utils/is_matching_guid run function dummy_lib:physics/wave_limb_strong
 
 
 # Play ambience (presence)
@@ -65,7 +69,8 @@ tag @s[tag=dummy_lib.dummy.is_walking, tag=lumenfuchs.dummy.looked_at] remove du
 
 
 # Move towards nearest player
-execute if entity @s[tag=dummy_lib.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at] run function dummy_lib:physics/move { direction: "^ ^ ^0.1" }
+execute if entity @s[tag=dummy_lib.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at, tag=!lumenfuchs.entity.mimic] run function dummy_lib:physics/move { direction: "^ ^ ^0.1" }
+execute if entity @s[tag=dummy_lib.dummy.is_walking, tag=!lumenfuchs.dummy.looked_at, tag=lumenfuchs.entity.mimic] run function dummy_lib:physics/move { direction: "^ ^ ^0.25" }
 
 
 ## Warp

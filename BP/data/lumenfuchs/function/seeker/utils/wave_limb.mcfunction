@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-27 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-27 .. 2025-04-07
 ## * 
 ## * Swings the limbs somewhat swiftly, resembling more an actual entity's walk cycle.
 
@@ -16,4 +16,4 @@ tag @s[scores={ dummy_lib.clock=..-24 }] remove dummy_lib.clock_invert
 execute store result entity @s Rotation[1] float 1.5 run scoreboard players get @s dummy_lib.clock
 
 # Set interpolation
-data modify entity @s interpolation_duration set value 2
+data modify entity @s interpolation_duration set value 8

@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "interact_ingredient": {
+            "trigger": "player_interacted_with_entity",
+            "conditions": {
+                "entity": {
+                    "type": "interaction",
+                    "nbt": "{ Tags: [ lumenfuchs.entity.dummy_altar ] }"
+                },
+                "player": {
+                    "equipment": {
+                        "mainhand": {
+                            "items": "paper"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "lumenfuchs:dummy_altar/triggers/get_purity"
+    }
+}

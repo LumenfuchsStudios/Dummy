@@ -1,0 +1,28 @@
+{
+    "criteria": {
+        "interact_ingredient": {
+            "trigger": "player_interacted_with_entity",
+            "conditions": {
+                "entity": {
+                    "type": "interaction",
+                    "nbt": "{ Tags: [ lumenfuchs.entity.dummy_altar ] }"
+                },
+                "player": {
+                    "equipment": {
+                        "mainhand": {
+                            "items": "stick",
+                            "components": {
+                                "custom_data": {
+                                    "dummy_lib.items.dummy_remover": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "lumenfuchs:dummy_altar/triggers/remove_dummies"
+    }
+}

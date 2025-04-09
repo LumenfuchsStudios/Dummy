@@ -198,8 +198,8 @@ The Dummy's most resource-intensive function is walking, which utilizes macros a
 
 If performance is a concern, the Dummy's update rate is editable by changing these fake players' `dummy_lib.dummy` score:
 
-* `#lumenfuchs_tick_rate_a` (Default: `1`) defines the delay in ticks for updating the Dummy's physics, as well as for checking and adding/removing forceloaded chunks.
-* `#lumenfuchs_tick_rate_b` (Default: `2`) defines the delay in ticks for updating the Dummy's behaviors and animations.
+* `#dummy_lib_tick_rate_a` (Default: `1`) defines the delay in ticks for updating the Dummy's physics, as well as for checking and adding/removing forceloaded chunks.
+* `#dummy_lib_tick_rate_b` (Default: `2`) defines the delay in ticks for updating the Dummy's behaviors and animations.
 
 ---
 

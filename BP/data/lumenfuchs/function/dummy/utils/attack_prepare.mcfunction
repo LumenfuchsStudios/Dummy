@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-15 .. 2025-04-07
 ## * 
 ## * Raises the dummy's arm to its signature attack.
 
@@ -9,6 +9,7 @@ tag @s[tag=dummy_lib.dummy.is_walking] remove dummy_lib.dummy.is_walking
 
 # Add score
 execute unless score @s dummy_lib.clock matches 160.. run scoreboard players add @s dummy_lib.clock 2
+execute unless score @s[tag=lumenfuchs.entity.mimic] dummy_lib.clock matches 80.. run scoreboard players add @s dummy_lib.clock 2
 
 # Add tag
 execute if score @s dummy_lib.clock matches 2..4 run tag @s[tag=!dummy_lib.dummy.is_floating] add dummy_lib.dummy.is_floating

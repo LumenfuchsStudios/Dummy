@@ -1,0 +1,12 @@
+{
+    "values": [
+        "#is_badlands",
+        "#is_beach",
+        "#is_forest",
+        "#is_hill",
+        "#is_jungle",
+        "#is_mountain",
+        "#is_savanna",
+        "#is_taiga"
+    ]
+}

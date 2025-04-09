@@ -13,7 +13,7 @@ execute if entity @n[type=!#dummy_lib:technical, type=!player, distance=1..] as 
 
 
 # Add score
-scoreboard players add @n[type=item_display, tag=dummy_lib.dummy_limb.torso, distance=..3] dummy_lib.dummy 1
+scoreboard players operation @n[type=item_display, tag=dummy_lib.dummy_limb.torso, distance=..3] dummy_lib.dummy += #dummy_lib_tick_rate_b dummy_lib.dummy
 
 # Ignore if not in attack mode until delay is ready
 # If stare_player is disabled, this is ignored entirely.

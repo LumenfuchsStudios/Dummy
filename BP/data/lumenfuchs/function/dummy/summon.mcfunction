@@ -140,7 +140,7 @@ execute positioned ~0.5 ~1 ~0.5 as @n[type=item_display, tag=dummy_lib.dummy_lim
 
 
 ## Grant Advancement
-advancement grant @a[advancements={ lumenfuchs:the_dummy=false }, distance=..16] only lumenfuchs:the_dummy
+advancement grant @a[distance=..16] only lumenfuchs:the_dummy
 
 
 ## Set GUID

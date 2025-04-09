@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-16 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-16 .. 2025-04-08
 ## * 
 ## * Updates the dummy with entity-like and custom behavior.
 
@@ -9,8 +9,11 @@
 ## # PHYSICS
 
 # Apply gravity
-execute if block ~ ~-0.1 ~ #dummy_lib:transparent run function dummy_lib:physics/accelerate
-execute if score @s dummy_lib.momentum matches -200..200 run function dummy_lib:physics/accelerate
+execute if block ~ ~-0.1 ~ #dummy_lib:transparent unless block ~ ~ ~ water run function dummy_lib:physics/accelerate
+execute if block ~ ~-0.1 ~ #dummy_lib:transparent if block ~ ~ ~ water run function dummy_lib:physics/accelerate_underwater
+
+execute if score @s dummy_lib.momentum matches -200..200 unless block ~ ~ ~ water run function dummy_lib:physics/accelerate
+execute if score @s dummy_lib.momentum matches -100..100 if block ~ ~ ~ water run function dummy_lib:physics/accelerate_underwater
 
 # Apply upwards momentum (Slime Block)
 execute if block ~ ~ ~ slime_block run scoreboard players set @s dummy_lib.momentum -32

@@ -115,6 +115,15 @@
 						}
 					},
 					"offsetY": -2
+				},
+				{
+					"condition": "location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#dummy_lib:transparent"
+						}
+					},
+					"offsetY": -3
 				}
 			]
 		},

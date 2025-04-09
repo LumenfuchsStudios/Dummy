@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-15 .. 2025-04-07
 ## * 
 ## * Ticks all code from this datapack at a custom rate.
 
@@ -15,8 +15,8 @@ scoreboard players add #dummy_lib_tick_b dummy_lib.dummy 1
 execute if score #dummy_lib_tick_b dummy_lib.dummy = #dummy_lib_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=dummy_lib.entity, tag=!dummy_lib.dummy.is_dead] at @s if loaded ~ ~ ~ run function dummy_lib:update_b
 
 # Remove stray limbs if Dummy was killed without removing them
-execute if score #dummy_lib_tick_a dummy_lib.dummy = #lumenfuchs_tick_rate_a dummy_lib.dummy \
-		as @e[type=item_display, tag=dummy_lib.entity.dummy_limb] at @s unless entity @n[type=interaction, tag=dummy_lib.entity, distance=..8] run function dummy_lib:events/death
+execute if score #dummy_lib_tick_a dummy_lib.dummy = #dummy_lib_tick_rate_a dummy_lib.dummy \
+		as @e[type=item_display, tag=dummy_lib.entity.dummy_limb] at @s unless entity @n[type=interaction, tag=dummy_lib.entity, distance=..4] run function dummy_lib:events/death
 
 
 # Reset clock

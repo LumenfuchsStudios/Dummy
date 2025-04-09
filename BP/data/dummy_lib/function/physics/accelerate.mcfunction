@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-03-01
+## * AydenTFoxx @ 2025-01-15 .. 2025-04-07
 ## * 
 ## * Applies upwards and downwards motion to the dummy entity.
 
@@ -6,8 +6,12 @@
 ## Ignore if flag is detected
 execute if entity @s[tag=dummy_lib.dummy.is_floating] run return fail
 
+## Ignore if magically-paralyzed
+execute if entity @s[tag=dummy_lib.dummy.paralysis] run return fail
+
+
 ## Add momentum
-execute unless score @s dummy_lib.momentum matches 200.. run scoreboard players add @s dummy_lib.momentum 1
+execute unless score @s dummy_lib.momentum matches 200.. run scoreboard players operation @s dummy_lib.momentum += #dummy_lib_tick_rate_a dummy_lib.dummy
 
 
 ## Apply momentum

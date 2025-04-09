@@ -10,7 +10,11 @@
                 "player": {
                     "equipment": {
                         "mainhand": {
-                            "items": "sugar"
+                            "items": [
+                                "sugar",
+                                "glowstone",
+                                "glowstone_dust"
+                            ]
                         }
                     }
                 }

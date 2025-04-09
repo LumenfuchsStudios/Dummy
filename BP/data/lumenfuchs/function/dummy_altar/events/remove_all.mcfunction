@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-04-05 .. 2025-04-07
+## * AydenTFoxx @ 2025-04-05 .. 2025-04-09
 ## * 
 ## * Deals a large amount of damage to all creatures near the Dummy Altar itself.
 
@@ -32,8 +32,9 @@ particle enchanted_hit ~ ~1.3 ~ 0.1 0.2 0.1 0.1 4 force
 
 ## END
 
-# No mercy shall be given
-execute if score @s dummy_lib.clock matches 80.. as @e[type=!#dummy_lib:technical, distance=1..16] run damage @s 80 bad_respawn_point
+# No mercy shall be given (or some mercy ig)
+execute if score @s dummy_lib.clock matches 80.. as @e[type=!#dummy_lib:technical, type=!player, distance=1..32] run damage @s 100 bad_respawn_point
+execute if score @s dummy_lib.clock matches 80.. as @a[distance=1..16] run damage @s 20 bad_respawn_point
 
 # Trigger death event for Dummies
 execute if score @s dummy_lib.clock matches 80.. as @e[type=interaction, tag=dummy_lib.entity, distance=..32] at @s run function dummy_lib:events/death

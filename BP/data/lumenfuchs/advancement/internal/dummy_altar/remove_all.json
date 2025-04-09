@@ -10,7 +10,12 @@
                 "player": {
                     "equipment": {
                         "mainhand": {
-                            "items": "enchanted_book",
+                            "items": [
+                                "enchanted_book",
+                                "echo_shard",
+                                "charcoal",
+                                "coal"
+                            ],
                             "components": {
                                 "custom_data": {
                                     "lumenfuchs.items.dummy_attack": true

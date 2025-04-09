@@ -10,7 +10,11 @@
                 "player": {
                     "equipment": {
                         "mainhand": {
-                            "items": "fire_charge"
+                            "items": [
+                                "fire_charge",
+                                "blaze_powder",
+                                "blaze_rod"
+                            ]
                         }
                     }
                 }

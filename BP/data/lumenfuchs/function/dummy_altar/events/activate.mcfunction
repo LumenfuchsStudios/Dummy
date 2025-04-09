@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-04-08
+## * AydenTFoxx @ 2025-04-08 .. 2025-04-09
 ## * 
 ## * Performs a long ritual for a Dummy Altar's activation.
 ## * A standard showcase of Yannah/Ayden's flashy tastes.
@@ -51,7 +51,7 @@ effect give @a[distance=..32] darkness 8 0 true
 
 
 # Display final feedback
-execute if score @s dummy_lib.clock matches 250 run playsound entity.evoker.prepare_summon neutral @a[distance=..32] ~ ~0.5 ~ 2 1.5 0.2
+execute if score @s dummy_lib.clock matches 250 run playsound entity.evoker.prepare_summon neutral @a[distance=..32] ~ ~0.5 ~ 2 1.2 0.2
 execute if score @s dummy_lib.clock matches 310 run playsound block.portal.trigger neutral @a[distance=..32] ~ ~0.5 ~ 2 1.5 0.2
 
 particle witch ~ ~1 ~ 0.1 0.1 0.1 0.01 4
@@ -77,5 +77,3 @@ scoreboard players reset @s dummy_lib.clock
 
 # Remove tag
 tag @s remove lumenfuchs.dummy_altar.deactivated
-
-loot spawn ~ ~ ~ loot chests/ancient_city

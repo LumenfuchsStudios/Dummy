@@ -10,7 +10,10 @@
                 "player": {
                     "equipment": {
                         "mainhand": {
-                            "items": "paper"
+                            "items": [
+                                "paper",
+                                "quartz"
+                            ]
                         }
                     }
                 }

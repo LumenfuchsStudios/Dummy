@@ -1,0 +1,26 @@
+{
+	"display": {
+		"icon": {
+			"id": "glowstone_dust"
+		},
+		"title": {
+			"translate": "advancements.lumenfuchs.root.title",
+			"fallback": "Lumenfuchs Studios",
+			"bold": true,
+			"color": "aqua"
+		},
+		"description": {
+			"translate": "advancements.lumenfuchs.root.description",
+			"fallback": "Lesser projects of the Golden Light."
+		},
+		"frame": "task",
+		"background": "minecraft:textures/block/tinted_glass.png",
+		"announce_to_chat": false,
+		"show_toast": false
+	},
+	"criteria": {
+		"world_loaded": {
+			"trigger": "impossible"
+		}
+	}
+}

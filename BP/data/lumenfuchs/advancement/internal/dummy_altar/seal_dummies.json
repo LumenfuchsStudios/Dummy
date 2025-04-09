@@ -10,7 +10,11 @@
                 "player": {
                     "equipment": {
                         "mainhand": {
-                            "items": "redstone"
+                            "items": [
+                                "redstone",
+                                "redstone_block",
+                                "redstone_torch"
+                            ]
                         }
                     }
                 }

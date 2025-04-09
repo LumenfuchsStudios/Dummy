@@ -10,7 +10,10 @@
                 "player": {
                     "equipment": {
                         "mainhand": {
-                            "items": "stick",
+                            "items": [
+                                "stick",
+                                "debug_stick"
+                            ],
                             "components": {
                                 "custom_data": {
                                     "dummy_lib.items.dummy_remover": true

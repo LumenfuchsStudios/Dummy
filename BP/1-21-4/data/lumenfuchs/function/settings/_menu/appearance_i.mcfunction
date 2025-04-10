@@ -1,0 +1,30 @@
+## * AydenTFoxx @ 2025-01-31 .. 2025-04-02
+## * 
+## * Manages the Dummy's body's materials.
+
+
+$tellraw @s [ "", \
+	{ "text": "--------------------------", "color": "dark_gray" }, "\n\n", \
+	{ "text": "[<] " , "color": "red", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_reset", "fallback": "Reset to default?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 2011" } }, \
+	{ "translate": "lumenfuchs.setting.material.head.title", "fallback": "Head: ", "color": "gray", "hoverEvent": { "action": "show_text", "contents": [{ "translate": "lumenfuchs.setting.material.head.description", "fallback": "The block texture of the Dummy's head." }, "\n", { "translate": "lumenfuchs.setting.material.head.additions", "fallback": "The Seeker's worn Pumpkin is unaffected by this setting.", "color": "gray" }] } }, \
+	{ "text": "$(head)", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_edit", "fallback": "Change setting?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 3081" } }, "\n\n", \
+	{ "text": "[<] " , "color": "red", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_reset", "fallback": "Reset to default?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 2012" } }, \
+	{ "translate": "lumenfuchs.setting.material.torso.title", "fallback": "Torso: ", "color": "gray", "hoverEvent": { "action": "show_text", "contents": [{ "translate": "lumenfuchs.setting.material.torso.description", "fallback": "The block texture of the Dummy's torso." }, "\n", { "translate": "lumenfuchs.setting.material.torso.additions", "fallback": "This also defines the hurt particles of the Dummy.", "color": "gray" }] } }, \
+	{ "text": "$(torso)", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_edit", "fallback": "Change setting?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 3082" } }, "\n\n\n", \
+	{ "text": "[<] " , "color": "red", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_reset", "fallback": "Reset to default?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 2013" } }, \
+	{ "translate": "lumenfuchs.setting.material.left_arm.title", "fallback": "Left Arm: ", "color": "gray", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.setting.material.left_arm.description", "fallback": "The block texture of the Dummy's left arm." } } }, \
+	{ "text": "$(left_arm)", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_edit", "fallback": "Change setting?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 3083" } }, "\n\n", \
+	{ "text": "[<] " , "color": "red", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_reset", "fallback": "Reset to default?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 2014" } }, \
+	{ "translate": "lumenfuchs.setting.material.right_arm.title", "fallback": "Right Arm: ", "color": "gray", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.setting.material.right_arm.description", "fallback": "The block texture of the Dummy's right arm." } } }, \
+	{ "text": "$(right_arm)", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_edit", "fallback": "Change setting?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 3084" } }, "\n\n\n", \
+	{ "text": "[<] " , "color": "red", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_reset", "fallback": "Reset to default?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 2015" } }, \
+	{ "translate": "lumenfuchs.setting.material.left_leg.title", "fallback": "Left Leg: ", "color": "gray", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.setting.material.left_leg.description", "fallback": "The block texture of the Dummy's left leg." } } }, \
+	{ "text": "$(left_leg)", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_edit", "fallback": "Change setting?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 3085" } }, "\n\n", \
+	{ "text": "[<] " , "color": "red", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_reset", "fallback": "Reset to default?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 2016" } }, \
+	{ "translate": "lumenfuchs.setting.material.right_leg.title", "fallback": "Right Leg: ", "color": "gray", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.setting.material.right_leg.description", "fallback": "The block texture of the Dummy's right leg." } } }, \
+	{ "text": "$(right_leg)", "color": "yellow", "hoverEvent": { "action": "show_text", "contents": { "translate": "lumenfuchs.settings.option_edit", "fallback": "Change setting?" } }, "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 3086" } }, "\n\n\n", \
+	{ "translate": "lumenfuchs.settings.menu_return", "fallback": "<-- Return", "color": "gold", "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 2" } }, \
+	{ "text": "  |  ", "color": "dark_gray" }, \
+	{ "translate": "lumenfuchs.settings.menu_refresh", "fallback": "Refresh", "color": "dark_purple", "clickEvent": { "action": "run_command", "value": "/trigger lumenfuchs.settings set 21" } }, "\n\n", \
+	{ "text": "--------------------------", "color": "dark_gray" } \
+]

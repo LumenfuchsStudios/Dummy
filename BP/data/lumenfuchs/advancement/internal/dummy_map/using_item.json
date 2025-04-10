@@ -1,0 +1,20 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "using_item",
+			"conditions": {
+				"item": {
+					"items": "#coals",
+					"components": {
+						"custom_data": {
+							"lumenfuchs.items.dummy_map": true
+						}
+					}
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "lumenfuchs:items/dummy_map/display_distance"
+	}
+}

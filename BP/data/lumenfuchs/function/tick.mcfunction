@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-04-02
+## * AydenTFoxx @ 2025-01-15 .. 2025-04-06
 ## * 
 ## * Ticks all code from this datapack at a custom rate.
 
@@ -11,16 +11,19 @@ scoreboard players add #lumenfuchs_tick_b dummy_lib.dummy 1
 
 
 # Update dummy entities
-execute if score #lumenfuchs_tick_a dummy_lib.dummy = #lumenfuchs_tick_rate_a dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy] at @s run function lumenfuchs:dummy/update_a with storage lumenfuchs:flags dummy
-execute if score #lumenfuchs_tick_b dummy_lib.dummy = #lumenfuchs_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy, tag=!dummy_lib.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:dummy/update_b with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_a dummy_lib.dummy = #dummy_lib_tick_rate_a dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy] at @s run function lumenfuchs:dummy/update_a with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_b dummy_lib.dummy = #dummy_lib_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy, tag=!dummy_lib.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:dummy/update_b with storage lumenfuchs:flags dummy
 
-execute if score #lumenfuchs_tick_a dummy_lib.dummy = #lumenfuchs_tick_rate_a dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker] at @s run function lumenfuchs:seeker/update_a with storage lumenfuchs:flags dummy
-execute if score #lumenfuchs_tick_b dummy_lib.dummy = #lumenfuchs_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker, tag=!dummy_lib.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:seeker/update_b with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_a dummy_lib.dummy = #dummy_lib_tick_rate_a dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker] at @s run function lumenfuchs:seeker/update_a with storage lumenfuchs:flags dummy
+execute if score #lumenfuchs_tick_b dummy_lib.dummy = #dummy_lib_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.seeker, tag=!dummy_lib.dummy.is_dead] at @s if loaded ~ ~ ~ run function lumenfuchs:seeker/update_b with storage lumenfuchs:flags dummy
 
+# Update Dummy Altar
+execute if score #lumenfuchs_tick_b dummy_lib.dummy = #dummy_lib_tick_rate_b dummy_lib.dummy as @e[type=interaction, tag=lumenfuchs.entity.dummy_altar] at @s if loaded ~ ~ ~ run function lumenfuchs:dummy_altar/update
+execute if score #lumenfuchs_tick_b dummy_lib.dummy = #dummy_lib_tick_rate_b dummy_lib.dummy as @e[type=block_display, tag=lumenfuchs.entity.dummy_altar] at @s if loaded ~ ~ ~ unless entity @n[type=interaction, tag=lumenfuchs.entity.dummy_altar, distance=..1] run function lumenfuchs:dummy_altar/utils/remove_self
 
 # Reset clock
-execute if score #lumenfuchs_tick_a dummy_lib.dummy >= #lumenfuchs_tick_rate_a dummy_lib.dummy run scoreboard players set #lumenfuchs_tick_a dummy_lib.dummy 0
-execute if score #lumenfuchs_tick_b dummy_lib.dummy >= #lumenfuchs_tick_rate_b dummy_lib.dummy run scoreboard players set #lumenfuchs_tick_b dummy_lib.dummy 0
+execute if score #lumenfuchs_tick_a dummy_lib.dummy >= #dummy_lib_tick_rate_a dummy_lib.dummy run scoreboard players set #lumenfuchs_tick_a dummy_lib.dummy 0
+execute if score #lumenfuchs_tick_b dummy_lib.dummy >= #dummy_lib_tick_rate_b dummy_lib.dummy run scoreboard players set #lumenfuchs_tick_b dummy_lib.dummy 0
 
 
 ## SETTINGS TRIGGER
@@ -75,3 +78,6 @@ execute as @e[type=marker, tag=lumenfuchs.dummy.vessel] at @s positioned ~-0.5 ~
 
 # Replace vessel with Seeker
 execute as @e[type=marker, tag=lumenfuchs.seeker.vessel] at @s positioned ~-0.5 ~ ~-0.5 run function lumenfuchs:seeker/events/summon_egg
+
+# Replace vessel with Dummy Altar
+execute as @e[type=marker, tag=lumenfuchs.dummy_altar.vessel] at @s run function lumenfuchs:dummy_altar/summon

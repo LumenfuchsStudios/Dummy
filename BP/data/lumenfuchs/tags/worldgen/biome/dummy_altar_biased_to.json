@@ -1,0 +1,8 @@
+{
+    "values": [
+        "#is_forest",
+        "#is_taiga",
+        "#is_savanna",
+        "#is_jungle"
+    ]
+}

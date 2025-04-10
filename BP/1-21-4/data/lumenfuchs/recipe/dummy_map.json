@@ -1,0 +1,26 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        "map",
+        "#lumenfuchs:dummy_material",
+        "gold_ingot",
+        [
+            "echo_shard",
+            "redstone",
+            "glowstone_dust"
+        ]
+    ],
+    "result": {
+        "id": "coal",
+        "components": {
+            "consumable": { "animation": "bow", "consume_seconds": 300, "has_consume_particles": false, "sound": "ambient.nether_wastes.mood", "on_consume_effects": [ { "type": "play_sound", "sound": "entity.generic.explode" } ] },
+            "item_model": "filled_map",
+            "item_name": "{ \"translate\": \"lumenfuchs.items.dummy_map\", \"fallback\": \"Dummy Altar Map\" }",
+            "rarity": "uncommon",
+            "enchantment_glint_override": true,
+            "custom_data": { "lumenfuchs.items.dummy_map": true }
+        }
+    },
+    "category": "misc",
+    "group": "lumenfuchs:dummy_map"
+}

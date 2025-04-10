@@ -30,6 +30,11 @@
     "item.lumenfuchs.dummy_attack": "Void Shard",
     "item.lumenfuchs.dummy_attack.description": "\"A shard of the Dummy's grim power.\"",
 
+    "item.lumenfuchs.dummy_altar": "Dummy Altar",
+    "item.lumenfuchs.dummy_altar.lore": "A powerful aura emanates from within.",
+    
+    "item.lumenfuchs.dummy_map": "Dummy Altar Map",
+
 
     "lumenfuchs.help.1": "Hello! Welcome to %s,\n a datapack whose main feature is the titular %s,",
     "lumenfuchs.help.2": "an \"entity\" whose main hobby is to stalk you around,\n no matter how, no matter where.",

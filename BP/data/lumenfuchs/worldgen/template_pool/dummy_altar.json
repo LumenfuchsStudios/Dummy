@@ -1,0 +1,477 @@
+{
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "single_pool_element",
+                "projection": "rigid",
+                "location": "lumenfuchs:dummy_altar/v1",
+                "processors": {
+                    "processors": [
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "water"
+                                    },
+                                    "output_state": {
+                                        "Name": "tinted_glass"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "air"
+                                    },
+                                    "output_state": {
+                                        "Name": "black_wool"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "block_ignore",
+                            "blocks": [
+                                {
+                                    "Name": "grass_block"
+                                },
+                                {
+                                    "Name": "dirt"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "single_pool_element",
+                "projection": "rigid",
+                "location": "lumenfuchs:dummy_altar/v2",
+                "processors": {
+                    "processors": [
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "water"
+                                    },
+                                    "output_state": {
+                                        "Name": "tinted_glass"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "air"
+                                    },
+                                    "output_state": {
+                                        "Name": "black_wool"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "block_ignore",
+                            "blocks": [
+                                {
+                                    "Name": "grass_block"
+                                },
+                                {
+                                    "Name": "dirt"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "single_pool_element",
+                "projection": "rigid",
+                "location": "lumenfuchs:dummy_altar/v3",
+                "processors": {
+                    "processors": [
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "water"
+                                    },
+                                    "output_state": {
+                                        "Name": "tinted_glass"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "air"
+                                    },
+                                    "output_state": {
+                                        "Name": "black_wool"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "block_ignore",
+                            "blocks": [
+                                {
+                                    "Name": "grass_block"
+                                },
+                                {
+                                    "Name": "dirt"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "single_pool_element",
+                "projection": "rigid",
+                "location": "lumenfuchs:dummy_altar/v4",
+                "processors": {
+                    "processors": [
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "water"
+                                    },
+                                    "output_state": {
+                                        "Name": "tinted_glass"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "air"
+                                    },
+                                    "output_state": {
+                                        "Name": "black_wool"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "block_ignore",
+                            "blocks": [
+                                {
+                                    "Name": "grass_block"
+                                },
+                                {
+                                    "Name": "dirt"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "single_pool_element",
+                "projection": "rigid",
+                "location": "lumenfuchs:dummy_altar/v5",
+                "processors": {
+                    "processors": [
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "water"
+                                    },
+                                    "output_state": {
+                                        "Name": "tinted_glass"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "air"
+                                    },
+                                    "output_state": {
+                                        "Name": "black_wool"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "block_ignore",
+                            "blocks": [
+                                {
+                                    "Name": "grass_block"
+                                },
+                                {
+                                    "Name": "dirt"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "single_pool_element",
+                "projection": "rigid",
+                "location": "lumenfuchs:dummy_altar/v6",
+                "processors": {
+                    "processors": [
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "water"
+                                    },
+                                    "output_state": {
+                                        "Name": "tinted_glass"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "air"
+                                    },
+                                    "output_state": {
+                                        "Name": "black_wool"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "block_ignore",
+                            "blocks": [
+                                {
+                                    "Name": "grass_block"
+                                },
+                                {
+                                    "Name": "dirt"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "single_pool_element",
+                "projection": "rigid",
+                "location": "lumenfuchs:dummy_altar/v7",
+                "processors": {
+                    "processors": [
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "water"
+                                    },
+                                    "output_state": {
+                                        "Name": "tinted_glass"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "air"
+                                    },
+                                    "output_state": {
+                                        "Name": "black_wool"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "block_ignore",
+                            "blocks": [
+                                {
+                                    "Name": "grass_block"
+                                },
+                                {
+                                    "Name": "dirt"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "single_pool_element",
+                "projection": "rigid",
+                "location": "lumenfuchs:dummy_altar/v8",
+                "processors": {
+                    "processors": [
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "water"
+                                    },
+                                    "output_state": {
+                                        "Name": "tinted_glass"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "rule",
+                            "rules": [
+                                {
+                                    "input_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "grass_block"
+                                    },
+                                    "location_predicate": {
+                                        "predicate_type": "block_match",
+                                        "block": "air"
+                                    },
+                                    "output_state": {
+                                        "Name": "black_wool"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "processor_type": "block_ignore",
+                            "blocks": [
+                                {
+                                    "Name": "grass_block"
+                                },
+                                {
+                                    "Name": "dirt"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

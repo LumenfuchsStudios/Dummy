@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-11 .. 2025-04-01
+## * AydenTFoxx @ 2025-01-11 .. 2025-04-07
 ## * 
 ## * Initializes features required for the proper functioning of the datapack.
 
@@ -14,7 +14,7 @@ execute unless data storage lumenfuchs:flags { first_load_true: true } run tellr
 execute if data storage lumenfuchs:flags { first_load_true: true } unless data storage lumenfuchs:flags { first_load: true } run tellraw @a { "translate": "lumenfuchs.intro.reload", "fallback": "Hello again.", "color": "yellow", "hover_event": { "action": "show_text", "value": { "translate": "lumenfuchs.intro.reload.info", "fallback": "Your datapack got updated! Click here for a list of latest changes." } }, "click_event": { "action": "open_url", "url": "https://github.com/LumenfuchsStudios/Dummy/blob/main/CHANGELOG.md" } }
 
 # Grant advancement
-advancement grant @a[advancements={ lumenfuchs:root=false }] only lumenfuchs:root
+advancement grant @a only lumenfuchs:root
 
 
 ## # SCOREBOARDS
@@ -31,14 +31,6 @@ scoreboard objectives add lumenfuchs.purity dummy { "text": "Purity", "color": "
 
 ## DEFAULT VALUES
 
-# Initialize custom tick rate
-execute unless score #lumenfuchs_tick_rate_a dummy_lib.dummy matches 1.. \
-        run scoreboard players set #lumenfuchs_tick_rate_a dummy_lib.dummy 1
-
-execute unless score #lumenfuchs_tick_rate_b dummy_lib.dummy matches 1.. \
-        run scoreboard players set #lumenfuchs_tick_rate_b dummy_lib.dummy 2
-
-
 # Enable Settings trigger for all players
 scoreboard players enable @a lumenfuchs.settings
 
@@ -54,6 +46,7 @@ scoreboard players enable @a lumenfuchs.settings
 # 6 | 1.3.0 - 1.3.1
 # 7 | 1.4.0
 # 8 | 1.5.0 - 1.5.1
+# 9 | 1.6.0
 scoreboard players set #lumenfuchs_dummy.target_version dummy_lib.dummy 8
 
 # Set current version to latest

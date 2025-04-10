@@ -16,4 +16,4 @@ tag @s[scores={ dummy_lib.clock=..-24 }] remove dummy_lib.clock_invert
 execute store result entity @s Rotation[1] float 2 run scoreboard players get @s dummy_lib.clock
 
 # Set interpolation
-data modify entity @s interpolation_duration set value 2
+data modify entity @s interpolation_duration set value 8

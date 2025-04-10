@@ -1,0 +1,55 @@
+{
+    "type": "jigsaw",
+    "biomes": "#lumenfuchs:has_structure/dummy_altar",
+    "step": "surface_structures",
+    "terrain_adaptation": "none",
+    "spawn_overrides": {
+        "monster": {
+            "bounding_box": "full",
+            "spawns": []
+        },
+        "creature": {
+            "bounding_box": "full",
+            "spawns": []
+        },
+        "ambient": {
+            "bounding_box": "full",
+            "spawns": []
+        },
+        "water_creature": {
+            "bounding_box": "full",
+            "spawns": []
+        },
+        "underground_water_creature": {
+            "bounding_box": "full",
+            "spawns": []
+        },
+        "water_ambient": {
+            "bounding_box": "full",
+            "spawns": []
+        },
+        "misc": {
+            "bounding_box": "full",
+            "spawns": []
+        },
+        "axolotls": {
+            "bounding_box": "full",
+            "spawns": []
+        }
+    },
+    "start_pool": "lumenfuchs:dummy_altar",
+    "size": 1,
+    "start_height": {
+        "type": "biased_to_bottom",
+        "min_inclusive": {
+            "absolute": 0
+        },
+        "max_inclusive": {
+            "absolute": 1
+        }
+    },
+    "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "max_distance_from_center": 1,
+    "use_expansion_hack": false,
+    "liquid_settings": "ignore_waterlogging"
+}

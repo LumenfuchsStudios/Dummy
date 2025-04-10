@@ -1,0 +1,33 @@
+{
+    "criteria": {
+        "interact_ingredient": {
+            "trigger": "player_interacted_with_entity",
+            "conditions": {
+                "entity": {
+                    "type": "interaction",
+                    "nbt": "{ Tags: [ lumenfuchs.entity.dummy_altar ] }"
+                },
+                "player": {
+                    "equipment": {
+                        "mainhand": {
+                            "items": [
+                                "enchanted_book",
+                                "echo_shard",
+                                "charcoal",
+                                "coal"
+                            ],
+                            "components": {
+                                "custom_data": {
+                                    "lumenfuchs.items.dummy_attack": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "lumenfuchs:dummy_altar/triggers/remove_all"
+    }
+}

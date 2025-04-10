@@ -1,0 +1,22 @@
+{
+    "structures": [
+        {
+            "structure": "lumenfuchs:dummy_altar",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "salt": 1819533102,
+        "frequency": 1.0,
+        "exclusion_zone": {
+            "chunk_count": 4,
+            "other_set": "villages"
+        },
+        "locate_offset": [ -3, 0, -3 ],
+        "type": "concentric_rings",
+        "distance": 8,
+        "count": 64,
+        "preferred_biomes": "#lumenfuchs:dummy_altar_biased_to",
+        "spread": 2
+    }
+}

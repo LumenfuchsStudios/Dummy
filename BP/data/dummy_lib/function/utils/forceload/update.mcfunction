@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-30 .. 2025-02-20
+## * AydenTFoxx @ 2025-01-30 .. 2025-04-08
 ## * 
 ## * Updates the forceloading entity's behavior.
 
@@ -12,7 +12,7 @@ execute unless loaded ~ ~ ~ if data storage dummy_lib:flags { debug_mode: true }
 
 
 # Tick clock
-scoreboard players add @s dummy_lib.clock 1
+scoreboard players operation @s dummy_lib.clock += #dummy_lib_tick_rate_a dummy_lib.dummy
 
 # Remove entity
-execute if score @s dummy_lib.clock matches 1200.. run function dummy_lib:utils/forceload/remove
+execute if score @s dummy_lib.clock matches 2400.. run function dummy_lib:utils/forceload/remove

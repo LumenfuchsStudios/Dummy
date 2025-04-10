@@ -1,0 +1,47 @@
+{
+    "criteria": {
+        "obtain_item": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "vex_spawn_egg",
+                        "components": {
+                            "entity_data": {
+                                "id": "marker",
+                                "Tags": [
+                                    "lumenfuchs.dummy_altar.vessel"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "materials_found": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "nether_star",
+                            "dragon_breath",
+                            "echo_shard"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "obtain_item",
+            "materials_found"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "lumenfuchs:dummy_altar"
+        ]
+    }
+}

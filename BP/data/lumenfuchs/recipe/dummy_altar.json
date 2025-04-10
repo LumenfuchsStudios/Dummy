@@ -1,0 +1,46 @@
+{
+    "type": "crafting_shaped",
+    "key": {
+        "c": "crying_obsidian",
+        "g": "glowstone",
+        "d": "#lumenfuchs:dummy_material",
+        "E": [
+            "nether_star",
+            "dragon_breath",
+            "echo_shard"
+        ]
+    },
+    "pattern": [
+        "cdc",
+        "gEg",
+        "cdc"
+    ],
+    "result": {
+        "id": "vex_spawn_egg",
+        "components": {
+            "item_model": "respawn_anchor",
+            "item_name": {
+                "translate": "item.lumenfuchs.dummy_altar",
+                "fallback": "Dummy Altar"
+            },
+            "rarity": "epic",
+            "lore": [
+                {
+                    "translate": "item.lumenfuchs.dummy_altar.lore",
+                    "fallback": "A powerful aura emanates from within.",
+                    "color": "gray",
+                    "italic": false
+                }
+            ],
+            "enchantment_glint_override": true,
+            "entity_data": {
+                "id": "marker",
+                "Tags": [
+                    "lumenfuchs.dummy_altar.vessel"
+                ]
+            }
+        }
+    },
+    "category": "misc",
+    "group": "lumenfuchs:dummy_altar"
+}

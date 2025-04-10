@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-14 .. 2025-04-01
+## * AydenTFoxx @ 2025-01-14 .. 2025-04-07
 ## * 
 ## * Pauses the Dummy for a moment then removes it.
 
@@ -37,4 +37,5 @@ execute if score @s dummy_lib.clock matches 59.. if data storage lumenfuchs:flag
         run loot spawn ~ ~ ~ loot lumenfuchs:entities/dummy
 
 ## Increase Purity score
-execute if score @s dummy_lib.clock matches 59.. run function lumenfuchs:dummy/utils/add_purity with entity @s attack
+execute if score @s dummy_lib.clock matches 59.. if entity @s[tag=lumenfuchs.entity.dummy] \
+        run function lumenfuchs:dummy/utils/add_purity with entity @s attack

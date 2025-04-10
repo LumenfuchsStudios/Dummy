@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-27 .. 2025-03-02
+## * AydenTFoxx @ 2025-01-27 .. 2025-04-07
 ## * 
 ## * Summons a Seeker dummy entity.
 
@@ -7,7 +7,7 @@
 function lumenfuchs:seeker/summon
 
 # Give advancement
-advancement grant @p[gamemode=!spectator, advancements={ lumenfuchs:the_seeker=false }, distance=..8] only lumenfuchs:the_seeker
+advancement grant @s only lumenfuchs:the_seeker
 
 
 # Remove vessel

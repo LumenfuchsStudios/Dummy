@@ -1,4 +1,4 @@
-## * AydenTFoxx @ 2025-01-15 .. 2025-04-02
+## * AydenTFoxx @ 2025-01-15 .. 2025-04-07
 ## * 
 ## * Performs the dummy's signature "attack" ability.
 
@@ -6,10 +6,14 @@
 # STOP EVERYTHING!!1! (kris get the banana)
 stopsound @a[distance=..64]
 
-# Damage nearest victim
+# Damage nearest player
 execute if entity @p[gamemode=!creative, gamemode=!spectator, distance=..64] run damage @p[gamemode=!creative, gamemode=!spectator, distance=..64] 8 sonic_boom by @s
-execute as @p[gamemode=!creative, gamemode=!spectator, distance=..64] if score @s lumenfuchs.purity matches ..-16 run effect give @s wither 4 2
 
+# Inflict context-dependant debuffs
+execute as @p[gamemode=!creative, gamemode=!spectator, distance=..64] if score @s lumenfuchs.purity matches ..-16 run effect give @s wither 4 2
+execute if entity @s[tag=lumenfuchs.entity.mimic] as @p[gamemode=!creative, gamemode=!spectator, distance=..64] unless score @s lumenfuchs.purity matches 12.. run effect give @s slowness 8 2
+
+# Damage non-player creatures
 execute unless entity @p[gamemode=!creative, gamemode=!spectator, distance=..64] as @e[type=!#dummy_lib:technical, distance=..16] run damage @s 8 sonic_boom by @n[type=interaction, tag=lumenfuchs.entity.dummy]
 
 

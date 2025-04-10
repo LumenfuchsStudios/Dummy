@@ -8,7 +8,7 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
-## v1.6.0 - Unreleased
+## v1.6.0 - 2025-04-10
 
 ### Codename: `Old Gods`
 

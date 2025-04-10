@@ -29,6 +29,11 @@
 
     "item.lumenfuchs.dummy_attack": "Fragmento do Vazio",
     "item.lumenfuchs.dummy_attack.lore": "\"Uma fração do poder sombrio do Dummy.\"",
+    
+    "item.lumenfuchs.dummy_altar": "Altar das Sombras",
+    "item.lumenfuchs.dummy_altar.lore": "Uma energia poderosa emana de seu interior.",
+
+    "item.lumenfuchs.dummy_map": "Mapa do Altar das Sombras",
 
 
     "lumenfuchs.help.1": "Olá! Bem-vindo a %s,\n um datapack cujo item principal é o %s,",

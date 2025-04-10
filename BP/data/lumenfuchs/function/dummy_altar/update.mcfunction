@@ -1,6 +1,6 @@
 ## * AydenTFoxx @ 2025-04-05 .. 2025-04-08
 ## * 
-## * ...
+## * Updates the Dummy Altar block entity with its behaviors and abilities.
 
 # Ayden's B-Day event
 

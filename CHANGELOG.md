@@ -8,6 +8,43 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
+## v1.6.0 - Unreleased
+
+### Codename: `Old Gods`
+
+* ✳️ Added new "overlay" folder for the 1.21.4-compatible version of the datapack.
+  * This overlay will be automatically applied on versions 1.21.2-1.21.4, and ignored otherwise; Essentially, this means all compatible versions will now use the same file! :D
+  * The newly-created 1.21.4 branch will be thus deprecated. Oh well.
+* 🐛 Fixed bug where the Seeker could not hurt any entities at all.
+* ⭐ Added a new naturally-generated structure: the *Dummy Altar*:
+  * Generating throughout most of the Overworld, this mysterious structure features a strange block at its center, which activates when approached. When interacted with specific items, it has the ability to directly influence Dummy/Seeker entities around itself.
+* 🔺 Reduced the volume of the sound from the Dummy/Seeker's death event.
+* 🔺 Changed Seekers to no longer grant Purity scores when killed.
+* 🔧 Introduced a new entity tag to indicate an entity should be in a "paralysis" state: `dummy_lib.dummy.paralysis`
+* 🔧 Added failsafe to ensure DummyLib entities always have their own GUID.
+* 🔧 Increased Dummy/Seeker's "obstacle" avoidance threshold by one block.
+  * This means they will now fall up to two blocks high, and climb obstacles up to two blocks tall when pursuing a target.
+* 🔧 Changed Dummy/Seeker's gravity to be half as effective while underwater.
+* 🔧 Changed Seeker's advancement to be only granted to the player who used its spawn egg.
+
+And for the truly technical and of little relevance to gameplay purposes...
+
+* 🔧 Added the **Mimic**, a Dummy variant who is both faster and stronger, but with one health point.
+  * Introduced in a now scrapped structure prototype; The entity tag `lumenfuchs.entity.mimic` makes a Dummy behave like a Mimic.
+  * Fun fact: In the original concept, Mimics had the appearance of a Seeker, and would rarely replace a Seeker in one of the scrapped structures.
+* 🔧 Added *Dummy Map*, an item which tells the user their distance to the nearest Dummy Altar.
+  * Currently only a (working) prototype; Future plans involve proper visuals and better usability.
+  * Nonetheless, it does have its own recipe:
+    * `minecraft:map`
+    * `#lumenfuchs:dummy_material`
+    * `minecraft:gold_ingot`
+    * `minecraft:echo_shard`, `minecraft:redstone`, or `minecraft:glowstone_dust`
+* 🔧 Added biome tags: `#lumenfuchs:has_structure/dummy_altar`, `#lumenfuchs:dummy_altar_biased_to`
+* 🔧 Increased `interpolation_duration` from all `wave_limb` functions from `2` to `8`.
+* 🔧 Decreased range at which DummyLib's "limb" entities could exist without a dummy entity nearby from `8` blocks to `4` blocks.
+* 🔧 Changed *Lumenfuchs' Dummy*'s custom tick rate to use the same as *DummyLib*'s.
+* 🔧 Updated several internal "clocks" to be consistent regardless of the datapack's custom tick rate.
+
 ## v1.5.1 - 2025-04-02
 
 ### Codename: `Hotfix: Folly`

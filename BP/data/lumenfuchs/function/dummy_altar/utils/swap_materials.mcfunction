@@ -1,6 +1,7 @@
 ## * AydenTFoxx @ 2025-04-07 .. 2025-04-08
 ## * 
-## * ...
+## * Swaps all Black Wool blocks with a random "Dummy Material" block.
+## ? Black Wool is used in the NBT files as a "placeholder" block, with a chance to be replaced by a random material below.
 
 
 ## Ignore if function was repeated too many times

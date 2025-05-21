@@ -1,12 +1,12 @@
-## * AydenTFoxx @ 2025-04-08 .. 2025-04-09
+## * AydenTFoxx @ 2025-04-08 .. 2025-04-10
 ## * 
 ## * Performs a long ritual for a Dummy Altar's activation.
 ## * A standard showcase of Yannah/Ayden's flashy tastes.
 
 
 ## Revert "possession" if event is interrupted
-execute unless entity @p[distance=..4] as @e[type=!#dummy_lib:technical, type=!player, tag=lumenfuchs.dummy_altar.possess, distance=..64] run data remove entity @s NoAI
-execute unless entity @p[distance=..4] as @e[type=!#dummy_lib:technical, type=!player, tag=lumenfuchs.dummy_altar.possess, distance=..64] run tag @s remove lumenfuchs.dummy_altar.possess
+execute unless entity @p[gamemode=!spectator, distance=..4] as @e[type=!#dummy_lib:technical, type=!player, tag=lumenfuchs.dummy_altar.possess, distance=..64] run data remove entity @s NoAI
+execute unless entity @p[gamemode=!spectator, distance=..4] as @e[type=!#dummy_lib:technical, type=!player, tag=lumenfuchs.dummy_altar.possess, distance=..64] run tag @s remove lumenfuchs.dummy_altar.possess
 
 ## Ignore if no player is nearby
 execute unless entity @p[distance=..4] run return run scoreboard players reset @s[scores={ dummy_lib.clock=..179 }] dummy_lib.clock

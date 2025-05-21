@@ -8,7 +8,14 @@ Legend:
 > 🔺 Enhancement  
 > 🔧 Technical
 
-## v1.6.0 - Unreleased
+## v1.6.1 - Unreleased
+
+### Codename: `Hotfix: ...`[^nocode]
+
+* 🔧 Changed Dummy Altar's activation to no longer be triggered by players in Spectator mode.
+* 🔧 Removed `#minecraft:load` and `#minecraft:tick` function tags from 1.21.4 overlay.
+
+## v1.6.0 - 2025-05-10
 
 ### Codename: `Old Gods`
 
@@ -231,3 +238,5 @@ And for the truly technical and of little relevance to gameplay purposes...
 * 🔧 Added "transparent" block tag and "technical" entity tag.
   * Both are borrowed from *Golden Arcane*'s "breathable" and "magic immune" tags, respectively.
 * 🔧 Added "dummy material" block tag for all valid materials for the Dummy totem.
+
+[^nocode]: This update is in very early stages and thus has no official name yet.

@@ -7,7 +7,7 @@
 function lumenfuchs:seeker/summon
 
 # Give advancement
-advancement grant @s only lumenfuchs:the_seeker
+advancement grant @p only lumenfuchs:the_seeker
 
 
 # Remove vessel

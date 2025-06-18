@@ -14,6 +14,7 @@ Legend:
 
 * 🔧 Changed Dummy Altar's activation to no longer be triggered by players in Spectator mode.
 * 🔧 Removed `#minecraft:load` and `#minecraft:tick` function tags from 1.21.4 overlay.
+* 🔧 Reverted change to Seeker's advancement trigger; Now granted to the closest player to the spawned Seeker.
 
 ## v1.6.0 - 2025-05-10
 
